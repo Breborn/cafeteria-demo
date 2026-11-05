@@ -45,7 +45,7 @@ Cuando una cafetería, pastelería o tostaduría contactada solicite una muestra
 
 > *"¡Hola [Nombre]! Te comparto una muestra interactiva que diseñamos especialmente para cafeterías de especialidad y brunch, combinando carta digital con fotos, venta de café en grano y pedidos directos a WhatsApp:*  
 > 👉 **https://breborn.github.io/cafeteria-demo/**  
-> *Podemos adaptar esta misma estructura con sus fotos reales, su carta, sus precios y sus orígenes en 48 horas. ¿Les gustaría que coordinemos los detalles?"*
+> *Podemos adaptar esta misma estructura con sus fotos reales, su carta, sus precios y sus orígenes en 4 a 5 días hábiles. ¿Les gustaría que coordinemos los detalles?"*
 
 ---
 
