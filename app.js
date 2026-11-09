@@ -1,6 +1,6 @@
 /**
  * ORIGEN 504 • SPECIALTY COFFEE ROASTERS & BRUNCH
- * Interactive Engine: Coffeeweb-style Live Cart, Multi-category Filter & WhatsApp Checkout
+ * Interactive Engine: Interactive Cart-style Live Cart, Multi-category Filter & WhatsApp Checkout
  * Developed for Breborn.cl Commercial Showcase
  */
 
@@ -48,7 +48,7 @@ function initTabs() {
 }
 
 /**
- * 2. Selector de Modalidad (Mesa, Retiro, Delivery estilo Coffeeweb)
+ * 2. Selector de Modalidad (Mesa, Retiro, Delivery estilo Interactive Cart)
  */
 function initModeChips() {
   const heroChips = document.querySelectorAll('.mode-chip');

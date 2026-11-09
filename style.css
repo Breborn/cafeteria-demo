@@ -1,14 +1,14 @@
 /* ============================================================
    ORIGEN 504 • SPECIALTY COFFEE, ROASTERS & BRUNCH
    Fusión de diseño:
-   - Cafetería Between (Brunch, Lifestyle & Tipografía Editorial)
-   - Coffeeweb.cl (Experiencia de Pedido interactiva, Carrito & WhatsApp)
-   - Black Drop Coffee (Tostaduría de Especialidad & Estética Dark Luxury)
+   - Cafetería de Especialidad (Brunch, Lifestyle & Tipografía Editorial)
+   - Interactive Cart.cl (Experiencia de Pedido interactiva, Carrito & WhatsApp)
+   - Roastery Coffee (Tostaduría de Especialidad & Estética Dark Luxury)
    Desarrollado para la Red Comercial de Breborn.cl
    ============================================================ */
 
 :root {
-  /* Paleta Black Drop & Between: Café tostado de especialidad, obsidiana mate y acentos oro/caramelo */
+  /* Paleta Roastery & Autor: Café tostado de especialidad, obsidiana mate y acentos oro/caramelo */
   --bg-darker: #0b0a09;
   --bg-dark: #120f0d;
   --bg-surface: #1a1613;
@@ -312,7 +312,7 @@ button, input, select {
   gap: 0.85rem;
 }
 
-/* Nav Cart Button (Coffeeweb style) */
+/* Nav Cart Button (Interactive Cart style) */
 .cart-nav-btn {
   display: inline-flex;
   align-items: center;
@@ -797,7 +797,7 @@ button, input, select {
   color: var(--gold-light);
 }
 
-/* Mode Selector Bar (Coffeeweb Style) */
+/* Mode Selector Bar (Interactive Cart Style) */
 .mode-selector-bar {
   background: rgba(26, 22, 19, 0.85);
   border: 1px solid var(--border-gold);
@@ -906,7 +906,7 @@ button, input, select {
   background: var(--border-subtle);
 }
 
-/* ================= ROASTERY SECTION (BLACK DROP STYLE) ================= */
+/* ================= ROASTERY SECTION ================= */
 .roastery-section {
   background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
   border-top: 1px solid var(--border-subtle);
@@ -1028,7 +1028,7 @@ button, input, select {
   color: var(--cream-muted);
 }
 
-/* ================= MENU TABS & PRODUCTS (BETWEEN + COFFEEWEB) ================= */
+/* ================= MENU TABS & PRODUCTS ================= */
 .menu-section {
   background: var(--bg-dark);
 }
@@ -1276,7 +1276,7 @@ button, input, select {
   box-shadow: 0 4px 15px var(--gold-glow);
 }
 
-/* ================= CART DRAWER (COFFEEWEB STYLE ENGINE) ================= */
+/* ================= CART DRAWER ================= */
 .cart-drawer {
   position: fixed;
   top: 0;
@@ -1660,7 +1660,7 @@ button, input, select {
   cursor: pointer;
 }
 
-/* ================= LIFESTYLE & EXPERIENCIA (BETWEEN VIBE) ================= */
+/* ================= LIFESTYLE & EXPERIENCIA ================= */
 .lifestyle-section {
   background: var(--bg-darker);
   border-top: 1px solid var(--border-subtle);
