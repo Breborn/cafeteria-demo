@@ -110,7 +110,7 @@ function syncHeroModeChips(mode) {
 }
 
 /**
- * 3. Botones de "Agregar al Pedido" en las tarjetas de productos
+ * 3. Botones de "Agregar al Pedido" en las tarjetas de productos y tendedero viral
  */
 function initAddToCartButtons() {
   const addButtons = document.querySelectorAll('.btn-add-cart');
@@ -147,6 +147,36 @@ function initAddToCartButtons() {
       // Animación visual de confirmación en el botón
       const originalText = btn.innerHTML;
       btn.innerHTML = '<span>✓ ¡Agregado!</span>';
+      btn.style.background = 'var(--gold-primary)';
+      btn.style.color = 'var(--bg-darker)';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 1100);
+    });
+  });
+
+  // Botones del tendedero colgante (Showcase viral Pinterest)
+  const hangButtons = document.querySelectorAll('.btn-quick-hang-add');
+  hangButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = btn.getAttribute('data-id');
+      const name = btn.getAttribute('data-name');
+      const price = parseInt(btn.getAttribute('data-price'), 10) || 0;
+
+      addItemToCart({
+        id: id,
+        productId: id,
+        name: name,
+        price: price,
+        meta: 'Selección Vitrina',
+        quantity: 1
+      });
+
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '✓ ¡Listo!';
       btn.style.background = 'var(--gold-primary)';
       btn.style.color = 'var(--bg-darker)';
       setTimeout(() => {
