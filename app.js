@@ -1,21 +1,31 @@
 /**
- * ORIGEN 504 • SPECIALTY COFFEE, ROASTERS & BRUNCH
- * Interactive Menu Logic & WhatsApp Order Integration
- * Developed for Breborn.cl Showcase
+ * ORIGEN 504 • SPECIALTY COFFEE ROASTERS & BRUNCH
+ * Interactive Engine: Coffeeweb-style Live Cart, Multi-category Filter & WhatsApp Checkout
+ * Developed for Breborn.cl Commercial Showcase
  */
+
+// Teléfono comercial de demostración (Breborn)
+const WHATSAPP_PHONE = '56956823670';
+
+// Estado global del carrito y pedido
+const AppState = {
+  cart: [],
+  selectedMode: 'Servir en el Local (Mesa)',
+  selectedLocation: 'Cerro Alegre (Almirante Montt 412, Valparaíso)',
+  customerNotes: ''
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   initTabs();
-  initOrderForm();
-  initProductAddButtons();
+  initModeChips();
+  initAddToCartButtons();
+  initCartDrawer();
   initMobileMenu();
+  loadCartFromStorage();
 });
 
-// Número de demostración comercial enlazado a Breborn
-const WHATSAPP_PHONE = '56956823670';
-
 /**
- * Navegación por pestañas de la carta
+ * 1. Pestañas de la Carta (Barra, Brunch, Bakery, Grano)
  */
 function initTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
@@ -38,147 +48,390 @@ function initTabs() {
 }
 
 /**
- * Conexión de botones "Agregar" de los productos de la carta con el formulario
+ * 2. Selector de Modalidad (Mesa, Retiro, Delivery estilo Coffeeweb)
  */
-function initProductAddButtons() {
-  const cards = document.querySelectorAll('.menu-item-card');
-  const bevSelect = document.getElementById('fBeverage');
-  const bakSelect = document.getElementById('fBakery');
-  const beanSelect = document.getElementById('fBeans');
-  const orderSection = document.getElementById('pedido');
-  const orderBox = document.querySelector('.order-box');
+function initModeChips() {
+  const heroChips = document.querySelectorAll('.mode-chip');
+  const drawerModeBtns = document.querySelectorAll('.cart-mode-btn');
 
-  cards.forEach((card) => {
-    const addBtn = card.querySelector('.btn-add-item');
-    const productName = card.getAttribute('data-product-name');
+  heroChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      heroChips.forEach((c) => c.classList.remove('active'));
+      chip.classList.add('active');
 
-    const handleSelect = (e) => {
-      e.stopPropagation();
+      const mode = chip.getAttribute('data-mode');
+      AppState.selectedMode = mode;
+      syncCartModeButtons(mode);
+    });
+  });
 
-      if (!productName) return;
+  drawerModeBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      drawerModeBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
 
-      // Detectar qué tipo de producto es según el contenedor
-      const parentTab = card.closest('.tab-content');
-      const tabId = parentTab ? parentTab.id : '';
+      const mode = btn.getAttribute('data-cart-mode');
+      AppState.selectedMode = mode;
+      syncHeroModeChips(mode);
+    });
+  });
+}
 
-      if (tabId === 'tab-cafeteria' && bevSelect) {
-        selectOptionOrAdd(bevSelect, productName);
-      } else if (tabId === 'tab-brunch' && bakSelect) {
-        selectOptionOrAdd(bakSelect, productName);
-      } else if (tabId === 'tab-bakery' && bakSelect) {
-        selectOptionOrAdd(bakSelect, productName);
-      } else if (tabId === 'tab-grano' && beanSelect) {
-        selectOptionOrAdd(beanSelect, productName);
-      } else if (bevSelect) {
-        selectOptionOrAdd(bevSelect, productName);
-      }
+function syncCartModeButtons(mode) {
+  const drawerModeBtns = document.querySelectorAll('.cart-mode-btn');
+  drawerModeBtns.forEach((btn) => {
+    const m = btn.getAttribute('data-cart-mode');
+    if (mode.includes('Mesa') && m.includes('Mesa')) {
+      btn.classList.add('active');
+    } else if (mode.includes('Llevar') && m.includes('Retiro')) {
+      btn.classList.add('active');
+    } else if (mode.includes('Delivery') && m.includes('Delivery')) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
 
-      // Scroll suave al formulario de pedido
-      if (orderSection) {
-        orderSection.scrollIntoView({ behavior: 'smooth' });
+function syncHeroModeChips(mode) {
+  const heroChips = document.querySelectorAll('.mode-chip');
+  heroChips.forEach((chip) => {
+    const m = chip.getAttribute('data-mode');
+    if (mode.includes('Mesa') && m.includes('Mesa')) {
+      chip.classList.add('active');
+    } else if (mode.includes('Retiro') && m.includes('Llevar')) {
+      chip.classList.add('active');
+    } else if (mode.includes('Delivery') && m.includes('Delivery')) {
+      chip.classList.add('active');
+    } else {
+      chip.classList.remove('active');
+    }
+  });
+}
 
-        if (orderBox) {
-          orderBox.style.transition = 'box-shadow 0.4s ease, border-color 0.4s ease';
-          orderBox.style.borderColor = '#d9823b';
-          orderBox.style.boxShadow = '0 0 45px rgba(217, 130, 59, 0.7)';
-          setTimeout(() => {
-            orderBox.style.boxShadow = '';
-            orderBox.style.borderColor = '';
-          }, 1800);
+/**
+ * 3. Botones de "Agregar al Pedido" en las tarjetas de productos
+ */
+function initAddToCartButtons() {
+  const addButtons = document.querySelectorAll('.btn-add-cart');
+
+  addButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('.product-card');
+      if (!card) return;
+
+      const id = card.getAttribute('data-id');
+      const name = card.getAttribute('data-name');
+      const price = parseInt(card.getAttribute('data-price'), 10) || 0;
+      const cat = card.getAttribute('data-cat') || 'general';
+
+      // Verificar si es café en grano y capturar molienda seleccionada
+      let meta = '';
+      if (cat === 'grano') {
+        const grindSelect = card.querySelector('.bean-grind-select');
+        if (grindSelect) {
+          meta = `Molienda: ${grindSelect.value}`;
         }
       }
-    };
 
-    if (addBtn) {
-      addBtn.addEventListener('click', handleSelect);
+      addItemToCart({
+        id: meta ? `${id}-${grindSelectValueToKey(meta)}` : id,
+        productId: id,
+        name: name,
+        price: price,
+        meta: meta,
+        quantity: 1
+      });
+
+      // Animación visual de confirmación en el botón
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span>✓ ¡Agregado!</span>';
+      btn.style.background = 'var(--gold-primary)';
+      btn.style.color = 'var(--bg-darker)';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 1100);
+    });
+  });
+}
+
+function grindSelectValueToKey(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+/**
+ * 4. Lógica de Carrito de Compras (Agregar, Modificar Cantidad, Renderizar)
+ */
+function addItemToCart(item) {
+  const existing = AppState.cart.find((i) => i.id === item.id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    AppState.cart.push(item);
+  }
+  updateCartUI();
+  saveCartToStorage();
+
+  // Mostrar el drawer temporalmente o animar sticky bar
+  showStickyBar();
+}
+
+function updateItemQuantity(itemId, delta) {
+  const item = AppState.cart.find((i) => i.id === itemId);
+  if (!item) return;
+
+  item.quantity += delta;
+  if (item.quantity <= 0) {
+    AppState.cart = AppState.cart.filter((i) => i.id !== itemId);
+  }
+  updateCartUI();
+  saveCartToStorage();
+}
+
+function formatCLP(amount) {
+  return '$' + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+function updateCartUI() {
+  const totalCount = AppState.cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPrice = AppState.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  // 1. Actualizar Nav Badge
+  const navBadge = document.getElementById('cartCountBadge');
+  const navTotal = document.getElementById('cartTotalText');
+  if (navBadge) navBadge.textContent = totalCount;
+  if (navTotal) navTotal.textContent = formatCLP(totalPrice);
+
+  // 2. Actualizar Drawer Badge & Totals
+  const headerBadge = document.getElementById('cartHeaderBadge');
+  const subtotalVal = document.getElementById('cartSubtotalValue');
+  const totalVal = document.getElementById('cartTotalValue');
+  if (headerBadge) headerBadge.textContent = `${totalCount} ${totalCount === 1 ? 'ítem' : 'ítems'}`;
+  if (subtotalVal) subtotalVal.textContent = formatCLP(totalPrice);
+  if (totalVal) totalVal.textContent = formatCLP(totalPrice);
+
+  // 3. Actualizar Sticky Bar
+  const stickyCount = document.getElementById('stickyCartCount');
+  const stickyTotal = document.getElementById('stickyCartTotal');
+  if (stickyCount) stickyCount.textContent = `${totalCount} ${totalCount === 1 ? 'producto' : 'productos'}`;
+  if (stickyTotal) stickyTotal.textContent = `${formatCLP(totalPrice)} CLP`;
+
+  const stickyBar = document.getElementById('stickyCartBar');
+  if (stickyBar) {
+    if (totalCount > 0) {
+      stickyBar.classList.add('visible');
+    } else {
+      stickyBar.classList.remove('visible');
     }
-    card.addEventListener('click', (e) => {
-      if (e.target !== addBtn) {
-        handleSelect(e);
-      }
+  }
+
+  // 4. Renderizar Lista de Ítems en el Drawer
+  renderCartItemsList();
+}
+
+function renderCartItemsList() {
+  const listContainer = document.getElementById('cartItemsList');
+  if (!listContainer) return;
+
+  if (AppState.cart.length === 0) {
+    listContainer.innerHTML = `
+      <div class="cart-empty-state">
+        <span class="empty-icon">☕</span>
+        <h4>Tu pedido está vacío</h4>
+        <p>Explora la carta y agrega tus cafés, brunch o café en grano favoritos.</p>
+      </div>
+    `;
+    return;
+  }
+
+  listContainer.innerHTML = AppState.cart
+    .map((item) => {
+      const itemSubtotal = item.price * item.quantity;
+      return `
+        <div class="cart-item-row" data-id="${item.id}">
+          <div class="cart-item-info">
+            <h5 class="cart-item-name">${item.name}</h5>
+            ${item.meta ? `<span class="cart-item-meta">📌 ${item.meta}</span>` : ''}
+            <span class="cart-item-price">${formatCLP(item.price)} c/u</span>
+          </div>
+          <div class="cart-item-controls">
+            <button class="cart-qty-btn btn-minus" data-id="${item.id}" aria-label="Disminuir">−</button>
+            <span class="cart-qty-text">${item.quantity}</span>
+            <button class="cart-qty-btn btn-plus" data-id="${item.id}" aria-label="Aumentar">＋</button>
+          </div>
+          <div class="cart-item-subtotal">
+            ${formatCLP(itemSubtotal)}
+          </div>
+        </div>
+      `;
+    })
+    .join('');
+
+  // Vincular eventos de botones + y -
+  listContainer.querySelectorAll('.btn-minus').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-id');
+      updateItemQuantity(id, -1);
+    });
+  });
+
+  listContainer.querySelectorAll('.btn-plus').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-id');
+      updateItemQuantity(id, 1);
     });
   });
 }
 
 /**
- * Selecciona una opción en el <select> o la agrega dinámicamente si no existe
+ * 5. Control del Drawer del Carrito (Abrir, Cerrar, Checkout WhatsApp)
  */
-function selectOptionOrAdd(selectElem, text) {
-  let matched = false;
-  for (let i = 0; i < selectElem.options.length; i++) {
-    const optVal = selectElem.options[i].value;
-    if (optVal.toLowerCase().includes(text.toLowerCase()) || text.toLowerCase().includes(optVal.toLowerCase())) {
-      selectElem.selectedIndex = i;
-      matched = true;
-      break;
+function initCartDrawer() {
+  const drawer = document.getElementById('cartDrawer');
+  const navTrigger = document.getElementById('cartNavBtn');
+  const stickyTrigger = document.getElementById('stickyCartTrigger');
+  const closeBtn = document.getElementById('cartDrawerClose');
+  const overlay = document.getElementById('cartDrawerOverlay');
+  const checkoutBtn = document.getElementById('cartCheckoutBtn');
+  const locationSelect = document.getElementById('cartLocationSelect');
+  const notesInput = document.getElementById('cartCustomerNotes');
+
+  const openDrawer = () => {
+    if (drawer) {
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
     }
+  };
+
+  const closeDrawer = () => {
+    if (drawer) {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  };
+
+  if (navTrigger) navTrigger.addEventListener('click', openDrawer);
+  if (stickyTrigger) stickyTrigger.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (overlay) overlay.addEventListener('click', closeDrawer);
+
+  if (locationSelect) {
+    locationSelect.addEventListener('change', (e) => {
+      AppState.selectedLocation = e.target.value;
+    });
   }
-  if (!matched) {
-    const newOpt = new Option(text, text, true, true);
-    selectElem.add(newOpt);
+
+  if (notesInput) {
+    notesInput.addEventListener('input', (e) => {
+      AppState.customerNotes = e.target.value;
+    });
   }
-}
 
-/**
- * Procesamiento y generación de pedido a WhatsApp
- */
-function initOrderForm() {
-  const form = document.getElementById('cafeOrderForm');
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const mode = document.getElementById('fMode')?.value || 'En mesa';
-      const location = document.getElementById('fLocation')?.value || 'Valparaíso';
-      const beverage = document.getElementById('fBeverage')?.value || 'Sin bebida';
-      const bakery = document.getElementById('fBakery')?.value || 'Sin comida';
-      const beans = document.getElementById('fBeans')?.value || 'Sin café en grano';
-      const grind = document.getElementById('fGrind')?.value || 'En grano';
-      const notes = document.getElementById('fNotes')?.value || 'Sin notas';
-
-      const lines = [
-        '¡Hola Origen 504! ☕ Quisiera hacer un pedido / reserva:',
-        '',
-        `📋 *Modalidad:* ${mode}`,
-        `📍 *Sucursal:* ${location}`,
-        `☕ *Café / Bebida:* ${beverage}`,
-        `🥐 *Brunch / Pastelería:* ${bakery}`
-      ];
-
-      if (!beans.includes('Sin café en bolsa') && !beans.includes('No agregar')) {
-        lines.push(`📦 *Café en Grano (250g):* ${beans}`);
-        lines.push(`⚙️ *Tipo de Molienda:* ${grind}`);
-      }
-
-      lines.push(`📝 *Detalles / Mesa / Dirección:* ${notes}`);
-      lines.push('');
-      lines.push('¿Me confirman disponibilidad y tiempo estimado? ¡Muchas gracias!');
-
-      const fullMessage = lines.join('\n');
-      const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(fullMessage)}`;
-
-      window.open(waUrl, '_blank');
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+      handleWhatsAppCheckout();
     });
   }
 }
 
+function showStickyBar() {
+  const stickyBar = document.getElementById('stickyCartBar');
+  if (stickyBar && AppState.cart.length > 0) {
+    stickyBar.classList.add('visible');
+  }
+}
+
 /**
- * Menú móvil responsive
+ * 6. Generación del Mensaje y Conexión Directa con WhatsApp
+ */
+function handleWhatsAppCheckout() {
+  if (AppState.cart.length === 0) {
+    alert('Tu pedido está vacío. Por favor agrega productos desde la carta.');
+    return;
+  }
+
+  const total = AppState.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const locationElem = document.getElementById('cartLocationSelect');
+  const location = locationElem ? locationElem.value : AppState.selectedLocation;
+  const notesElem = document.getElementById('cartCustomerNotes');
+  const notes = notesElem ? notesElem.value.trim() : '';
+
+  const lines = [
+    '¡Hola Origen 504! ☕ Quisiera enviar el siguiente pedido desde su carta web:',
+    '',
+    `📋 *Modalidad:* ${AppState.selectedMode}`,
+    `📍 *Sucursal:* ${location}`
+  ];
+
+  if (notes) {
+    lines.push(`📝 *Detalles / Mesa / Dirección:* ${notes}`);
+  }
+
+  lines.push('');
+  lines.push('🛒 *Detalle del Pedido:*');
+
+  AppState.cart.forEach((item) => {
+    const itemSubtotal = item.price * item.quantity;
+    const metaStr = item.meta ? ` [${item.meta}]` : '';
+    lines.push(`• ${item.quantity}x ${item.name}${metaStr} — ${formatCLP(itemSubtotal)}`);
+  });
+
+  lines.push('');
+  lines.push(`💰 *Total a Pagar:* ${formatCLP(total)} CLP`);
+  lines.push('');
+  lines.push('¿Me confirman para proceder? ¡Muchas gracias!');
+
+  const fullText = lines.join('\n');
+  const encodedText = encodeURIComponent(fullText);
+
+  // Intentar abrir por la app de escritorio o wa.me según el entorno
+  const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`;
+  window.open(waUrl, '_blank');
+}
+
+/**
+ * 7. Almacenamiento Local (Persistencia de carrito)
+ */
+function saveCartToStorage() {
+  try {
+    localStorage.setItem('origen504_cart', JSON.stringify(AppState.cart));
+  } catch (e) {
+    // Silencioso
+  }
+}
+
+function loadCartFromStorage() {
+  try {
+    const saved = localStorage.getItem('origen504_cart');
+    if (saved) {
+      AppState.cart = JSON.parse(saved);
+      updateCartUI();
+    }
+  } catch (e) {
+    // Silencioso
+  }
+}
+
+/**
+ * 8. Menú Móvil
  */
 function initMobileMenu() {
   const toggleBtn = document.getElementById('mobileToggle');
   const mobileNav = document.getElementById('mobileNav');
-  const mobileLinks = document.querySelectorAll('.m-link');
 
   if (toggleBtn && mobileNav) {
     toggleBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('active');
+      mobileNav.classList.toggle('open');
     });
 
-    mobileLinks.forEach((link) => {
+    mobileNav.querySelectorAll('.m-link').forEach((link) => {
       link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
+        mobileNav.classList.remove('open');
       });
     });
   }

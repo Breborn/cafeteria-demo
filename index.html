@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ORIGEN 504 • Specialty Coffee, Roasters & Brunch | Viña del Mar & Valparaíso</title>
-  <meta name="description" content="Cafetería de especialidad, tostaduría de café en grano y bakery artesanal en la V Región. Inspirado en 504 Coffee, Café Altura y Cafetería Between. Maqueta web desarrollada por Breborn.cl">
+  <title>ORIGEN 504 • Specialty Coffee Roasters & Brunch | Viña del Mar & Valparaíso</title>
+  <meta name="description" content="Café de especialidad tostado en casa, brunch de autor en pan de masa madre y pastelería fina en la V Región. Inspirado en Cafetería Between, Coffeeweb y Black Drop Coffee. Maqueta interactiva desarrollada por Breborn.cl">
 
   <!-- Google Fonts: Cormorant Garamond, Urbanist & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3.0">
 </head>
 <body>
 
@@ -20,16 +20,16 @@
     <div class="top-bar-container">
       <div class="top-bar-left">
         <span class="badge-tag">SHOWCASE BREBORN</span>
-        <span>Maqueta inspirada en la fusión de <strong>504 Coffee</strong>, <strong>Café Altura</strong> y <strong>Cafetería Between</strong> creada por <a href="https://breborn.cl" target="_blank" rel="noopener">Breborn.cl</a></span>
+        <span>Fusión de estilos de <strong>Cafetería Between</strong> (Brunch &amp; Lifestyle), <strong>Coffeeweb</strong> (Pedidos interactivos) y <strong>Black Drop</strong> (Tostaduría de Especialidad) • <a href="https://breborn.cl" target="_blank" rel="noopener">breborn.cl</a></span>
       </div>
       <a href="https://wa.me/56956823670?text=%C2%A1Hola%20Breborn!%20Me%20encant%C3%B3%20la%20maqueta%20para%20cafeter%C3%ADa.%20Quiero%20una%20web%20as%C3%AD%20para%20mi%20local." target="_blank" rel="noopener" class="top-bar-cta">
-        ¿Tienes una cafetería o pastelería? Creemos tu web ➔
+        ¿Tienes una cafetería o tostaduría? Creemos tu web ➔
       </a>
     </div>
   </aside>
 
   <!-- Navbar -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="brand-logo">
         <div class="brand-emblem">☕</div>
@@ -43,14 +43,22 @@
         <a href="#tostaduria">Tostaduría</a>
         <a href="#carta">Carta &amp; Brunch</a>
         <a href="#grano">Café en Grano</a>
-        <a href="#eventos">Eventos &amp; Catering</a>
+        <a href="#experiencia">Experiencia</a>
         <a href="#sedes">Sedes &amp; Horarios</a>
       </nav>
 
       <div class="nav-actions">
+        <!-- Floating Cart Trigger Button -->
+        <button class="cart-nav-btn" id="cartNavBtn" aria-label="Ver pedido">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-count-badge" id="cartCountBadge">0</span>
+          <span class="cart-total-text" id="cartTotalText">$0</span>
+        </button>
+
         <a href="#pedido" class="btn btn-coffee">
-          <span>Hacer Pedido / Reserva</span>
+          <span>Hacer Pedido</span>
         </a>
+
         <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
           <span></span><span></span><span></span>
         </button>
@@ -58,58 +66,75 @@
     </div>
   </header>
 
-  <!-- Mobile Dropdown -->
+  <!-- Mobile Dropdown Navigation -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="#tostaduria" class="m-link">Tostaduría &amp; Métodos</a>
-    <a href="#carta" class="m-link">Carta de Especialidad &amp; Brunch</a>
-    <a href="#grano" class="m-link">Café en Grano de Origen</a>
-    <a href="#eventos" class="m-link">Eventos &amp; Coffee Break</a>
-    <a href="#sedes" class="m-link">Sedes Viña &amp; Valparaíso</a>
-    <a href="#pedido" class="btn btn-coffee btn-block m-link">💬 Pedir o Reservar Mesa</a>
+    <a href="#tostaduria" class="m-link">☕ Tostaduría &amp; Métodos</a>
+    <a href="#carta" class="m-link">📖 Carta de Especialidad &amp; Brunch</a>
+    <a href="#grano" class="m-link">📦 Café en Grano Tostado Fresco</a>
+    <a href="#experiencia" class="m-link">🌿 Experiencia Between &amp; Cowork</a>
+    <a href="#sedes" class="m-link">📍 Sedes Viña &amp; Valparaíso</a>
+    <a href="#pedido" class="btn btn-coffee btn-block m-link">💬 Armar Pedido WhatsApp</a>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Black Drop Dark Luxury + Between Editorial Typography) -->
   <section class="hero-section">
     <div class="hero-backdrop"></div>
     <div class="hero-container">
       <div class="hero-kicker-box">
         <span class="hero-badge-dot">●</span>
-        <span class="hero-kicker-text">Café 100% Arábico • Tostado Fresco Semanalmente</span>
+        <span class="hero-kicker-text">Café 100% Arábico de Especialidad (+85 SCA) • Tostado en Casa</span>
         <span class="hero-city-tag">📍 Cerro Alegre &amp; Viña Poniente</span>
       </div>
 
       <h1 class="hero-title">
-        El Arte del Buen Café, <br>
-        <span class="text-terracotta">Del Grano a tu Mesa.</span>
+        El Café como Ritual, <br>
+        <span class="text-terracotta">El Brunch como Celebración.</span>
       </h1>
 
       <p class="hero-lead">
-        La precisión de los orígenes de especialidad tostados en casa se fusiona con la calidez del mejor brunch artesanal: tostones en pan de masa madre, pastelería fresca horneada a diario y filtrados que despiertan los sentidos.
+        La precisión de los micro-lotes de especialidad tostados semanalmente al estilo de <strong>Black Drop</strong>, fusionada con la calidez del brunch artesanal de <strong>Cafetería Between</strong>: tostones en masa madre de 36 horas, pastelería fina horneada al amanecer y pedidos directos a tu WhatsApp con la tecnología de <strong>Coffeeweb</strong>.
       </p>
+
+      <!-- Quick Ordering Mode Selector (Inspired by Coffeeweb.cl) -->
+      <div class="mode-selector-bar">
+        <span class="mode-bar-label">¿Cómo quieres disfrutar hoy?</span>
+        <div class="mode-chips">
+          <button class="mode-chip active" data-mode="Servir en el Local (Mesa)">
+            <span class="m-chip-icon">☕</span> Consumo en Mesa
+          </button>
+          <button class="mode-chip" data-mode="Para Llevar (Take Away Express)">
+            <span class="m-chip-icon">🛍️</span> Retiro en Tienda
+          </button>
+          <button class="mode-chip" data-mode="Delivery a Domicilio">
+            <span class="m-chip-icon">🛵</span> Delivery Express
+          </button>
+        </div>
+      </div>
 
       <div class="hero-cta-group">
         <a href="#carta" class="btn btn-coffee btn-lg">
-          <span class="icon">📖</span> Explorar Nuestra Carta
+          <span class="icon">📖</span> Explorar Carta con Fotos
         </a>
         <a href="#grano" class="btn btn-outline-warm btn-lg">
-          <span class="icon">☕</span> Comprar Café en Grano (250g)
+          <span class="icon">☕</span> Comprar Café en Grano (250g / 500g)
         </a>
       </div>
 
+      <!-- Trust Metrics Strip -->
       <div class="hero-trust-bar">
         <div class="trust-pill">
           <span class="t-icon">🌍</span>
           <div>
-            <strong>Orígenes +84 SCA</strong>
-            <span>Honduras, Etiopía, Colombia y Brasil</span>
+            <strong>Orígenes +85 SCA</strong>
+            <span>Honduras, Etiopía, Huila y Brasil</span>
           </div>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-pill">
           <span class="t-icon">🥐</span>
           <div>
-            <strong>Bakery Masa Madre</strong>
-            <span>Horneado cada mañana sin aditivos</span>
+            <strong>Masa Madre 36 Horas</strong>
+            <span>Fermentación natural y pastelería en vivo</span>
           </div>
         </div>
         <div class="trust-divider"></div>
@@ -117,62 +142,81 @@
           <span class="t-icon">🐾</span>
           <div>
             <strong>Pet Friendly &amp; Wi-Fi</strong>
-            <span>Espacios ideales para teletrabajo y pausas</span>
+            <span>Espacios relajados con terraza y enchufes</span>
+          </div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-pill">
+          <span class="t-icon">⚡</span>
+          <div>
+            <strong>Pedidos por WhatsApp</strong>
+            <span>Sin comisiones del 30% a apps externas</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Tostaduría & Filosofía (Estilo 504 Coffee & Café Altura) -->
+  <!-- Section: Tostaduría de Especialidad (Inspiración Black Drop Coffee) -->
   <section class="section roastery-section" id="tostaduria">
     <div class="section-container">
       <div class="roastery-grid">
         <div class="roastery-copy">
-          <span class="section-kicker">TOSTADURÍA DE AUTOR</span>
-          <h2 class="section-heading">Cada grano cuenta una historia, <span class="text-terracotta">tostado con precisión.</span></h2>
+          <div class="section-kicker-badge">
+            <span class="badge-roast">BLACK DROP VIBE</span>
+            <span>TOSTADURÍA DE AUTOR EN VIVO</span>
+          </div>
+          <h2 class="section-heading">Tostamos cada lote con precisión artesanal, <span class="text-terracotta">respetando cada origen.</span></h2>
           <p class="lead-p">
-            Creemos que el café no es solo una bebida matutina, es un ritual botánico y sensorial. 
+            Al igual que en las mejores tostadurías de especialidad como <em>Black Drop Coffee</em>, seleccionamos exclusivamente micro-lotes con trazabilidad total desde las fincas productoras hasta tu taza en la V Región.
           </p>
           <p>
-            Trabajamos directamente con micro-lotes de fincas sustentables en Honduras, Huila (Colombia) y Yirgacheffe (Etiopía). Desarrollamos perfiles de tueste medio y claro que conservan la dulzura natural, acidez brillante y notas afrutadas sin quemar el grano.
+            Desarrollamos curvas de tueste medio y claro que realzan las notas frutales, la acidez brillante y el dulzor acaramelado de cada grano sin quemar sus aceites esenciales.
           </p>
 
           <div class="methods-strip">
             <div class="method-card">
               <span class="m-icon">⚖️</span>
-              <strong>V60 &amp; Chemex</strong>
-              <span>Extracción limpia y aromática</span>
+              <div>
+                <strong>Filtrados V60 &amp; Chemex</strong>
+                <span>Extracciones lentas, limpias y aromáticas</span>
+              </div>
             </div>
             <div class="method-card">
               <span class="m-icon">⏱️</span>
-              <strong>Aeropress</strong>
-              <span>Cuerpo sedoso y dulzura intensa</span>
+              <div>
+                <strong>Aeropress &amp; Prensa</strong>
+                <span>Cuerpo denso, textura sedosa y dulzura</span>
+              </div>
             </div>
             <div class="method-card">
               <span class="m-icon">❄️</span>
-              <strong>Cold Brew 18h</strong>
-              <span>Baja acidez, infusión en frío</span>
+              <div>
+                <strong>Cold Brew Nitro 18h</strong>
+                <span>Maceración en frío con crema nitrogenada</span>
+              </div>
             </div>
             <div class="method-card">
               <span class="m-icon">☕</span>
-              <strong>Espresso Bar</strong>
-              <span>Extracción en máquina italiana</span>
+              <div>
+                <strong>Espresso Bar Italiano</strong>
+                <span>Extracción en máquina italiana a 9 bares</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="roastery-visual">
           <div class="visual-mosaic">
-            <div class="mosaic-card m-top">
-              <span class="mosaic-tag">TUESTE EN VIVO</span>
-              <h3>Lotes Frescos Cada Semana</h3>
-              <p>Fecha de tueste visible en cada bolsa para garantizar máxima frescura aromática.</p>
-            </div>
-            <div class="mosaic-card m-bottom">
-              <span class="mosaic-tag">CAFÉ DE ESPECIALIDAD</span>
-              <h3>100% Granos Arábicos</h3>
-              <p>Sin mezclas comerciales. Trazabilidad total de la finca a la taza.</p>
+            <div class="mosaic-card m-main">
+              <div class="mosaic-img-box">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Tostaduría de Café Origen 504" loading="lazy">
+              </div>
+              <div class="mosaic-overlay">
+                <span class="mosaic-tag">TUESTE SEMANAL EN CERRO ALEGRE</span>
+                <h3>Fecha de tueste visible en cada bolsa</h3>
+                <p>Garantía de máxima frescura aromática y perfiles de taza de campeonato mundial.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -180,350 +224,584 @@
     </div>
   </section>
 
-  <!-- Section: Carta Interactiva con Pestañas (Estilo Cafetería Between) -->
+  <!-- Section: Carta Interactiva con Pestañas y Fotos (Estilo Between + Coffeeweb) -->
   <section class="section menu-section" id="carta">
     <div class="section-container">
       <div class="section-header text-center">
-        <span class="section-kicker">NUESTRA PROPUESTA</span>
-        <h2 class="section-heading">Carta &amp; <span class="text-terracotta">Experiencia de Especialidad</span></h2>
-        <p class="section-desc">Selecciona tus favoritos y pídelos directo por WhatsApp para servir en mesa, retirar o delivery.</p>
+        <div class="section-kicker-badge">
+          <span class="badge-roast">EXPERIENCIA GASTRONÓMICA</span>
+          <span>CARTA DE ESPECIALIDAD &amp; BRUNCH</span>
+        </div>
+        <h2 class="section-heading">Nuestra Carta <span class="text-terracotta">Interactiva</span></h2>
+        <p class="section-desc">Selecciona tus cafés, brunch y pastelería favoritos. Agrégalos a tu pedido con 1 clic para disfrutar en mesa, pedir para llevar o recibir por delivery.</p>
 
         <!-- Category Tabs -->
         <div class="menu-tabs">
-          <button class="tab-btn active" data-tab="cafeteria">☕ Cafetería de Barra</button>
-          <button class="tab-btn" data-tab="brunch">🥑 Brunch &amp; Tostones</button>
+          <button class="tab-btn active" data-tab="cafeteria">☕ Barra de Especialidad</button>
+          <button class="tab-btn" data-tab="brunch">🥑 Brunch &amp; Tostones (Between)</button>
           <button class="tab-btn" data-tab="bakery">🥐 Pastelería &amp; Dulces</button>
-          <button class="tab-btn" data-tab="grano">📦 Café en Grano (250g)</button>
+          <button class="tab-btn" data-tab="grano">📦 Café en Grano (Black Drop)</button>
         </div>
       </div>
 
-      <!-- Tab Content: Cafetería de Especialidad -->
+      <!-- Tab Content: Cafetería de Barra -->
       <div class="tab-content active" id="tab-cafeteria">
         <div class="products-grid">
 
-          <div class="menu-item-card" data-product-name="Flat White Doble Ristretto ($3.500)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Flat White Doble</h4>
-                <span class="item-tag-origin">Honduras Marcala</span>
-              </div>
-              <span class="item-price">$3.500</span>
+          <!-- Item 1: Flat White -->
+          <div class="product-card" data-id="p1" data-name="Flat White Doble Ristretto" data-price="3500" data-cat="cafeteria">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=600&q=80" alt="Flat White Doble" loading="lazy">
+              <span class="card-badge-top">FAVORITO DE BARRA</span>
+              <span class="card-origin-tag">Honduras Marcala</span>
             </div>
-            <p class="item-desc">Doble shot de espresso ristretto con leche texturizada aterciopelada y capa delgada de microespuma.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Chocolate con leche, avellanas</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Flat White Doble Ristretto</h4>
+                <span class="card-price">$3.500</span>
+              </div>
+              <p class="card-desc">Doble shot de espresso ristretto con leche texturizada sedosa y una capa ultra delgada de microespuma aterciopelada.</p>
+              <div class="card-notes">
+                <span class="note-pill">🍫 Chocolate con leche</span>
+                <span class="note-pill">🌰 Avellanas tostadas</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p1">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card featured" data-product-name="Filtrado V60 de Origen ($3.800)">
-            <div class="card-badge">MÉTODO SIGNATURE</div>
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Filtrado Manual V60</h4>
-                <span class="item-tag-origin">Etiopía Yirgacheffe</span>
-              </div>
-              <span class="item-price">$3.800</span>
+          <!-- Item 2: Filtrado V60 Geisha/Yirgacheffe -->
+          <div class="product-card featured-gold" data-id="p2" data-name="Filtrado Manual V60 de Origen" data-price="3800" data-cat="cafeteria">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Filtrado V60" loading="lazy">
+              <span class="card-badge-top gold">+87 SCA SCORE</span>
+              <span class="card-origin-tag">Etiopía Yirgacheffe</span>
             </div>
-            <p class="item-desc">Filtrado en mesa con tetera cuello de cisne. Taza excepcionalmente limpia, sedosa y floral.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Jazmín, durazno blanco, bergamota</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Filtrado Manual V60</h4>
+                <span class="card-price">$3.800</span>
+              </div>
+              <p class="card-desc">Filtrado artesanal en mesa con tetera cuello de cisne. Taza excepcionalmente limpia, delicada y con aromas florales sublimes.</p>
+              <div class="card-notes">
+                <span class="note-pill">🌸 Jazmín silvestre</span>
+                <span class="note-pill">🍑 Durazno blanco</span>
+                <span class="note-pill">🍋 Bergamota</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p2">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Cold Brew Nitro en Frío 18h ($3.900)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Cold Brew Nitro</h4>
-                <span class="item-tag-origin">Colombia Huila</span>
-              </div>
-              <span class="item-price">$3.900</span>
+          <!-- Item 3: Cold Brew Nitro -->
+          <div class="product-card" data-id="p3" data-name="Cold Brew Nitro en Frío (18h)" data-price="3900" data-cat="cafeteria">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80" alt="Cold Brew Nitro" loading="lazy">
+              <span class="card-badge-top">INFUSIÓN 18 HORAS</span>
+              <span class="card-origin-tag">Colombia Huila</span>
             </div>
-            <p class="item-desc">Infusionado lentamente durante 18 horas con agua fría y servido nitrogenado con textura tipo cerveza stout.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Cacao puro, caramelo tostado, refrescante</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Cold Brew Nitro 18h</h4>
+                <span class="card-price">$3.900</span>
+              </div>
+              <p class="card-desc">Macerado gota a gota con agua filtrada durante 18 horas y servido nitrogenado con una cascada de espuma densa tipo stout.</p>
+              <div class="card-notes">
+                <span class="note-pill">🍫 Cacao 75%</span>
+                <span class="note-pill">🍯 Caramelo quemado</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p3">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Iced Spanish Latte ($4.200)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Iced Spanish Latte</h4>
-                <span class="item-tag-origin">Blend Casa Origen</span>
-              </div>
-              <span class="item-price">$4.200</span>
+          <!-- Item 4: Iced Pistachio Latte Especial -->
+          <div class="product-card" data-id="p4" data-name="Iced Pistachio Latte de Especialidad" data-price="4500" data-cat="cafeteria">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" alt="Iced Pistachio Latte" loading="lazy">
+              <span class="card-badge-top">TENDENCIA BRUNCH</span>
+              <span class="card-origin-tag">Blend Casa + Pasta Pistacho</span>
             </div>
-            <p class="item-desc">Espresso doble sobre hielo, leche fresca y un toque sutil de leche condensada artesanal de campo.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Dulce equilibrado, cremoso, energizante</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Iced Pistachio Latte</h4>
+                <span class="card-price">$4.500</span>
+              </div>
+              <p class="card-desc">Espresso doble de especialidad vertido sobre leche fría, crema artesanal de pistachos sicilianos tostados y hielo cristalino.</p>
+              <div class="card-notes">
+                <span class="note-pill">🌱 Pistacho natural</span>
+                <span class="note-pill">🥛 Textura cremosa</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p4">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Cappuccino Italiano Tradicional ($3.400)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Cappuccino Italiano</h4>
-                <span class="item-tag-origin">Brasil Cerrado</span>
-              </div>
-              <span class="item-price">$3.400</span>
+          <!-- Item 5: Cappuccino Italiano -->
+          <div class="product-card" data-id="p5" data-name="Cappuccino Italiano Tradicional" data-price="3400" data-cat="cafeteria">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80" alt="Cappuccino Italiano" loading="lazy">
+              <span class="card-origin-tag">Brasil Cerrado</span>
             </div>
-            <p class="item-desc">El balance clásico exacto en tercios: espresso intenso, leche vaporizada y espuma densa con cacao.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Nuez, caramelo, cacao 70%</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Cappuccino Italiano</h4>
+                <span class="card-price">$3.400</span>
+              </div>
+              <p class="card-desc">Proporción exacta en tres partes: shot de espresso intenso, leche entera vaporizada y abundante espuma sedosa espolvoreada con cacao.</p>
+              <div class="card-notes">
+                <span class="note-pill">🌰 Nuez moscada</span>
+                <span class="note-pill">☕ Cacao orgánico</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p5">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Dirty Chai Latte Especiado ($4.300)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Dirty Chai Latte</h4>
-                <span class="item-tag-origin">Chai Masala + Shot Espresso</span>
-              </div>
-              <span class="item-price">$4.300</span>
+          <!-- Item 6: Dirty Chai Latte -->
+          <div class="product-card" data-id="p6" data-name="Dirty Chai Latte Especiado" data-price="4300" data-cat="cafeteria">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Dirty Chai Latte" loading="lazy">
+              <span class="card-origin-tag">Masala Chai + Espresso</span>
             </div>
-            <p class="item-desc">Infusión artesanal de té negro con cardamomo, canela, clavo de olor y jengibre coronada con un shot de espresso.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Especias cálidas, aromático, reconstituyente</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Dirty Chai Latte Especiado</h4>
+                <span class="card-price">$4.300</span>
+              </div>
+              <p class="card-desc">Concentrado casero de té negro infusionado con canela Ceilán, jengibre, clavo y cardamomo, combinado con leche y un shot de espresso.</p>
+              <div class="card-notes">
+                <span class="note-pill">🌿 Especias cálidas</span>
+                <span class="note-pill">✨ Energizante natural</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p6">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- Tab Content: Brunch & Tostones (Estilo Between) -->
+      <!-- Tab Content: Brunch & Tostones en Masa Madre (Estilo Between) -->
       <div class="tab-content" id="tab-brunch">
         <div class="products-grid">
 
-          <div class="menu-item-card featured" data-product-name="Tostón Palta & Huevo Poché en Masa Madre ($6.800)">
-            <div class="card-badge">FAVORITO BRUNCH</div>
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Tostón Palta &amp; Poché</h4>
-                <span class="item-tag-origin">Pan de Masa Madre 36h</span>
-              </div>
-              <span class="item-price">$6.800</span>
+          <!-- Brunch Item 1: Tostón Palta y Huevo Poché -->
+          <div class="product-card featured-gold" data-id="p7" data-name="Tostón Palta & Huevo Poché en Masa Madre" data-price="6800" data-cat="brunch">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80" alt="Tostón Palta y Huevo Poché" loading="lazy">
+              <span class="card-badge-top gold">ÍCONO BRUNCH BETWEEN</span>
+              <span class="card-origin-tag">Hogaza Masa Madre 36h</span>
             </div>
-            <p class="item-desc">Hogaza rústica tostada, abundante palta hass cremosa, dos huevos de campo pochados, semillas tostadas y aceite de oliva extra virgen.</p>
-            <div class="item-footer">
-              <span class="item-notes">Incluye mix verde orgánico</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Tostón Palta &amp; Huevo Poché</h4>
+                <span class="card-price">$6.800</span>
+              </div>
+              <p class="card-desc">Rebanada gruesa de pan de masa madre tostada a la plancha con mantequilla de campo, palta hass en láminas, dos huevos pochados de campo, mix de semillas tostadas y oliva extra virgen.</p>
+              <div class="card-notes">
+                <span class="note-pill">🥑 Palta Hass fresca</span>
+                <span class="note-pill">🍳 Huevos de gallina libre</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p7">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Croissant Francés Serrano & Brie ($6.900)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Croissant Serrano &amp; Brie</h4>
-                <span class="item-tag-origin">Masa hojaldrada 100% mantequilla</span>
-              </div>
-              <span class="item-price">$6.900</span>
+          <!-- Brunch Item 2: Focaccia Mechada Braseada -->
+          <div class="product-card" data-id="p8" data-name="Sándwich Mechada en Focaccia de Romero" data-price="7200" data-cat="brunch">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" alt="Focaccia Mechada" loading="lazy">
+              <span class="card-badge-top">FAVORITO ALMUERZO</span>
+              <span class="card-origin-tag">Focaccia Artesanal al Romero</span>
             </div>
-            <p class="item-desc">Croissant artesanal tibio relleno con láminas de jamón serrano reserva, queso brie fundido, rúcula fresca y reducción de higos.</p>
-            <div class="item-footer">
-              <span class="item-notes">Crocante por fuera, suave por dentro</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Focaccia Mechada Braseada</h4>
+                <span class="card-price">$7.200</span>
+              </div>
+              <p class="card-desc">Carne mechada tierna cocinada a fuego lento durante 6 horas en vino tinto del Valle de Casablanca, queso mantecoso fundido, cebolla caramelizada y emulsión suave de ajo asado.</p>
+              <div class="card-notes">
+                <span class="note-pill">🥩 Braseado 6 horas</span>
+                <span class="note-pill">🧀 Queso mantecoso fundido</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p8">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Bagel Salmón Ahumado & Alcaparras ($7.500)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Bagel Salmón &amp; Cream Cheese</h4>
-                <span class="item-tag-origin">Bagel artesanal con sésamo</span>
-              </div>
-              <span class="item-price">$7.500</span>
+          <!-- Brunch Item 3: Croissant Serrano & Brie -->
+          <div class="product-card" data-id="p9" data-name="Croissant Francés Jamón Serrano & Queso Brie" data-price="6900" data-cat="brunch">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant Serrano & Brie" loading="lazy">
+              <span class="card-origin-tag">Hojaldre 100% Mantequilla</span>
             </div>
-            <p class="item-desc">Salmón ahumado de la patagonia, queso crema a las finas hierbas, pepinillos encurtidos, alcaparras y ciboulette.</p>
-            <div class="item-footer">
-              <span class="item-notes">Clásico neoyorquino gourmet</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Croissant Serrano &amp; Brie</h4>
+                <span class="card-price">$6.900</span>
+              </div>
+              <p class="card-desc">Croissant francés laminado tibio, relleno con finas lonchas de jamón serrano reserva, queso brie fundido, rúcula fresca de huerto y un toque de reducción casera de higos.</p>
+              <div class="card-notes">
+                <span class="note-pill">🥓 Jamón Serrano</span>
+                <span class="note-pill">🧀 Brie cremoso</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p9">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Pailita de Huevos Revueltos de Campo ($5.400)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Pailita de Campo &amp; Tostadas</h4>
-                <span class="item-tag-origin">Huevos de gallina libre</span>
-              </div>
-              <span class="item-price">$5.400</span>
+          <!-- Brunch Item 4: Bagel Salmón & Cream Cheese -->
+          <div class="product-card" data-id="p10" data-name="Bagel Salmón Ahumado & Cream Cheese" data-price="7500" data-cat="brunch">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1584947897672-887e411b590e?auto=format&fit=crop&w=600&q=80" alt="Bagel Salmón" loading="lazy">
+              <span class="card-origin-tag">Bagel Artesanal de Sésamo</span>
             </div>
-            <p class="item-desc">Tres huevos revueltos cremosos servidos en paila de greda con ciboulette y acompañados de canasta de tostadas rústicas y mantequilla de campo.</p>
-            <div class="item-footer">
-              <span class="item-notes">Opción: agregar tocino crocante (+$1.200)</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Bagel Salmón &amp; Cream Cheese</h4>
+                <span class="card-price">$7.500</span>
+              </div>
+              <p class="card-desc">Salmón ahumado de la Patagonia, queso crema whipped con ciboulette y eneldo, láminas de pepinillo encurtido agridulce, alcaparras baby y aceite de oliva.</p>
+              <div class="card-notes">
+                <span class="note-pill">🐟 Salmón Patagónico</span>
+                <span class="note-pill">🥯 Sésamo tostado</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p10">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Yogurt Bowl Granola & Berries Silvestres ($5.200)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Yogurt Bowl &amp; Granola Casa</h4>
-                <span class="item-tag-origin">Yogurt griego natural</span>
-              </div>
-              <span class="item-price">$5.200</span>
+          <!-- Brunch Item 5: Pailita de Huevos Revueltos -->
+          <div class="product-card" data-id="p11" data-name="Pailita de Huevos de Campo Revueltos" data-price="5400" data-cat="brunch">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80" alt="Pailita de Huevos" loading="lazy">
+              <span class="card-origin-tag">Greda Tradicional + Tostadas</span>
             </div>
-            <p class="item-desc">Yogurt griego denso y cremoso con granola horneada con miel de ulmo, semillas de chía, frutos rojos frescos y mantequilla de maní.</p>
-            <div class="item-footer">
-              <span class="item-notes">Opción 100% vegetariana y proteica</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Pailita de Campo &amp; Tostadas</h4>
+                <span class="card-price">$5.400</span>
+              </div>
+              <p class="card-desc">Tres huevos revueltos ultra cremosos servidos en paila de greda caliente con ciboulette fresco, acompañados de canasta de tostadas de masa madre y mantequilla con sal marina.</p>
+              <div class="card-notes">
+                <span class="note-pill">🍳 Huevos de libre pastoreo</span>
+                <span class="note-pill">🍞 Canasta de tostadas</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p11">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Sándwich Mechada en Focaccia Romero ($7.200)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Focaccia Mechada Braseada</h4>
-                <span class="item-tag-origin">Focaccia artesanal con romero</span>
-              </div>
-              <span class="item-price">$7.200</span>
+          <!-- Brunch Item 6: Yogurt Bowl Granola -->
+          <div class="product-card" data-id="p12" data-name="Yogurt Griego Bowl & Granola de la Casa" data-price="5200" data-cat="brunch">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=600&q=80" alt="Yogurt Bowl" loading="lazy">
+              <span class="card-origin-tag">Yogurt Griego Natural</span>
             </div>
-            <p class="item-desc">Carne mechada deshilachada cocinada por 6 horas al vino tinto, queso mantecoso fundido, cebolla caramelizada y emulsión de ajo asado.</p>
-            <div class="item-footer">
-              <span class="item-notes">Sabor profundo y reconfortante</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Yogurt Bowl &amp; Granola Casa</h4>
+                <span class="card-price">$5.200</span>
+              </div>
+              <p class="card-desc">Yogurt griego natural sin azúcar, granola casera horneada con miel de ulmo y frutos secos, arándanos y frutillas frescas, semillas de chía y mantequilla de maní artesanal.</p>
+              <div class="card-notes">
+                <span class="note-pill">🍓 Berries de temporada</span>
+                <span class="note-pill">🥜 Granola horneada en casa</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p12">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- Tab Content: Pastelería & Dulces (Estilo Between) -->
+      <!-- Tab Content: Pastelería & Dulces (Bakery Fina) -->
       <div class="tab-content" id="tab-bakery">
         <div class="products-grid">
 
-          <div class="menu-item-card featured" data-product-name="Cinnamon Roll Gigante con Glaseado de Queso ($3.800)">
-            <div class="card-badge">MÁS VENDIDO</div>
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Cinnamon Roll Glaseado</h4>
-                <span class="item-tag-origin">Masa brioche con canela Ceilán</span>
-              </div>
-              <span class="item-price">$3.800</span>
+          <!-- Bakery Item 1: Cinnamon Roll -->
+          <div class="product-card featured-gold" data-id="p13" data-name="Cinnamon Roll Gigante con Frosting de Queso" data-price="3800" data-cat="bakery">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Cinnamon Roll" loading="lazy">
+              <span class="card-badge-top gold">RECIÉN HORNEADO</span>
+              <span class="card-origin-tag">Masa Brioche &amp; Canela Ceilán</span>
             </div>
-            <p class="item-desc">Rollo de canela esponjoso recién horneado con generosa cubierta de frosting de queso crema y vainilla bourbon.</p>
-            <div class="item-footer">
-              <span class="item-notes">Se sirve tibio al momento</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Cinnamon Roll Glaseado</h4>
+                <span class="card-price">$3.800</span>
+              </div>
+              <p class="card-desc">Rollo de canela brioche esponjoso y tibio, con un espiral de mantequilla y canela pura de Ceilán, cubierto con generoso frosting de queso crema y vainilla bourbon.</p>
+              <div class="card-notes">
+                <span class="note-pill">🔥 Se sirve tibio</span>
+                <span class="note-pill">🧁 Frosting artesanal</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p13">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Croissant Relleno Almendras & Frangipane ($4.200)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Croissant de Almendras</h4>
-                <span class="item-tag-origin">Doble horneado francés</span>
-              </div>
-              <span class="item-price">$4.200</span>
+          <!-- Bakery Item 2: Croissant de Almendras -->
+          <div class="product-card" data-id="p14" data-name="Croissant de Almendras & Frangipane" data-price="4200" data-cat="bakery">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?auto=format&fit=crop&w=600&q=80" alt="Croissant Almendras" loading="lazy">
+              <span class="card-origin-tag">Doble Horneado Tradicional</span>
             </div>
-            <p class="item-desc">Relleno con crema frangipane de almendras tostadas, bañado en almíbar de naranja y cubierto con almendras laminadas y azúcar flor.</p>
-            <div class="item-footer">
-              <span class="item-notes">El maridaje perfecto para un Flat White</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Croissant de Almendras</h4>
+                <span class="card-price">$4.200</span>
+              </div>
+              <p class="card-desc">Croissant francés bañado en almíbar de azahar, relleno con crema frangipane de almendras tostadas y cubierto con lluvia de almendras laminadas crujientes.</p>
+              <div class="card-notes">
+                <span class="note-pill">🥐 Hojaldre francés</span>
+                <span class="note-pill">🌰 Crema frangipane</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p14">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Tarta Cheesecake de Frambuesa & Pistacho ($4.600)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Cheesecake Pistacho &amp; Berries</h4>
-                <span class="item-tag-origin">Receta horneada New York</span>
-              </div>
-              <span class="item-price">$4.600</span>
+          <!-- Bakery Item 3: Cheesecake Pistacho & Frambuesa -->
+          <div class="product-card" data-id="p15" data-name="Cheesecake Pistacho & Frambuesas Silvestres" data-price="4600" data-cat="bakery">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" alt="Cheesecake Pistacho" loading="lazy">
+              <span class="card-origin-tag">Horneado Vasco Cremoso</span>
             </div>
-            <p class="item-desc">Textura ultra suave de queso crema sobre base crocante de galletas especiadas, coulis de frambuesas ácidas y praliné de pistacho.</p>
-            <div class="item-footer">
-              <span class="item-notes">Equilibrio perfecto entre acidez y dulzura</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Cheesecake Pistacho &amp; Berries</h4>
+                <span class="card-price">$4.600</span>
+              </div>
+              <p class="card-desc">Centro fundente de queso crema con praliné de pistacho, base crujiente de galleta de mantequilla y coulis brillante de frambuesas silvestres ácidas.</p>
+              <div class="card-notes">
+                <span class="note-pill">🍰 Textura cremosa</span>
+                <span class="note-pill">🌱 Pistacho siciliano</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p15">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Dúo Medialunas Rellenas con Manjar de Campo ($3.200)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Dúo Medialunas Artesanales</h4>
-                <span class="item-tag-origin">Masa hojaldrada con almíbar cítrico</span>
-              </div>
-              <span class="item-price">$3.200</span>
+          <!-- Bakery Item 4: Medialunas Porteñas -->
+          <div class="product-card" data-id="p16" data-name="Dúo de Medialunas con Manjar de Campo" data-price="3200" data-cat="bakery">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=600&q=80" alt="Medialunas con Manjar" loading="lazy">
+              <span class="card-origin-tag">Tradición de la Tarde</span>
             </div>
-            <p class="item-desc">Dos medialunas tibias rellenas con auténtico manjar de campo casero y toque de ralladura de naranja confitada.</p>
-            <div class="item-footer">
-              <span class="item-notes">La tradición de la tarde en Valparaíso</span>
-              <button class="btn-add-item">Agregar ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Dúo Medialunas Artesanales</h4>
+                <span class="card-price">$3.200</span>
+              </div>
+              <p class="card-desc">Dos medialunas de masa hojaldrada suave almibaradas con un toque de naranja confitada, rellenas con generoso manjar de campo casero.</p>
+              <div class="card-notes">
+                <span class="note-pill">🍯 Manjar de campo</span>
+                <span class="note-pill">🍊 Almíbar cítrico</span>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p16">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- Tab Content: Café en Grano 250g (Estilo Café Altura / 504 Coffee) -->
+      <!-- Tab Content: Café en Grano Tostado (Estilo Black Drop Coffee Roasters) -->
       <div class="tab-content" id="tab-grano">
         <div class="products-grid">
 
-          <div class="menu-item-card featured" data-product-name="Café en Grano Honduras Marcala 250g ($10.990)">
-            <div class="card-badge">+85 SCA SCORE</div>
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Honduras Marcala (250g)</h4>
-                <span class="item-tag-origin">Finca El Sauce • 1.600 msnm</span>
-              </div>
-              <span class="item-price">$10.990</span>
+          <!-- Bean 1: Honduras Marcala -->
+          <div class="product-card featured-gold" data-id="p17" data-name="Café en Grano Honduras Marcala" data-price="10990" data-cat="grano">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=600&q=80" alt="Honduras Marcala" loading="lazy">
+              <span class="card-badge-top gold">+85.5 SCA SCORE</span>
+              <span class="card-origin-tag">Finca El Sauce • 1.600 msnm</span>
             </div>
-            <p class="item-desc">Proceso Lavado. Varietal Catuai &amp; Lempira. Notas dulces balanceadas, cuerpo redondo y acidez cítrica suave.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Chocolate con leche, caramelo, manzana roja</span>
-              <button class="btn-add-item">Comprar / Moler ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Honduras Marcala (250g)</h4>
+                <span class="card-price">$10.990</span>
+              </div>
+              <p class="card-desc">Proceso Lavado • Varietal Catuai &amp; Lempira. Tueste medio ideal para espresso y moka italiana. Dulzura prolongada con acidez cítrica brillante.</p>
+              <div class="card-notes">
+                <span class="note-pill">🍫 Chocolate con leche</span>
+                <span class="note-pill">🍯 Caramelo blando</span>
+                <span class="note-pill">🍎 Manzana roja</span>
+              </div>
+              <div class="bean-options-box">
+                <label>Molienda:</label>
+                <select class="bean-grind-select" data-product-id="p17">
+                  <option value="En Grano Entero">En Grano Entero (Recomendado)</option>
+                  <option value="Molido para V60 / Filtro">Molido para V60 / Filtro</option>
+                  <option value="Molido para Moka Italiana">Molido para Moka Italiana</option>
+                  <option value="Molido para Prensa Francesa">Molido para Prensa Francesa</option>
+                  <option value="Molido Fino para Espresso">Molido Fino para Espresso</option>
+                </select>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p17">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Café en Grano Etiopía Yirgacheffe 250g ($12.490)">
-            <div class="card-badge">+87 SCA SCORE</div>
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Etiopía Yirgacheffe (250g)</h4>
-                <span class="item-tag-origin">Micro-lote Natural • 1.950 msnm</span>
-              </div>
-              <span class="item-price">$12.490</span>
+          <!-- Bean 2: Etiopía Yirgacheffe -->
+          <div class="product-card featured-gold" data-id="p18" data-name="Café en Grano Etiopía Yirgacheffe" data-price="12490" data-cat="grano">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=600&q=80" alt="Etiopía Yirgacheffe" loading="lazy">
+              <span class="card-badge-top gold">+87.5 SCA SCORE</span>
+              <span class="card-origin-tag">Micro-lote Natural • 1.950 msnm</span>
             </div>
-            <p class="item-desc">Proceso Natural secado en camas africanas. Varietal Heirloom. Una explosión floral y afrutada inigualable en filtrados.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Jazmín, arándanos silvestres, lima dulce</span>
-              <button class="btn-add-item">Comprar / Moler ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Etiopía Yirgacheffe (250g)</h4>
+                <span class="card-price">$12.490</span>
+              </div>
+              <p class="card-desc">Proceso Natural secado en camas africanas elevadas. Varietal Heirloom ancestral. Una explosión aromática floral y afrutada única en métodos filtrados.</p>
+              <div class="card-notes">
+                <span class="note-pill">🌸 Flor de jazmín</span>
+                <span class="note-pill">🫐 Arándanos frescos</span>
+                <span class="note-pill">🍋 Lima dulce</span>
+              </div>
+              <div class="bean-options-box">
+                <label>Molienda:</label>
+                <select class="bean-grind-select" data-product-id="p18">
+                  <option value="En Grano Entero">En Grano Entero (Recomendado)</option>
+                  <option value="Molido para V60 / Filtro" selected>Molido para V60 / Filtro</option>
+                  <option value="Molido para Moka Italiana">Molido para Moka Italiana</option>
+                  <option value="Molido para Prensa Francesa">Molido para Prensa Francesa</option>
+                  <option value="Molido Fino para Espresso">Molido Fino para Espresso</option>
+                </select>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p18">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Café en Grano Colombia Huila San Agustín 250g ($11.490)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Colombia Huila (250g)</h4>
-                <span class="item-tag-origin">San Agustín • 1.700 msnm</span>
-              </div>
-              <span class="item-price">$11.490</span>
+          <!-- Bean 3: Colombia Huila -->
+          <div class="product-card" data-id="p19" data-name="Café en Grano Colombia Huila San Agustín" data-price="11490" data-cat="grano">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=600&q=80" alt="Colombia Huila" loading="lazy">
+              <span class="card-badge-top gold">+86 SCA SCORE</span>
+              <span class="card-origin-tag">San Agustín • 1.700 msnm</span>
             </div>
-            <p class="item-desc">Proceso Honey. Varietal Castillo &amp; Colombia. Acidez cítrica jugosa con final prolongado a panela y caña de azúcar.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Panela, durazno, chocolate amargo</span>
-              <button class="btn-add-item">Comprar / Moler ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Colombia Huila (250g)</h4>
+                <span class="card-price">$11.490</span>
+              </div>
+              <p class="card-desc">Proceso Honey con fermentación anaeróbica controlada. Varietal Castillo &amp; Colombia. Acidez jugosa balanceada con final prolongado a panela artesanal.</p>
+              <div class="card-notes">
+                <span class="note-pill">🍯 Panela / Chancaca</span>
+                <span class="note-pill">🍑 Durazno maduro</span>
+                <span class="note-pill">🍫 Cacao amargo</span>
+              </div>
+              <div class="bean-options-box">
+                <label>Molienda:</label>
+                <select class="bean-grind-select" data-product-id="p19">
+                  <option value="En Grano Entero">En Grano Entero (Recomendado)</option>
+                  <option value="Molido para V60 / Filtro">Molido para V60 / Filtro</option>
+                  <option value="Molido para Moka Italiana">Molido para Moka Italiana</option>
+                  <option value="Molido para Prensa Francesa">Molido para Prensa Francesa</option>
+                  <option value="Molido Fino para Espresso">Molido Fino para Espresso</option>
+                </select>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p19">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item-card" data-product-name="Café en Grano Blend Casa Origen 504 250g ($9.990)">
-            <div class="item-header">
-              <div class="item-title-box">
-                <h4>Blend Casa Origen (250g)</h4>
-                <span class="item-tag-origin">Brasil Cerrado 60% + Honduras 40%</span>
-              </div>
-              <span class="item-price">$9.990</span>
+          <!-- Bean 4: Blend Casa Origen -->
+          <div class="product-card" data-id="p20" data-name="Café en Grano Blend Casa Origen 504" data-price="9990" data-cat="grano">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=600&q=80" alt="Blend Casa Origen" loading="lazy">
+              <span class="card-badge-top">RECETA DE LA CASA</span>
+              <span class="card-origin-tag">Brasil Cerrado 60% + Honduras 40%</span>
             </div>
-            <p class="item-desc">Nuestra receta insignia para cafetera italiana (Moka), espresso o prensa francesa. Mucho cuerpo, crema densa y cero amargor.</p>
-            <div class="item-footer">
-              <span class="item-notes">Notas: Avellana tostada, cacao dulce, vainilla</span>
-              <button class="btn-add-item">Comprar / Moler ➔</button>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4 class="card-title">Blend Casa Origen (250g)</h4>
+                <span class="card-price">$9.990</span>
+              </div>
+              <p class="card-desc">Nuestra fórmula estrella para café diario en casa: gran cuerpo, crema persistente, baja acidez y dulzor profundo a avellana y vainilla.</p>
+              <div class="card-notes">
+                <span class="note-pill">🌰 Avellana tostada</span>
+                <span class="note-pill">🍫 Chocolate con leche</span>
+                <span class="note-pill">✨ Crema densa</span>
+              </div>
+              <div class="bean-options-box">
+                <label>Molienda:</label>
+                <select class="bean-grind-select" data-product-id="p20">
+                  <option value="En Grano Entero">En Grano Entero (Recomendado)</option>
+                  <option value="Molido para Moka Italiana" selected>Molido para Moka Italiana</option>
+                  <option value="Molido para V60 / Filtro">Molido para V60 / Filtro</option>
+                  <option value="Molido para Prensa Francesa">Molido para Prensa Francesa</option>
+                  <option value="Molido Fino para Espresso">Molido Fino para Espresso</option>
+                </select>
+              </div>
+              <div class="card-footer">
+                <button class="btn-add-cart" data-id="p20">
+                  <span>＋ Agregar al Pedido</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -533,125 +811,130 @@
     </div>
   </section>
 
-  <!-- Section: Interactive WhatsApp Order & Table Booking Wizard (Breborn Engine) -->
-  <section class="section order-section" id="pedido">
-    <div class="section-container">
-      <div class="order-box">
-        <div class="order-header">
-          <span class="badge-tag">PEDIDO &amp; RESERVA DIRECTA</span>
-          <h2>Pide a tu Mesa o Reserva en <span class="text-terracotta">1 Clic</span></h2>
-          <p>Selecciona tus cafés, tu brunch o tus bolsas de café en grano. El sistema estructurará tu pedido directamente en WhatsApp para atenderte de inmediato.</p>
+  <!-- Interactive Slide-in Cart Drawer (Coffeeweb Style Engine) -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+    <div class="cart-drawer-content">
+      <div class="cart-drawer-header">
+        <div class="cart-header-title">
+          <span class="icon">🛒</span>
+          <h3>Tu Pedido</h3>
+          <span class="badge-pill-cyan" id="cartHeaderBadge">0 ítems</span>
+        </div>
+        <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Cerrar pedido">✕</button>
+      </div>
+
+      <!-- Mode Selector inside Cart -->
+      <div class="cart-mode-selector">
+        <label class="cart-label">Modalidad de Atención:</label>
+        <div class="cart-mode-options">
+          <button class="cart-mode-btn active" data-cart-mode="Servir en Mesa">
+            ☕ En Mesa
+          </button>
+          <button class="cart-mode-btn" data-cart-mode="Retiro en Tienda">
+            🛍️ Retiro
+          </button>
+          <button class="cart-mode-btn" data-cart-mode="Delivery a Domicilio">
+            🛵 Delivery
+          </button>
+        </div>
+      </div>
+
+      <!-- Sucursal Selector inside Cart -->
+      <div class="cart-location-selector">
+        <label class="cart-label" for="cartLocationSelect">Sucursal de Atención:</label>
+        <select id="cartLocationSelect" class="cafe-input-compact">
+          <option value="Cerro Alegre (Almirante Montt 412, Valparaíso)">Valparaíso • Cerro Alegre (Almirante Montt 412)</option>
+          <option value="7 Norte 635 (esq. Libertad, Viña del Mar)">Viña del Mar • 7 Norte 635 (Poniente)</option>
+        </select>
+      </div>
+
+      <!-- Cart Items List Container -->
+      <div class="cart-items-list" id="cartItemsList">
+        <div class="cart-empty-state">
+          <span class="empty-icon">☕</span>
+          <h4>Tu pedido está vacío</h4>
+          <p>Explora la carta y agrega tus cafés, brunch o café en grano favoritos.</p>
+        </div>
+      </div>
+
+      <!-- Cart Footer & WhatsApp Checkout -->
+      <div class="cart-drawer-footer">
+        <div class="cart-notes-box">
+          <label for="cartCustomerNotes">Mesa / Dirección / Notas especiales:</label>
+          <input type="text" id="cartCustomerNotes" placeholder="Ej: Mesa 3 / Sin lactosa / Para las 11:30" class="cafe-input-compact">
         </div>
 
-        <form id="cafeOrderForm" class="cafe-form">
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label for="fMode">1. Modalidad del Pedido:</label>
-              <select id="fMode" class="cafe-input" required>
-                <option value="Servir en el Local (Mesa)">☕ Servir en el Local (En Mesa)</option>
-                <option value="Para Llevar (Take Away)">🛍️ Para Llevar (Take Away Express)</option>
-                <option value="Delivery a Domicilio">🛵 Delivery a Domicilio (Viña / Valpo)</option>
-                <option value="Reserva de Mesa / Brunch">📅 Reserva de Mesa para Grupo/Brunch</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="fLocation">2. Sucursal:</label>
-              <select id="fLocation" class="cafe-input">
-                <option value="Cerro Alegre - Almirante Montt 412 (Valparaíso)">Valparaíso • Cerro Alegre (Almirante Montt 412)</option>
-                <option value="Viña del Mar - 7 Norte 635 (esq. Libertad)">Viña del Mar • 7 Norte 635 (Poniente)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="fBeverage">3. Café o Bebida:</label>
-              <select id="fBeverage" class="cafe-input">
-                <option value="Flat White Doble Ristretto ($3.500)">Flat White Doble Ristretto ($3.500)</option>
-                <option value="Filtrado V60 de Origen ($3.800)" selected>Filtrado V60 de Origen ($3.800)</option>
-                <option value="Cold Brew Nitro en Frío ($3.900)">Cold Brew Nitro en Frío ($3.900)</option>
-                <option value="Iced Spanish Latte ($4.200)">Iced Spanish Latte ($4.200)</option>
-                <option value="Cappuccino Italiano Tradicional ($3.400)">Cappuccino Italiano Tradicional ($3.400)</option>
-                <option value="Dirty Chai Latte Especiado ($4.300)">Dirty Chai Latte Especiado ($4.300)</option>
-                <option value="Ninguno (Solo comprar café en grano o comida)">Ninguno (Solo grano o comida)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="fBakery">4. Brunch o Pastelería:</label>
-              <select id="fBakery" class="cafe-input">
-                <option value="Tostón Palta & Huevo Poché en Masa Madre ($6.800)" selected>Tostón Palta &amp; Poché en Masa Madre ($6.800)</option>
-                <option value="Croissant Francés Serrano & Brie ($6.900)">Croissant Francés Serrano &amp; Brie ($6.900)</option>
-                <option value="Bagel Salmón Ahumado & Alcaparras ($7.500)">Bagel Salmón &amp; Cream Cheese ($7.500)</option>
-                <option value="Pailita de Huevos Revueltos de Campo ($5.400)">Pailita de Huevos Revueltos ($5.400)</option>
-                <option value="Cinnamon Roll Gigante con Glaseado ($3.800)">Cinnamon Roll Glaseado ($3.800)</option>
-                <option value="Croissant de Almendras & Frangipane ($4.200)">Croissant de Almendras ($4.200)</option>
-                <option value="Cheesecake Pistacho & Frambuesas ($4.600)">Cheesecake Pistacho &amp; Frambuesas ($4.600)</option>
-                <option value="Ninguno (Solo café)">Ninguno (Solo café)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="fBeans">5. Café en Grano para Casa (Opcional):</label>
-              <select id="fBeans" class="cafe-input">
-                <option value="Sin café en grano">No agregar café en bolsa</option>
-                <option value="Honduras Marcala 250g ($10.990)">Honduras Marcala 250g ($10.990)</option>
-                <option value="Etiopía Yirgacheffe 250g ($12.490)">Etiopía Yirgacheffe 250g ($12.490)</option>
-                <option value="Colombia Huila San Agustín 250g ($11.490)">Colombia Huila 250g ($11.490)</option>
-                <option value="Blend Casa Origen 250g ($9.990)">Blend Casa Origen 250g ($9.990)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="fGrind">6. Tipo de Molienda:</label>
-              <select id="fGrind" class="cafe-input">
-                <option value="En Grano Entero (Para moler en casa)">En Grano Entero (Recomendado)</option>
-                <option value="Molido para Cafetera Italiana (Moka)">Molido para Moka / Cafetera Italiana</option>
-                <option value="Molido para Filtro de Papel / V60">Molido para Filtro / V60 / Goteo</option>
-                <option value="Molido para Prensa Francesa">Molido Grueso para Prensa Francesa</option>
-                <option value="Molido Fino para Máquina Espresso">Molido Fino para Máquina Espresso</option>
-              </select>
-            </div>
-
-            <div class="form-group full-width">
-              <label for="fNotes">7. Nombre y Comentarios (Mesa, Alergias, Dirección o Hora):</label>
-              <input type="text" id="fNotes" class="cafe-input" placeholder="Ej: Mesa 4 / Sin lactosa / Para entregar a las 11:30 hrs" required>
-            </div>
-
-            <div class="form-group full-width form-submit-box">
-              <button type="submit" class="btn btn-whatsapp-solid btn-block btn-lg">
-                <span>💬 Enviar Pedido a WhatsApp al Instante</span>
-              </button>
-              <span class="form-footnote">Conecta directamente con el WhatsApp oficial del local. Sin comisiones de apps externas.</span>
-            </div>
-
+        <div class="cart-summary-box">
+          <div class="summary-row">
+            <span>Subtotal:</span>
+            <span id="cartSubtotalValue">$0</span>
           </div>
-        </form>
+          <div class="summary-row total-row">
+            <strong>Total a Pagar:</strong>
+            <strong id="cartTotalValue">$0</strong>
+          </div>
+        </div>
+
+        <button class="btn btn-whatsapp-solid btn-block btn-lg" id="cartCheckoutBtn">
+          <span>💬 Enviar Pedido por WhatsApp</span>
+        </button>
+        <span class="checkout-footnote">Se conecta directo con el WhatsApp del barista o la caja. Sin comisiones.</span>
       </div>
     </div>
-  </section>
+  </aside>
 
-  <!-- Section: Eventos, Catering & Coffee Breaks (Estilo Cafetería Between) -->
-  <section class="section events-section" id="eventos">
-    <div class="section-container">
-      <div class="events-card">
-        <div class="events-content">
-          <span class="badge-tag">SERVICIOS ESPECIALES</span>
-          <h2>¿Tienes un Evento o Coffee Break?</h2>
-          <h3>Llevamos nuestra barra de café de especialidad y pastelería a tu empresa, boda o celebración privada.</h3>
-          <p>
-            Montamos barra barista móvil con máquinas profesionales italianas, filtrados en vivo y cajas de bollería artesanal en Viña del Mar, Valparaíso, Concón y Quilpué.
-          </p>
-          <ul class="events-perks">
-            <li>✓ Baristas certificados atendiendo en vivo</li>
-            <li>✓ Café de especialidad ilimitado para tus invitados</li>
-            <li>✓ Bandejas de mini croissants, tostones y bocados dulces</li>
-          </ul>
+  <!-- Sticky Bottom Cart Pill (for Mobile & Quick Desktop Access) -->
+  <div class="sticky-cart-bar" id="stickyCartBar">
+    <div class="sticky-cart-content" id="stickyCartTrigger">
+      <div class="sc-left">
+        <span class="sc-icon">🛒</span>
+        <div class="sc-text">
+          <strong id="stickyCartCount">0 productos</strong>
+          <span id="stickyCartTotal">$0 CLP</span>
         </div>
-        <div class="events-cta">
-          <a href="https://wa.me/56956823670?text=%C2%A1Hola!%20Quisiera%20cotizar%20un%20Coffee%20Break%20/%20Catering%20para%20un%20evento%20con%20Origen%20504." target="_blank" rel="noopener" class="btn btn-coffee btn-lg">
-            🥐 Cotizar Barra de Café para Eventos
-          </a>
+      </div>
+      <button class="sc-btn">
+        Ver Mi Pedido ➔
+      </button>
+    </div>
+  </div>
+
+  <!-- Section: Experiencia & Lifestyle (Estilo Cafetería Between) -->
+  <section class="section lifestyle-section" id="experiencia">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <div class="section-kicker-badge">
+          <span class="badge-roast">FILOSOFÍA BETWEEN</span>
+          <span>EL ESPACIO IDEAL PARA DESCONECTAR O TRABAJAR</span>
+        </div>
+        <h2 class="section-heading">Mucho más que café: <span class="text-terracotta">Tu Pausa Cotidiana.</span></h2>
+        <p class="section-desc">Diseñamos cada rincón pensando en la luz natural, la acústica relajante y el confort para compartir o concentrarse con un café de especialidad en mano.</p>
+      </div>
+
+      <div class="lifestyle-grid">
+        <div class="lifestyle-card">
+          <div class="lifestyle-icon">🥐</div>
+          <h3>Bakery Propia &amp; Masa Madre</h3>
+          <p>Toda nuestra bollería, tostones y focaccias se elaboran en nuestro taller con harinas orgánicas, mantequilla premium y fermentaciones lentas de hasta 36 horas.</p>
+        </div>
+
+        <div class="lifestyle-card">
+          <div class="lifestyle-icon">🐾</div>
+          <h3>100% Pet Friendly</h3>
+          <p>En nuestras terrazas de Cerro Alegre y Viña tus mascotas son bienvenidas de verdad: disponemos de pocillos de agua fresca y galletas caninas artesanales de cortesía.</p>
+        </div>
+
+        <div class="lifestyle-card">
+          <div class="lifestyle-icon">⚡</div>
+          <h3>Espacio Cowork &amp; Wi-Fi 500M</h3>
+          <p>Conexión simétrica de alta velocidad, enchufes en mesas seleccionadas y música ambiental cuidada para trabajar remoto o tener reuniones sin interrupciones.</p>
+        </div>
+
+        <div class="lifestyle-card">
+          <div class="lifestyle-icon">🥂</div>
+          <h3>After Office &amp; Mocktails</h3>
+          <p>Al caer la tarde, combinamos el café con coctelería botánica sin alcohol, sangrías caseras, cold brew tonic y tablas de quesos artesanales para socializar.</p>
         </div>
       </div>
     </div>
@@ -661,9 +944,12 @@
   <section class="section locations-section" id="sedes">
     <div class="section-container">
       <div class="section-header text-center">
-        <span class="section-kicker">ENCUÉNTRANOS</span>
+        <div class="section-kicker-badge">
+          <span class="badge-roast">ENCUÉNTRANOS</span>
+          <span>VALPARAÍSO &amp; VIÑA DEL MAR</span>
+        </div>
         <h2 class="section-heading">Nuestras <span class="text-terracotta">Sedes</span></h2>
-        <p class="section-desc">Espacios acogedores diseñados para leer, conversar, teletrabajar y disfrutar con calma.</p>
+        <p class="section-desc">Dos espacios emblemáticos en el corazón gastronómico de la V Región.</p>
       </div>
 
       <div class="locations-grid">
@@ -714,10 +1000,11 @@
     <div class="section-container">
       <div class="breborn-banner-card">
         <div class="bb-content">
-          <span class="bb-tag">PROPUESTA DE VALOR BREBORN.CL</span>
+          <span class="bb-tag">PROPUESTA COMERCIAL BREBORN.CL</span>
           <h3>¿Tienes una Cafetería, Pastelería o Tostaduría en la V Región?</h3>
           <p>
-            En <strong>Breborn</strong> creamos sitios web de alto impacto inspirados en referentes como <em>504 Coffee</em>, <em>Café Altura</em> y <em>Between</em>, con carta interactiva, venta de café en grano y pedidos directos a tu WhatsApp sin pagar comisiones a plataformas externas. Además, te incluimos en el bucle comercial de <strong>breborn.cl</strong> para potenciar tus ventas locales.
+            En <strong>Breborn</strong> creamos tu propia web con catálogo digital interactivo, fotos de alta calidad, carrito de compras automático y botón directo a tu WhatsApp con el estilo de <em>Cafetería Between</em>, <em>Coffeeweb</em> y <em>Black Drop</em>.
+            <strong>Olvídate de pagar el 25% o 30% de comisiones abusivas a las apps de delivery</strong> y súmate además a nuestra red en <strong>breborn.cl</strong> por solo <strong>$15.000/mes</strong> (1er mes gratis).
           </p>
         </div>
         <div class="bb-action">
@@ -738,7 +1025,7 @@
             <div class="brand-emblem">☕</div>
             <span class="brand-name">ORIGEN 504</span>
           </div>
-          <p class="f-desc">Café de especialidad de origen, tostaduría artesanal y bakery de masa madre en Valparaíso y Viña del Mar.</p>
+          <p class="f-desc">Café de especialidad de origen (+85 SCA), tostaduría artesanal y bakery de masa madre en Valparaíso y Viña del Mar.</p>
         </div>
 
         <div class="f-col">
@@ -747,7 +1034,7 @@
             <li><a href="#tostaduria">Tostaduría &amp; Métodos</a></li>
             <li><a href="#carta">Carta &amp; Brunch</a></li>
             <li><a href="#grano">Café en Grano</a></li>
-            <li><a href="#eventos">Eventos &amp; Coffee Break</a></li>
+            <li><a href="#experiencia">Experiencia Between</a></li>
             <li><a href="#sedes">Sedes</a></li>
           </ul>
         </div>
@@ -756,22 +1043,23 @@
           <h4>Sedes V Región</h4>
           <p>• Almirante Montt 412, Cerro Alegre, Valparaíso</p>
           <p>• 7 Norte 635, Viña del Mar</p>
-          <p>• Pedidos: +56 9 5682 3670</p>
+          <p>• Pedidos WhatsApp: +56 9 5682 3670</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 ORIGEN 504 Specialty Coffee. Maqueta de exhibición desarrollada por <a href="https://breborn.cl" target="_blank" rel="noopener">Breborn.cl</a>.</p>
+        <p>&copy; 2026 ORIGEN 504 Specialty Coffee Roasters. Maqueta de demostración desarrollada por <a href="https://breborn.cl" target="_blank" rel="noopener">Breborn.cl</a>.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
+  <!-- Floating WhatsApp Direct Contact Button -->
   <a href="https://wa.me/56956823670?text=%C2%A1Hola!%20Quisiera%20hacer%20un%20pedido%20en%20Origen%20504." class="floating-wa" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
     <span class="floating-wa-icon">💬</span>
-    <span class="floating-wa-label">Pedir por WhatsApp</span>
+    <span class="floating-wa-label">WhatsApp Directo</span>
   </a>
 
-  <script src="app.js"></script>
+  <!-- JavaScript Engine -->
+  <script src="app.js?v=3.0"></script>
 </body>
 </html>
