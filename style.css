@@ -1705,77 +1705,230 @@ button, input, select {
   line-height: 1.6;
 }
 
-/* ================= SEDES & HORARIOS ================= */
+/* ================= SEDES & HORARIOS CON FONDO TAZA DE CAFÉ ================= */
 .locations-section {
   background: var(--bg-dark);
   border-top: 1px solid var(--border-subtle);
-}
-
-.locations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.location-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 2.2rem 2rem;
   position: relative;
-  transition: var(--transition);
+}
+
+.schedule-showcase-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.schedule-board-frame {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(212, 163, 115, 0.25);
+  padding: 3.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.schedule-board-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(12, 8, 6, 0.45) 0%, rgba(10, 6, 4, 0.78) 100%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.schedule-pin {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2.2rem;
+  filter: drop-shadow(2px 6px 10px rgba(0, 0, 0, 0.8));
+  transform: rotate(22deg);
+  z-index: 5;
+  user-select: none;
+}
+
+.schedule-card-glass {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(30, 18, 12, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 163, 115, 0.35);
+  border-radius: 24px;
+  padding: 2.5rem 2.2rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.schedule-brand-badge {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.8rem;
 }
 
-.location-card:hover {
-  border-color: var(--border-gold);
-  transform: translateY(-4px);
+.schedule-brand-badge .s-emblem {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
 }
 
-.location-card.featured-loc {
-  border-color: var(--border-gold);
-  background: linear-gradient(180deg, rgba(212, 163, 115, 0.08) 0%, var(--bg-card) 100%);
+.schedule-brand-badge .s-brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  font-weight: 700;
 }
 
-.loc-badge {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: var(--gold-primary);
-  color: var(--bg-darker);
-  font-size: 0.68rem;
+.schedule-brand-badge .s-brand-sub {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: var(--cream-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.schedule-card-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  letter-spacing: 0.1em;
   font-weight: 800;
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-full);
-  letter-spacing: 0.05em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 0.8rem 0 1rem;
 }
 
-.loc-city {
-  font-size: 0.75rem;
+.schedule-divider-line {
+  width: 50px;
+  height: 2px;
+  background: var(--gold-primary);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+.schedule-block {
+  margin-bottom: 1.4rem;
+  text-align: left;
+}
+
+.schedule-loc-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--gold-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+  padding-bottom: 0.3rem;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-row .s-day {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #f1f3f5;
+  letter-spacing: 0.04em;
+}
+
+.schedule-row .s-time {
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--gold-light);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.03em;
 }
 
-.location-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.7rem;
+.schedule-sub-divider {
+  height: 1px;
+  background: rgba(212, 163, 115, 0.15);
+  margin: 1.2rem 0;
+}
+
+.schedule-footer-meta {
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(212, 163, 115, 0.2);
+}
+
+.schedule-ig-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.schedule-ig-tag:hover {
   color: var(--cream-soft);
-  margin-top: 0.2rem;
+  transform: translateY(-1px);
+}
+
+.schedule-bottom-emblem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--cream-muted);
+  margin: 0.5rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.schedule-address-line {
+  font-size: 0.82rem;
+  color: var(--cream-muted);
   margin-bottom: 1.2rem;
 }
 
-.loc-body {
-  margin-bottom: 1.8rem;
-  flex: 1;
+.schedule-cta-row {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
 }
 
-.l-item {
-  font-size: 0.92rem;
-  color: var(--cream-muted);
-  margin-bottom: 0.65rem;
-  line-height: 1.5;
+@media (max-width: 600px) {
+  .schedule-board-frame {
+    padding: 2.5rem 1rem;
+    border-radius: 20px;
+  }
+  .schedule-card-glass {
+    padding: 1.8rem 1.2rem;
+    border-radius: 18px;
+  }
+  .schedule-card-title {
+    font-size: 1.7rem;
+  }
+  .schedule-row .s-day {
+    font-size: 0.78rem;
+  }
+  .schedule-row .s-time {
+    font-size: 0.86rem;
+  }
 }
 
 /* ================= BREBORN BANNER ================= */

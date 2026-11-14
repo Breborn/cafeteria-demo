@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=4.0">
+  <link rel="stylesheet" href="style.css?v=5.0">
 </head>
 <body>
 
@@ -1143,39 +1143,97 @@
     </div>
   </section>
 
-  <!-- Section: Sedes & Horarios (V Región) -->
+  <!-- Section: Sedes & Horarios -->
   <section class="section locations-section" id="sedes">
     <div class="section-container">
       <div class="section-header text-center">
         <div class="section-kicker-badge">
           <span class="badge-roast">ENCUÉNTRANOS</span>
-          <span>VALPARAÍSO &amp; VIÑA DEL MAR</span>
+          <span>QUILPUÉ &amp; V REGIÓN</span>
         </div>
-        <h2 class="section-heading">Nuestras <span class="text-terracotta">Sedes</span></h2>
-        <p class="section-desc">Dos espacios emblemáticos en el corazón gastronómico de la V Región.</p>
+        <h2 class="section-heading">Nuestros <span class="text-terracotta">Horarios</span></h2>
+        <p class="section-desc">Te esperamos en Quilpué para disfrutar tu café de especialidad, Cold Foam recién batido y nuestra pastelería artesanal.</p>
       </div>
 
-      <div class="locations-grid">
+      <!-- Schedule Board Showcase (Inspirado en diseño fijado con fondo de taza de café) -->
+      <div class="schedule-showcase-wrap">
+        <div class="schedule-board-frame" style="background-image: url('assets/bg_horarios_coffee.jpg');">
+          <div class="schedule-board-overlay"></div>
+          
+          <!-- Pin Icon top right -->
+          <div class="schedule-pin" aria-hidden="true">📌</div>
 
-        <div class="location-card featured-loc">
-          <div class="loc-badge">CAFETERÍA &amp; PASTELERÍA DE ESPECIALIDAD</div>
-          <div class="loc-top">
-            <span class="loc-city">QUILPUÉ</span>
-            <h3>Magna's Coffee</h3>
-          </div>
-          <div class="loc-body">
-            <p class="l-item">📍 Quilpué, V Región de Valparaíso</p>
-            <p class="l-item">🕒 Martes a Domingo: Carta Abierta</p>
-            <p class="l-item">✨ Especialistas en Cold Foam &amp; Pastelería de Autor</p>
-            <p class="l-item">📞 Pedidos WhatsApp: +56 9 5164 4492</p>
-          </div>
-          <div class="loc-action">
-            <a href="https://www.instagram.com/magnascoffee" target="_blank" rel="noopener" class="btn btn-coffee btn-block">
-              📸 Seguir en Instagram @magnascoffee
-            </a>
+          <!-- Glass Notice Card -->
+          <div class="schedule-card-glass">
+            
+            <!-- Brand Badge -->
+            <div class="schedule-brand-badge">
+              <span class="s-emblem">☕</span>
+              <span class="s-brand-name">MAGNA’S COFFEE</span>
+              <span class="s-brand-sub">CAFETERÍA DE ESPECIALIDAD</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h3 class="schedule-card-title">NUESTROS HORARIOS</h3>
+
+            <div class="schedule-divider-line"></div>
+
+            <!-- Block 1: Salón & Terraza -->
+            <div class="schedule-block">
+              <h4 class="schedule-loc-title">QUILPUÉ • SALÓN &amp; TERRAZA</h4>
+              <div class="schedule-row">
+                <span class="s-day">LUNES A VIERNES</span>
+                <span class="s-time">9:00 A 20:00 hrs.</span>
+              </div>
+              <div class="schedule-row">
+                <span class="s-day">SÁBADO</span>
+                <span class="s-time">9:30 A 20:00 hrs.</span>
+              </div>
+              <div class="schedule-row">
+                <span class="s-day">DOMINGO</span>
+                <span class="s-time">10:00 A 18:00 hrs.</span>
+              </div>
+            </div>
+
+            <div class="schedule-sub-divider"></div>
+
+            <!-- Block 2: Barra Cold Foam & Pedidos WhatsApp -->
+            <div class="schedule-block">
+              <h4 class="schedule-loc-title">BARRA COLD FOAM &amp; PEDIDOS WHATSAPP</h4>
+              <div class="schedule-row">
+                <span class="s-day">LUNES A SÁBADO</span>
+                <span class="s-time">9:00 A 19:30 hrs.</span>
+              </div>
+              <div class="schedule-row">
+                <span class="s-day">DOMINGO</span>
+                <span class="s-time">10:00 A 17:30 hrs.</span>
+              </div>
+            </div>
+
+            <!-- Bottom Social Handle & Details -->
+            <div class="schedule-footer-meta">
+              <a href="https://www.instagram.com/magnascoffee" target="_blank" rel="noopener" class="schedule-ig-tag">
+                @MAGNASCOFFEE
+              </a>
+              <div class="schedule-bottom-emblem">
+                <span>☕</span>
+                <span>MAGNA'S COFFEE</span>
+                <span>☕</span>
+              </div>
+              <p class="schedule-address-line">📍 Quilpué, Región de Valparaíso • Pedidos WhatsApp: +56 9 5164 4492</p>
+            </div>
+
+            <div class="schedule-cta-row">
+              <a href="https://wa.me/56951644492?text=%C2%A1Hola%20Magna%27s%20Coffee!%20Quisiera%20consultar%20por%20sus%20horarios%20y%20hacer%20un%20pedido." target="_blank" rel="noopener" class="btn btn-coffee">
+                💬 Escribir a WhatsApp
+              </a>
+              <a href="https://www.instagram.com/magnascoffee" target="_blank" rel="noopener" class="btn btn-outline-warm">
+                📸 Ver Instagram @magnascoffee
+              </a>
+            </div>
+
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1245,6 +1303,6 @@
   </a>
 
   <!-- JavaScript Engine -->
-  <script src="app.js?v=4.0"></script>
+  <script src="app.js?v=5.0"></script>
 </body>
 </html>
