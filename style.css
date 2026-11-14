@@ -1874,7 +1874,7 @@ button, input, select {
   color: var(--gold-light);
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.85rem;
 }
 
 .s-day-script {
