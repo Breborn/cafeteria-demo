@@ -1,17 +1,17 @@
 /**
- * ORIGEN 504 • SPECIALTY COFFEE ROASTERS & BRUNCH
- * Interactive Engine: Interactive Cart-style Live Cart, Multi-category Filter & WhatsApp Checkout
- * Developed for Breborn.cl Commercial Showcase
+ * MAGNA’S COFFEE • SPECIALTY COFFEE & BAKERY
+ * Interactive Engine: Live Cart, Multi-category Filter & WhatsApp Checkout
+ * Developed for Magna's Coffee by Breborn.cl
  */
 
-// Teléfono comercial de demostración (Breborn)
-const WHATSAPP_PHONE = '56956823670';
+// Teléfono oficial de Magna's Coffee (+56 9 5164 4492)
+const WHATSAPP_PHONE = '56951644492';
 
 // Estado global del carrito y pedido
 const AppState = {
   cart: [],
   selectedMode: 'Servir en el Local (Mesa)',
-  selectedLocation: 'Cerro Alegre (Almirante Montt 412, Valparaíso)',
+  selectedLocation: 'Magna\'s Coffee Quilpué',
   customerNotes: ''
 };
 
@@ -392,10 +392,10 @@ function handleWhatsAppCheckout() {
   const notes = notesElem ? notesElem.value.trim() : '';
 
   const lines = [
-    '¡Hola Origen 504! ☕ Quisiera enviar el siguiente pedido desde su carta web:',
+    '¡Hola Magna\'s Coffee! ☕ Quisiera enviar el siguiente pedido desde su carta web:',
     '',
     `📋 *Modalidad:* ${AppState.selectedMode}`,
-    `📍 *Sucursal:* ${location}`
+    `📍 *Ubicación:* ${location}`
   ];
 
   if (notes) {
@@ -429,7 +429,7 @@ function handleWhatsAppCheckout() {
  */
 function saveCartToStorage() {
   try {
-    localStorage.setItem('origen504_cart', JSON.stringify(AppState.cart));
+    localStorage.setItem('magnascoffee_cart', JSON.stringify(AppState.cart));
   } catch (e) {
     // Silencioso
   }
@@ -437,7 +437,7 @@ function saveCartToStorage() {
 
 function loadCartFromStorage() {
   try {
-    const saved = localStorage.getItem('origen504_cart');
+    const saved = localStorage.getItem('magnascoffee_cart');
     if (saved) {
       AppState.cart = JSON.parse(saved);
       updateCartUI();
