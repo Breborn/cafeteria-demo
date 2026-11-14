@@ -255,25 +255,25 @@ button, input, select {
 }
 
 .brand-emblem.brand-emblem-logo {
-  width: 48px;
-  height: 48px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   background: #ffffff;
-  padding: 1px;
-  border: 1.5px solid var(--gold-primary);
+  padding: 2px;
+  border: 2px solid var(--gold-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 163, 115, 0.25);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55), 0 0 14px rgba(212, 163, 115, 0.3);
   flex-shrink: 0;
   overflow: hidden;
   transition: var(--transition);
 }
 
 .brand-emblem.brand-emblem-logo:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
   border-color: var(--gold-light);
-  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.45);
+  box-shadow: 0 6px 22px rgba(212, 163, 115, 0.45);
 }
 
 .nav-logo-img {
@@ -2070,6 +2070,10 @@ button, input, select {
 }
 
 @media (max-width: 600px) {
+  .brand-emblem.brand-emblem-logo {
+    width: 52px;
+    height: 52px;
+  }
   .schedule-board-frame {
     padding: 2.2rem 0.8rem;
     border-radius: 20px;
