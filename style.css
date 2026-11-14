@@ -1821,14 +1821,15 @@ button, input, select {
 
 .schedule-card-title-mono {
   font-family: var(--font-mono-tracked);
-  font-size: 1.45rem;
-  letter-spacing: 0.24em;
+  font-size: clamp(1.05rem, 2.7vw, 1.4rem);
+  letter-spacing: 0.16em;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
   margin: 0.8rem 0 0.3rem;
-  line-height: 1.35;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 .schedule-card-script-note {
@@ -1949,14 +1950,15 @@ button, input, select {
 
 .s-addr-mono {
   font-family: var(--font-mono-tracked);
-  font-size: 1.25rem;
-  letter-spacing: 0.18em;
+  font-size: clamp(1.05rem, 3.2vw, 1.4rem);
+  letter-spacing: 0.16em;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
   margin: 0.25rem 0;
-  line-height: 1.35;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  line-height: 1.3;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
 }
 
 .s-addr-sub {
@@ -2016,32 +2018,57 @@ button, input, select {
 
 @media (max-width: 600px) {
   .schedule-board-frame {
-    padding: 2.2rem 0.9rem;
+    padding: 2.2rem 0.8rem;
     border-radius: 20px;
   }
   .schedule-card-glass {
-    padding: 1.8rem 1.1rem;
+    padding: 1.8rem 1rem;
     border-radius: 18px;
   }
   .mono-heading-spaced {
-    font-size: 1.4rem;
-    letter-spacing: 0.16em;
+    font-size: 1.35rem;
+    letter-spacing: 0.14em;
   }
   .schedule-card-title-mono {
-    font-size: 1.2rem;
-    letter-spacing: 0.16em;
+    font-size: 0.98rem;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
   }
   .s-day-mono {
-    font-size: 0.9rem;
-    letter-spacing: 0.16em;
+    font-size: 0.88rem;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
   }
   .s-time-giant {
-    font-size: 1.45rem;
-    padding: 0.45rem 1rem;
+    font-size: 1.4rem;
+    padding: 0.45rem 0.9rem;
+    white-space: nowrap;
   }
   .s-addr-mono {
     font-size: 1.05rem;
     letter-spacing: 0.12em;
+    white-space: nowrap;
+  }
+  .s-addr-sub {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 420px) {
+  .schedule-card-title-mono {
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  .s-addr-mono {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  .s-time-giant {
+    font-size: 1.25rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 
