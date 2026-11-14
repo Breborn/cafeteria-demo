@@ -11,7 +11,7 @@ const WHATSAPP_PHONE = '56951644492';
 const AppState = {
   cart: [],
   selectedMode: 'Servir en el Local (Mesa)',
-  selectedLocation: 'Magna\'s Coffee Quilpué',
+  selectedLocation: 'Magna\'s Coffee (Las Palmas 2620 L8, Los Pinos, Quilpué)',
   customerNotes: ''
 };
 
