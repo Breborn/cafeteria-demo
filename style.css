@@ -1869,40 +1869,45 @@ button, input, select {
 }
 
 
-/* ================= LIFESTYLE & EXPERIENCIA (TENDEDERO CON PERROS DE ROPA ESTÁTICOS) ================= */
+/* ================= LIFESTYLE & EXPERIENCIA (TENDEDERO CON CLIPS EXACTOS DE PINTEREST) ================= */
 .lifestyle-section {
   background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
   padding: 5.5rem 0 6.5rem 0 !important;
   position: relative;
-  overflow: hidden;
+  overflow: visible !important;
+}
+
+.lifestyle-section .section-container {
+  overflow: visible !important;
 }
 
 .clothesline-container {
   position: relative;
-  padding-top: 75px; /* Espacio para las pinzas/perros de ropa y la cuerda */
+  padding-top: 50px;
   width: 100%;
+  overflow: visible !important;
 }
 
 /* Cuerda horizontal trenzada estilo tendedero */
 .clothesline-rope {
   position: absolute;
-  top: 62px; /* Alineada exactamente con la ranura del perro de ropa */
+  top: 26px; /* Altura perfecta que coincide con el cuello del clip */
   left: -20px;
   right: -20px;
-  height: 6px;
+  height: 8px;
   background: repeating-linear-gradient(
     55deg,
     #baa793 0px,
-    #baa793 3px,
-    #f2ece3 3px,
-    #f2ece3 6px,
-    #9c8770 6px,
-    #9c8770 9px
+    #baa793 4px,
+    #f2ece3 4px,
+    #f2ece3 8px,
+    #9c8770 8px,
+    #9c8770 12px
   );
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(50, 35, 20, 0.25);
+  box-shadow: 0 4px 10px rgba(50, 35, 20, 0.28);
   z-index: 2;
   animation: none !important;
 }
@@ -1913,15 +1918,15 @@ button, input, select {
   content: '';
   position: absolute;
   top: -6px;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   background: radial-gradient(circle at 35% 35%, #f6dfb8 20%, #b07736 70%, #684218 100%);
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
-.clothesline-rope::before { left: -4px; }
-.clothesline-rope::after { right: -4px; }
+.clothesline-rope::before { left: -6px; }
+.clothesline-rope::after { right: -6px; }
 
 /* Grid de Tarjetas Colgadas Estáticas */
 .lifestyle-hanging-grid {
@@ -1930,6 +1935,7 @@ button, input, select {
   gap: 1.8rem !important;
   position: relative;
   z-index: 3;
+  overflow: visible !important;
 }
 
 /* Tarjeta colgada estática */
@@ -1937,7 +1943,7 @@ button, input, select {
   background: #ffffff !important;
   border: 1.5px solid rgba(176, 119, 54, 0.22) !important;
   border-radius: 18px !important;
-  padding: 2.2rem 1.6rem 1.8rem 1.6rem !important;
+  padding: 2.4rem 1.6rem 1.8rem 1.6rem !important;
   position: relative !important;
   box-shadow: 0 14px 35px rgba(60, 45, 30, 0.08), 0 3px 10px rgba(60, 45, 30, 0.04) !important;
   display: flex !important;
@@ -1945,6 +1951,7 @@ button, input, select {
   text-align: left !important;
   transform: none !important;
   animation: none !important;
+  overflow: visible !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
 }
 
@@ -1956,17 +1963,17 @@ button, input, select {
   z-index: 10 !important;
 }
 
-/* Perro de ropa de madera clásico sujetando la cuerda y la tarjeta */
+/* Clip bulldog beige exacto de Pinterest sujetando la cuerda y la tarjeta */
 .card-clip-peg {
   position: absolute;
-  top: -85px; /* Hace que el orificio coincida con la cuerda a 62px y la mordaza muerda la tarjeta */
+  top: -50px; /* Hace que el cuello coincida con la cuerda a 26px y la mordaza muerda la tarjeta */
   left: 50%;
   transform: translateX(-50%);
-  width: 32px;
-  height: 116px;
+  width: 68px;
+  height: 68px;
   z-index: 6;
   pointer-events: none;
-  filter: drop-shadow(0 5px 8px rgba(40, 25, 12, 0.32));
+  filter: drop-shadow(0 4px 6px rgba(40, 25, 12, 0.32));
   transition: transform 0.3s ease;
 }
 
@@ -2066,7 +2073,7 @@ button, input, select {
     gap: 5.5rem !important;
   }
   .clothesline-rope {
-    display: none; /* En 1 columna vertical se preserva el perro de ropa en cada tarjeta */
+    display: none; /* En 1 columna vertical se preserva el clip en cada tarjeta */
   }
 }
 
