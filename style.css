@@ -1076,118 +1076,49 @@ button, input, select {
   background: var(--border-subtle);
 }
 
-/* ================= ROASTERY SECTION ================= */
+/* ================= ROASTERY / COLD FOAM SHOWCASE ================= */
 .roastery-section {
   background-color: var(--bg-dark);
   background-image: url('assets/texture_distressed_sand.png'), linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
   background-repeat: repeat, no-repeat;
   background-size: 550px auto, 100% 100%;
   border-top: 1px solid var(--border-subtle);
+  padding: 4rem 0;
 }
 
 .roastery-section .section-container {
-  max-width: 1440px;
+  max-width: 1360px;
   width: 100%;
   padding: 0 2rem;
+  margin: 0 auto;
 }
 
-.roastery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.08fr;
-  gap: 3.5rem;
-  align-items: stretch;
+.coldfoam-showcase-wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
-.roastery-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.roastery-copy p {
-  color: var(--cream-muted);
-  margin-bottom: 1.2rem;
-  font-size: 1.02rem;
-}
-
-.lead-p {
-  font-size: 1.18rem !important;
-  color: var(--cream-soft) !important;
-  font-weight: 500;
-}
-
-.methods-strip {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  margin-top: 2rem;
-}
-
-.method-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 1.1rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-  transition: var(--transition);
-}
-
-.method-card:hover {
-  border-color: var(--border-gold);
-  transform: translateY(-2px);
-  background: var(--bg-card-hover);
-}
-
-.m-icon {
-  font-size: 1.5rem;
-  background: rgba(212, 163, 115, 0.1);
-  padding: 0.4rem;
-  border-radius: var(--radius-sm);
-  color: var(--gold-light);
-}
-
-.method-card strong {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--cream-soft);
-  margin-bottom: 0.2rem;
-}
-
-.method-card span {
-  font-size: 0.78rem;
-  color: var(--cream-dim);
-}
-
-.roastery-visual {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 600px;
-}
-
-.visual-mosaic {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.roastery-visual .m-main {
+.coldfoam-banner-card {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 600px;
+  min-height: 580px;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(176, 119, 54, 0.4);
-  box-shadow: 0 25px 60px rgba(60, 45, 30, 0.22);
+  border: 1.5px solid rgba(212, 163, 115, 0.45);
+  box-shadow: 0 25px 65px rgba(20, 14, 9, 0.38), 0 0 20px rgba(212, 163, 115, 0.12);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background-color: #120e0b;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.mosaic-img-box {
+.coldfoam-banner-card:hover {
+  box-shadow: 0 30px 80px rgba(20, 14, 9, 0.48), 0 0 30px rgba(212, 163, 115, 0.22);
+}
+
+.coldfoam-banner-card .mosaic-img-box {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1195,58 +1126,107 @@ button, input, select {
   z-index: 1;
 }
 
-.mosaic-img-box img {
+.coldfoam-banner-card .mosaic-img-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.roastery-visual .m-main:hover .mosaic-img-box img {
-  transform: scale(1.03);
+.coldfoam-banner-card:hover .mosaic-img-box img {
+  transform: scale(1.025);
 }
 
-.mosaic-overlay {
+.coldfoam-showcase-overlay {
   position: relative;
   z-index: 2;
-  padding: 3.5rem 2.5rem 2.4rem 2.5rem;
-  background: linear-gradient(180deg, transparent 0%, rgba(12, 9, 6, 0.35) 25%, rgba(12, 9, 6, 0.88) 65%, rgba(12, 9, 6, 0.98) 100%);
+  padding: 4.5rem 3.5rem 3rem 3.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 9, 6, 0) 0%,
+    rgba(12, 9, 6, 0.25) 25%,
+    rgba(12, 9, 6, 0.82) 60%,
+    rgba(12, 9, 6, 0.98) 100%
+  );
   margin-top: auto;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
 }
 
-.mosaic-tag {
-  display: inline-block;
-  background: var(--gold-primary);
+.coldfoam-tag-row {
+  margin-bottom: 0.9rem;
+}
+
+.coldfoam-tag {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  background: linear-gradient(135deg, #b87333 0%, #dfa968 50%, #f4cb93 100%) !important;
+  color: #1a0f07 !important;
+  padding: 0.45rem 1.15rem !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 14px rgba(223, 169, 104, 0.3) !important;
+  display: inline-block !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.coldfoam-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(2.3rem, 4.4vw, 3.8rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.16 !important;
   color: #ffffff !important;
-  font-size: 0.78rem;
-  font-weight: 800;
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+  margin-bottom: 0.85rem !important;
+  letter-spacing: -0.015em !important;
 }
 
-.mosaic-overlay h3 {
-  font-family: var(--font-sans);
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: #ffffff !important;
-  margin-bottom: 0.6rem;
-  line-height: 1.22;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+.coldfoam-title-accent {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 900 !important;
+  font-style: italic !important;
+  color: #f6c88f !important;
+  text-shadow: 0 0 28px rgba(246, 200, 143, 0.55), 0 4px 20px rgba(0, 0, 0, 0.95) !important;
+  display: inline-block !important;
 }
 
-.mosaic-overlay p {
-  font-size: 1.05rem;
-  color: #f7f2ea !important;
-  line-height: 1.55;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-  max-width: 560px;
-  opacity: 0.96;
+.coldfoam-flavors {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: clamp(1rem, 1.7vw, 1.25rem) !important;
+  font-weight: 700 !important;
+  color: #fff4e3 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95) !important;
+  margin-bottom: 0.55rem !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.35rem 0.65rem !important;
+  line-height: 1.45 !important;
+}
+
+.coldfoam-flavors .flavor-item {
+  color: #fff5e6 !important;
+  white-space: nowrap !important;
+}
+
+.coldfoam-flavors .bullet-sep {
+  color: #dfa968 !important;
+  font-weight: 900 !important;
+  user-select: none !important;
+}
+
+.coldfoam-subtitle {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: clamp(0.95rem, 1.35vw, 1.08rem) !important;
+  font-weight: 400 !important;
+  color: rgba(247, 242, 234, 0.92) !important;
+  line-height: 1.55 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8) !important;
+  max-width: 680px !important;
 }
 
 /* ================= MENU TABS & PRODUCTS ================= */
@@ -2642,19 +2622,14 @@ button, input, select {
   .roastery-section .section-container {
     padding: 0 1.25rem;
   }
-  .roastery-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+  .coldfoam-banner-card {
+    min-height: 520px;
   }
-  .roastery-visual,
-  .roastery-visual .m-main {
-    min-height: 480px;
+  .coldfoam-showcase-overlay {
+    padding: 3rem 2.2rem 2.2rem 2.2rem;
   }
-  .mosaic-overlay {
-    padding: 2.5rem 1.8rem 1.8rem 1.8rem;
-  }
-  .mosaic-overlay h3 {
-    font-size: 1.65rem;
+  .coldfoam-title {
+    font-size: clamp(2.1rem, 5vw, 2.9rem) !important;
   }
   .nav-menu, .btn-coffee.nav-actions {
     display: none;
@@ -2695,22 +2670,33 @@ button, input, select {
   .trust-divider {
     display: none;
   }
-  .methods-strip {
-    grid-template-columns: 1fr;
-  }
-  .roastery-visual,
-  .roastery-visual .m-main {
-    min-height: 400px;
+  .coldfoam-banner-card {
+    min-height: 480px;
     border-radius: 20px;
   }
-  .mosaic-overlay {
-    padding: 2rem 1.25rem 1.25rem 1.25rem;
+  .coldfoam-banner-card .mosaic-img-box img {
+    object-position: center 25%;
   }
-  .mosaic-overlay h3 {
-    font-size: 1.35rem;
+  .coldfoam-showcase-overlay {
+    padding: 2.2rem 1.25rem 1.5rem 1.25rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
-  .mosaic-overlay p {
-    font-size: 0.88rem;
+  .coldfoam-tag {
+    font-size: 0.72rem !important;
+    padding: 0.35rem 0.85rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .coldfoam-title {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem) !important;
+    line-height: 1.22 !important;
+  }
+  .coldfoam-flavors {
+    font-size: 0.92rem !important;
+    gap: 0.25rem 0.45rem !important;
+  }
+  .coldfoam-subtitle {
+    font-size: 0.86rem !important;
   }
   /* Category Filter Tabs Horizontal Touch-Scroll */
   .menu-tabs {
@@ -3923,4 +3909,16 @@ h1, h2, h3, h4, h5, h6, .section-heading, .card-title, .lifestyle-card h3, .bb-c
   font-weight: 400 !important;
   letter-spacing: normal !important;
   text-transform: none !important;
+}
+
+/* EXCEPCIÓN: Tipografía editorial llamativa para Cold Foam */
+.coldfoam-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 900 !important;
+}
+
+.coldfoam-title-accent {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 900 !important;
+  font-style: italic !important;
 }
