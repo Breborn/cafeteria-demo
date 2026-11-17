@@ -3238,3 +3238,178 @@ body {
     padding: 0 1.2rem !important;
   }
 }
+
+/* ================= TWO-TIER STACKED CENTERED NAVBAR (CAMPUS GRIND STYLE) ================= */
+.navbar-campus-grind {
+  background: #ffffff !important;
+  border-bottom: 1.5px solid rgba(176, 119, 54, 0.20) !important;
+  padding: 2.4rem 1.5rem 1.8rem 1.5rem !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 100 !important;
+  box-shadow: 0 4px 20px rgba(60, 45, 30, 0.05) !important;
+}
+
+.nav-container-campus {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.campus-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+
+.campus-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.campus-logo-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 6px 20px rgba(176, 119, 54, 0.28)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
+  transition: transform 0.35s cubic-bezier(0.2, 0, 0.2, 1), filter 0.35s ease;
+}
+
+.campus-logo-link:hover .campus-logo-badge {
+  transform: scale(1.06) translateY(-2px);
+  filter: drop-shadow(0 10px 28px rgba(176, 119, 54, 0.45)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.14));
+}
+
+.campus-logo-img {
+  width: 135px;
+  height: 135px;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+}
+
+.campus-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.4rem;
+  flex-wrap: wrap;
+}
+
+.campus-nav-link {
+  font-family: 'Montserrat', var(--font-sans);
+  font-size: 0.90rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #2c241e !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.35rem 0;
+  transition: color 0.25s ease;
+}
+
+.campus-nav-link.active,
+.campus-nav-link:hover {
+  color: #af6934 !important; /* Exact warm caramel gold from Campus Grind */
+}
+
+.campus-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #af6934;
+  transition: width 0.28s ease;
+}
+
+.campus-nav-link:hover::after,
+.campus-nav-link.active::after {
+  width: 100%;
+}
+
+.campus-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #fbf8f5 !important;
+  border: 1.5px solid rgba(176, 119, 54, 0.30) !important;
+  color: #1d1510 !important;
+  padding: 0.45rem 1.15rem !important;
+  border-radius: 999px !important;
+  font-family: 'Montserrat', var(--font-sans) !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-left: 0.8rem;
+}
+
+.campus-cart-btn:hover {
+  background: #af6934 !important;
+  border-color: #af6934 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(175, 105, 52, 0.35);
+}
+
+.campus-cart-btn:hover .cart-total-text {
+  color: #ffffff !important;
+}
+
+.campus-cart-btn:hover .cart-count-badge {
+  background: #ffffff !important;
+  color: #af6934 !important;
+}
+
+.campus-mobile-toggle {
+  display: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+}
+
+.campus-mobile-toggle span {
+  background: #1d1510 !important;
+}
+
+/* Responsive Campus Grind Header */
+@media (max-width: 900px) {
+  .navbar-campus-grind {
+    padding: 1.4rem 1rem 1.2rem 1rem !important;
+  }
+  .campus-logo-wrap {
+    margin-bottom: 0.8rem;
+  }
+  .campus-logo-img {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .campus-nav-row {
+    gap: 1.8rem;
+  }
+  .campus-nav-link {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-width: 680px) {
+  .campus-nav-row {
+    display: none !important;
+  }
+  .campus-mobile-toggle {
+    display: flex !important;
+  }
+}

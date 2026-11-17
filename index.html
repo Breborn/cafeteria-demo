@@ -9,9 +9,9 @@
   <!-- Google Fonts: Space Mono (Imprenta tracked), Caveat (Manuscrita), Cormorant Garamond & Urbanist -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@500;600;700;800&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=23.0">
+  <link rel="stylesheet" href="style.css?v=24.0">
 </head>
 <body>
 
@@ -27,40 +27,37 @@
     </div>
   </aside>
 
-  <!-- Navbar: Clean Between Style -->
-  <header class="navbar navbar-between-white" id="navbar">
-    <div class="nav-container-between">
+  <!-- Navbar: Two-Tier Stacked Centered Style (Inspiración The Campus Grind) -->
+  <header class="navbar navbar-campus-grind" id="navbar">
+    <div class="nav-container-campus">
 
-      <!-- Left Links -->
-      <nav class="nav-menu-left">
-        <a href="#coldfoam" class="between-nav-link">NUEVOS SABORES</a>
-        <a href="#carta" class="between-nav-link">CARTA</a>
-      </nav>
+      <!-- Top Row: Big Centered Circular Logo -->
+      <div class="campus-logo-wrap">
+        <a href="#" class="campus-logo-link" aria-label="Magna's Coffee Inicio">
+          <div class="campus-logo-badge">
+            <img src="assets/logo_magnas_framed.png" alt="Magna's Coffee - Cafetería de Especialidad" class="campus-logo-img">
+          </div>
+        </a>
+      </div>
 
-      <!-- Center Logo: Official Magna's Coffee with Frame -->
-      <a href="#" class="brand-logo-between" aria-label="Magna's Coffee Inicio">
-        <div class="b-logo-badge">
-          <img src="assets/logo_magnas_coffee.png" alt="Magna's Coffee - Cafetería de Especialidad" class="b-logo-img">
-        </div>
-      </a>
+      <!-- Bottom Row: Centered Navigation Menu Links & Cart -->
+      <nav class="campus-nav-row">
+        <a href="#coldfoam" class="campus-nav-link active">NUEVOS SABORES</a>
+        <a href="#carta" class="campus-nav-link">CARTA</a>
+        <a href="#sedes" class="campus-nav-link">HORARIOS Y UBICACIÓN</a>
+        <a href="#pedido" class="campus-nav-link">PEDIDOS</a>
 
-      <!-- Right Links & Actions -->
-      <nav class="nav-menu-right">
-        <a href="#sedes" class="between-nav-link">HORARIOS Y UBICACIÓN</a>
-        <a href="#pedido" class="between-nav-link">PEDIDOS</a>
-      </nav>
-
-      <div class="nav-actions-between">
-        <button class="cart-nav-btn cart-nav-between" id="cartNavBtn" aria-label="Ver pedido">
+        <button class="cart-nav-btn campus-cart-btn" id="cartNavBtn" aria-label="Ver pedido">
           <span class="cart-icon">🛒</span>
           <span class="cart-count-badge" id="cartCountBadge">0</span>
           <span class="cart-total-text" id="cartTotalText">$0</span>
         </button>
+      </nav>
 
-        <button class="mobile-toggle toggle-between" id="mobileToggle" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <!-- Mobile Menu Toggle Button (Visible only on mobile) -->
+      <button class="mobile-toggle campus-mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
 
     </div>
   </header>
