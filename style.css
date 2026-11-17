@@ -1869,7 +1869,7 @@ button, input, select {
 }
 
 
-/* ================= LIFESTYLE & EXPERIENCIA (TÉCNICA PINTEREST: TENDEDERO CON PINZAS) ================= */
+/* ================= LIFESTYLE & EXPERIENCIA (TÉCNICA PINTEREST: TENDEDERO CON PINZAS EN MOVIMIENTO) ================= */
 .lifestyle-section {
   background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
@@ -1881,14 +1881,14 @@ button, input, select {
 
 .clothesline-container {
   position: relative;
-  padding-top: 50px;
+  padding-top: 55px;
   width: 100%;
 }
 
 /* Cuerda horizontal trenzada estilo tendedero */
 .clothesline-rope {
   position: absolute;
-  top: 22px;
+  top: 25px;
   left: -20px;
   right: -20px;
   height: 6px;
@@ -1904,6 +1904,13 @@ button, input, select {
   border-radius: 4px;
   box-shadow: 0 4px 10px rgba(50, 35, 20, 0.25);
   z-index: 2;
+  animation: ropeSway 6s ease-in-out infinite alternate;
+}
+
+@keyframes ropeSway {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(1px); }
+  100% { transform: translateY(0); }
 }
 
 /* Anclajes metálicos dorados en los extremos */
@@ -1931,7 +1938,56 @@ button, input, select {
   z-index: 3;
 }
 
-/* Tarjeta colgada */
+/* Keyframes de balanceo continuo (física de péndulo realista) */
+@keyframes pegSwing1 {
+  0% {
+    transform: rotate(-2.8deg);
+  }
+  50% {
+    transform: rotate(2.8deg);
+  }
+  100% {
+    transform: rotate(-2.8deg);
+  }
+}
+
+@keyframes pegSwing2 {
+  0% {
+    transform: rotate(2.4deg);
+  }
+  50% {
+    transform: rotate(-2.4deg);
+  }
+  100% {
+    transform: rotate(2.4deg);
+  }
+}
+
+@keyframes pegSwing3 {
+  0% {
+    transform: rotate(-2.6deg);
+  }
+  50% {
+    transform: rotate(2.6deg);
+  }
+  100% {
+    transform: rotate(-2.6deg);
+  }
+}
+
+@keyframes pegSwing4 {
+  0% {
+    transform: rotate(3.0deg);
+  }
+  50% {
+    transform: rotate(-2.2deg);
+  }
+  100% {
+    transform: rotate(3.0deg);
+  }
+}
+
+/* Tarjeta colgada en movimiento perpetuo */
 .hanging-card {
   background: #ffffff !important;
   border: 1.5px solid rgba(176, 119, 54, 0.22) !important;
@@ -1939,20 +1995,38 @@ button, input, select {
   padding: 2.4rem 1.6rem 1.8rem 1.6rem !important;
   position: relative !important;
   box-shadow: 0 16px 38px rgba(60, 45, 30, 0.08), 0 3px 12px rgba(60, 45, 30, 0.04) !important;
-  transform-origin: 50% -22px !important;
-  transform: rotate(var(--idle-rot, 0deg));
-  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28), box-shadow 0.35s ease, border-color 0.3s ease !important;
+  transform-origin: 50% -30px !important; /* Punto de pivote exacto en el orificio de la pinza sobre la cuerda */
   display: flex !important;
   flex-direction: column !important;
   text-align: left !important;
+  will-change: transform;
 }
 
-/* Efecto hover: se balancea sutilmente y se eleva */
+/* Asignación de balanceo desfasado para efecto natural y orgánico */
+.lifestyle-hanging-grid .hanging-card:nth-child(1) {
+  animation: pegSwing1 3.6s ease-in-out infinite;
+}
+
+.lifestyle-hanging-grid .hanging-card:nth-child(2) {
+  animation: pegSwing2 4.2s ease-in-out infinite -1.4s;
+}
+
+.lifestyle-hanging-grid .hanging-card:nth-child(3) {
+  animation: pegSwing3 3.9s ease-in-out infinite -2.8s;
+}
+
+.lifestyle-hanging-grid .hanging-card:nth-child(4) {
+  animation: pegSwing4 4.5s ease-in-out infinite -0.9s;
+}
+
+/* Al pasar el cursor: se detiene suavemente para leer y se acerca */
 .hanging-card:hover {
-  transform: rotate(0deg) translateY(6px) scale(1.025) !important;
-  box-shadow: 0 24px 50px rgba(156, 108, 65, 0.22), 0 8px 20px rgba(0, 0, 0, 0.08) !important;
-  border-color: rgba(176, 119, 54, 0.60) !important;
+  animation-play-state: paused !important;
+  transform: rotate(0deg) translateY(6px) scale(1.028) !important;
+  box-shadow: 0 24px 50px rgba(156, 108, 65, 0.24), 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(176, 119, 54, 0.65) !important;
   z-index: 10 !important;
+  transition: transform 0.35s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.3s ease !important;
 }
 
 /* Pinza bulldog real en la parte superior */
@@ -2055,19 +2129,20 @@ button, input, select {
 @media (max-width: 1024px) {
   .lifestyle-hanging-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 4rem 1.8rem !important;
+    gap: 4.5rem 1.8rem !important;
   }
 }
 
 @media (max-width: 640px) {
   .lifestyle-hanging-grid {
     grid-template-columns: 1fr !important;
-    gap: 4rem !important;
+    gap: 4.5rem !important;
   }
   .clothesline-rope {
     display: none; /* En 1 columna vertical se preserva el clip en cada tarjeta */
   }
 }
+
 
 /* ================= SEDES & HORARIOS CON FONDO TAZA DE CAFÉ ================= */
 .locations-section {
