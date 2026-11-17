@@ -3035,24 +3035,25 @@ button, input, select {
 
 /* Large Cursive Hero Title (Solo Pastelería y Solo Café en manuscrita grande) */
 .between-script-hero {
-  font-family: var(--font-script);
-  font-size: clamp(4.5rem, 8.5vw, 7.5rem);
-  font-weight: 700;
-  font-style: italic;
-  color: #ffffff;
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.88), 0 2px 8px rgba(0, 0, 0, 0.95);
-  user-select: none;
-  transition: all 0.35s cubic-bezier(0.2, 0, 0.2, 1);
-  display: block;
+  font-family: 'Alex Brush', 'Great Vibes', cursive !important;
+  font-size: clamp(5.2rem, 9.8vw, 8.5rem) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.92), 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 16px rgba(0, 0, 0, 0.6) !important;
+  user-select: none !important;
+  transition: all 0.35s cubic-bezier(0.2, 0, 0.2, 1) !important;
+  display: block !important;
+  letter-spacing: 0.02em !important;
 }
 
 .between-split-side:hover .between-script-hero {
-  color: var(--gold-light);
-  transform: scale(1.05);
-  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 163, 115, 0.5);
+  color: #fbe6ce !important;
+  transform: scale(1.06) !important;
+  text-shadow: 0 6px 32px rgba(0, 0, 0, 0.95), 0 0 35px rgba(212, 163, 115, 0.75) !important;
 }
 
 .between-split-lockup {
@@ -3415,5 +3416,12 @@ body {
   }
   .campus-mobile-toggle {
     display: flex !important;
+  }
+}
+
+/* Responsive Calligraphy Script */
+@media (max-width: 900px) {
+  .between-script-hero {
+    font-size: clamp(4rem, 15vw, 6rem) !important;
   }
 }
