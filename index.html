@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=15.0">
+  <link rel="stylesheet" href="style.css?v=16.0">
 </head>
 <body>
 
@@ -27,40 +27,40 @@
     </div>
   </aside>
 
-  <!-- Navbar -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="brand-logo" aria-label="CAFÉ Inicio">
-        <div class="brand-emblem">☕</div>
-        <div class="brand-meta">
-          <span class="brand-name">CAFÉ</span>
-          <span class="brand-sub">ESPECIALIDAD &amp; PASTELERÍA</span>
-        </div>
-      </a>
+  <!-- Navbar: Clean Between Style -->
+  <header class="navbar navbar-between-white" id="navbar">
+    <div class="nav-container-between">
 
-      <nav class="nav-menu">
-        <a href="#coldfoam">Nuevos Sabores</a>
-        <a href="#carta">Carta</a>
-        <a href="#sedes">Horarios y Ubicación</a>
-        <a href="#pedido">Pedidos</a>
+      <!-- Left Links -->
+      <nav class="nav-menu-left">
+        <a href="#coldfoam" class="between-nav-link">NUEVOS SABORES</a>
+        <a href="#carta" class="between-nav-link">CARTA</a>
       </nav>
 
-      <div class="nav-actions">
-        <!-- Floating Cart Trigger Button -->
-        <button class="cart-nav-btn" id="cartNavBtn" aria-label="Ver pedido">
+      <!-- Center Logo -->
+      <a href="#" class="brand-logo-between" aria-label="CAFÉ Inicio">
+        <span class="b-logo-title">CAFÉ</span>
+        <span class="b-logo-sub">ESPECIALIDAD &amp; PASTELERÍA</span>
+      </a>
+
+      <!-- Right Links & Actions -->
+      <nav class="nav-menu-right">
+        <a href="#sedes" class="between-nav-link">HORARIOS Y UBICACIÓN</a>
+        <a href="#pedido" class="between-nav-link">PEDIDOS</a>
+      </nav>
+
+      <div class="nav-actions-between">
+        <button class="cart-nav-btn cart-nav-between" id="cartNavBtn" aria-label="Ver pedido">
           <span class="cart-icon">🛒</span>
           <span class="cart-count-badge" id="cartCountBadge">0</span>
           <span class="cart-total-text" id="cartTotalText">$0</span>
         </button>
 
-        <a href="#pedido" class="btn btn-coffee">
-          <span>Hacer Pedido</span>
-        </a>
-
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+        <button class="mobile-toggle toggle-between" id="mobileToggle" aria-label="Abrir menú">
           <span></span><span></span><span></span>
         </button>
       </div>
+
     </div>
   </header>
 
@@ -72,74 +72,37 @@
     <a href="#pedido" class="m-link">🛒 Pedidos</a>
   </div>
 
-  <!-- Hero Section: Modern Minimalist Dual-Portal (Inspiración Between) -->
-  <section class="hero-section hero-between-style" id="heroSection">
-    <div class="hero-container">
-
-      <!-- Header Simple y Atractivo -->
-      <div class="hero-heading-group">
-        <span class="hero-script-title">El ritual del buen café</span>
-        <h1 class="hero-mono-heading">
-          <span class="hero-title-line">CAFÉ DE ESPECIALIDAD</span>
-        </h1>
+  <!-- Hero Section: EXACT Between 50/50 Split Screen -->
+  <section class="between-split-hero" id="heroSection">
+    
+    <!-- Left Half: Pastelería & Sándwich (Lleva a la carta de pasteles y sándwich) -->
+    <a href="#carta" class="between-split-side side-bakery" data-target-tab="bakery" aria-label="Conoce nuestra Pastelería y Sándwich">
+      <div class="between-split-bg">
+        <img src="assets/split_hero_bakery.jpg" alt="Croissant sándwich artesanal y carrot cake" class="between-bg-img" loading="eager">
+        <div class="between-split-gradient"></div>
       </div>
-
-      <!-- Two Interactive Feature Portals (Between Style) -->
-      <div class="portal-grid">
-
-        <!-- Portal 1: Café & Líquidos -->
-        <a href="#carta" class="portal-card" data-target-tab="cafeteria" aria-label="Ver Carta de Café y Líquidos">
-          <div class="portal-img-wrap">
-            <img src="assets/portal_cafe_liquidos.jpg" alt="Café de Especialidad, Cold Foam y Bebidas Frías" class="portal-img" loading="eager">
-            <div class="portal-overlay"></div>
-          </div>
-          <div class="portal-content">
-            <span class="portal-badge">☕ CAFÉ &amp; LÍQUIDOS</span>
-            <h2 class="portal-title">Café &amp; Bebidas</h2>
-            <p class="portal-desc">Cold Foam cremoso, espressos de origen, Flat White, lattes y bebidas frías de autor.</p>
-            <div class="portal-action-pill">
-              <span>Ver Carta de Bebidas</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </div>
-        </a>
-
-        <!-- Portal 2: Preparaciones Horneadas -->
-        <a href="#carta" class="portal-card" data-target-tab="bakery" aria-label="Ver Preparaciones Horneadas, Pasteles y Sándwich">
-          <div class="portal-img-wrap">
-            <img src="assets/portal_preparaciones_horneadas.jpg" alt="Preparaciones Horneadas, Pasteles, Carrot Cake y Sándwich" class="portal-img" loading="eager">
-            <div class="portal-overlay"></div>
-          </div>
-          <div class="portal-content">
-            <span class="portal-badge">🥐 PASTELERÍA &amp; COCINA</span>
-            <h2 class="portal-title">Preparaciones Horneadas</h2>
-            <p class="portal-desc">Carrot Cake artesanal doble relleno, bollería hojaldrada, tostones y sándwiches gourmet.</p>
-            <div class="portal-action-pill">
-              <span>Ver Pasteles &amp; Sándwich</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </div>
-        </a>
-
+      <div class="between-split-lockup">
+        <span class="between-outline">CONOCE</span>
+        <span class="between-script">nuestra</span>
+        <span class="between-solid">PASTELERÍA</span>
+        <span class="between-sub-hint">Pasteles &amp; Sándwich ➔</span>
       </div>
+    </a>
 
-      <!-- Quick Trust Info Strip -->
-      <div class="hero-quick-strip">
-        <div class="quick-pill">
-          <span class="q-icon">📍</span>
-          <span>Las Palmas 2620 L8, Los Pinos • Quilpué</span>
-        </div>
-        <div class="quick-pill">
-          <span class="q-icon">🕒</span>
-          <span>Lunes a Sábado: 09:00 a 20:00 hrs</span>
-        </div>
-        <div class="quick-pill">
-          <span class="q-icon">💬</span>
-          <span>Pedidos directos por WhatsApp sin comisiones</span>
-        </div>
+    <!-- Right Half: Café & Líquidos (Lleva a la carta de café y bebidas) -->
+    <a href="#carta" class="between-split-side side-drinks" data-target-tab="cafeteria" aria-label="Conoce nuestro Café y Barra de Especialidad">
+      <div class="between-split-bg">
+        <img src="assets/split_hero_drinks.jpg" alt="Café de especialidad con cold foam y latte art" class="between-bg-img" loading="eager">
+        <div class="between-split-gradient"></div>
       </div>
+      <div class="between-split-lockup">
+        <span class="between-outline">CONOCE</span>
+        <span class="between-script">nuestro</span>
+        <span class="between-solid">CAFÉ</span>
+        <span class="between-sub-hint">Café &amp; Líquidos ➔</span>
+      </div>
+    </a>
 
-    </div>
   </section>
 
   <!-- Section: Tostaduría & Cold Foam -->

@@ -595,7 +595,7 @@ function initHeroCarousel() {
  * Clicks on portal cards switch to the corresponding menu tab and smooth-scroll to #carta
  */
 function initPortalCards() {
-  const portalCards = document.querySelectorAll('.portal-card');
+  const portalCards = document.querySelectorAll('.portal-card, .between-split-side');
   portalCards.forEach((card) => {
     card.addEventListener('click', (e) => {
       const targetTab = card.getAttribute('data-target-tab');

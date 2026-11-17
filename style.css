@@ -2748,3 +2748,289 @@ button, input, select {
     gap: 0.6rem;
   }
 }
+
+/* ================= EXACT BETWEEN WHITE NAVBAR & 50/50 SPLIT HERO ================= */
+.navbar-between-white {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e8e4df !important;
+  padding: 0.75rem 0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nav-container-between {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-menu-left, .nav-menu-right {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.between-nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #1a1a1a !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+.between-nav-link:hover {
+  color: var(--gold-primary) !important;
+}
+
+.between-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: width 0.25s ease;
+}
+
+.between-nav-link:hover::after {
+  width: 100%;
+}
+
+.brand-logo-between {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+
+.b-logo-title {
+  font-family: var(--font-mono-tracked);
+  font-size: 1.85rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  color: #110e0c !important;
+  line-height: 1;
+}
+
+.b-logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #7a7067 !important;
+  margin-top: 0.15rem;
+  text-transform: uppercase;
+}
+
+.nav-actions-between {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-nav-between {
+  background: #f5f2ed !important;
+  border: 1px solid #ddd6cc !important;
+  color: #1a1410 !important;
+}
+
+.cart-nav-between .cart-total-text {
+  color: #1a1410 !important;
+}
+
+.toggle-between span {
+  background: #110e0c !important;
+}
+
+/* ================= EXACT 50/50 SPLIT SCREEN HERO (BETWEEN STYLE) ================= */
+.between-split-hero {
+  width: 100%;
+  min-height: calc(100vh - 85px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  overflow: hidden;
+}
+
+.between-split-side {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  overflow: hidden;
+  min-height: calc(100vh - 85px);
+  cursor: pointer;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.between-split-side:last-child {
+  border-right: none;
+}
+
+.between-split-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.between-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  filter: none !important;
+  transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.between-split-side:hover .between-bg-img {
+  transform: scale(1.05);
+}
+
+.between-split-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.52) 0%, 
+    rgba(0, 0, 0, 0.22) 32%, 
+    rgba(0, 0, 0, 0.08) 55%, 
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  transition: background 0.4s ease;
+}
+
+.between-split-side:hover .between-split-gradient {
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.40) 0%, 
+    rgba(0, 0, 0, 0.15) 32%, 
+    rgba(0, 0, 0, 0.05) 55%, 
+    rgba(0, 0, 0, 0.28) 100%
+  );
+}
+
+/* Typographic Lockup (CONOCE nuestra CAFETERÍA / BAR) */
+.between-split-lockup {
+  position: relative;
+  z-index: 5;
+  margin-top: 4.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  padding: 0 1.5rem;
+}
+
+.between-outline {
+  font-family: var(--font-mono-tracked);
+  font-size: clamp(3rem, 5.8vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
+  line-height: 1;
+  display: block;
+  user-select: none;
+}
+
+.between-script {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 5.5vw, 4.8rem);
+  color: #ffffff;
+  font-style: italic;
+  display: block;
+  line-height: 0.8;
+  margin-top: -1.3rem;
+  margin-bottom: -0.6rem;
+  z-index: 2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  user-select: none;
+}
+
+.between-solid {
+  font-family: var(--font-mono-tracked);
+  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: block;
+  line-height: 1.1;
+  z-index: 3;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.75);
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.between-split-side:hover .between-solid {
+  color: var(--gold-light);
+}
+
+.between-sub-hint {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(18, 14, 12, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  margin-top: 1.2rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.between-split-side:hover .between-sub-hint {
+  background: #ffffff;
+  color: #120e0b;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Split */
+@media (max-width: 900px) {
+  .nav-menu-left, .nav-menu-right {
+    display: none !important;
+  }
+  .between-split-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .between-split-side {
+    min-height: 52vh;
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  }
+  .between-split-lockup {
+    margin-top: 3.2rem;
+  }
+  .between-outline {
+    font-size: 2.8rem;
+  }
+  .between-script {
+    font-size: 2.8rem;
+  }
+  .between-solid {
+    font-size: 2.2rem;
+  }
+}
