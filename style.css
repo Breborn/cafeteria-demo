@@ -1869,26 +1869,26 @@ button, input, select {
 }
 
 
-/* ================= LIFESTYLE & EXPERIENCIA (TÉCNICA PINTEREST: TENDEDERO CON PINZAS EN MOVIMIENTO) ================= */
+/* ================= LIFESTYLE & EXPERIENCIA (TENDEDERO CON PERROS DE ROPA ESTÁTICOS) ================= */
 .lifestyle-section {
   background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 6rem 0 7rem 0 !important;
+  padding: 5.5rem 0 6.5rem 0 !important;
   position: relative;
   overflow: hidden;
 }
 
 .clothesline-container {
   position: relative;
-  padding-top: 55px;
+  padding-top: 75px; /* Espacio para las pinzas/perros de ropa y la cuerda */
   width: 100%;
 }
 
 /* Cuerda horizontal trenzada estilo tendedero */
 .clothesline-rope {
   position: absolute;
-  top: 25px;
+  top: 62px; /* Alineada exactamente con la ranura del perro de ropa */
   left: -20px;
   right: -20px;
   height: 6px;
@@ -1904,13 +1904,7 @@ button, input, select {
   border-radius: 4px;
   box-shadow: 0 4px 10px rgba(50, 35, 20, 0.25);
   z-index: 2;
-  animation: ropeSway 6s ease-in-out infinite alternate;
-}
-
-@keyframes ropeSway {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(1px); }
-  100% { transform: translateY(0); }
+  animation: none !important;
 }
 
 /* Anclajes metálicos dorados en los extremos */
@@ -1929,7 +1923,7 @@ button, input, select {
 .clothesline-rope::before { left: -4px; }
 .clothesline-rope::after { right: -4px; }
 
-/* Grid de Tarjetas Colgadas */
+/* Grid de Tarjetas Colgadas Estáticas */
 .lifestyle-hanging-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr) !important;
@@ -1938,113 +1932,46 @@ button, input, select {
   z-index: 3;
 }
 
-/* Keyframes de balanceo continuo (física de péndulo realista) */
-@keyframes pegSwing1 {
-  0% {
-    transform: rotate(-2.8deg);
-  }
-  50% {
-    transform: rotate(2.8deg);
-  }
-  100% {
-    transform: rotate(-2.8deg);
-  }
-}
-
-@keyframes pegSwing2 {
-  0% {
-    transform: rotate(2.4deg);
-  }
-  50% {
-    transform: rotate(-2.4deg);
-  }
-  100% {
-    transform: rotate(2.4deg);
-  }
-}
-
-@keyframes pegSwing3 {
-  0% {
-    transform: rotate(-2.6deg);
-  }
-  50% {
-    transform: rotate(2.6deg);
-  }
-  100% {
-    transform: rotate(-2.6deg);
-  }
-}
-
-@keyframes pegSwing4 {
-  0% {
-    transform: rotate(3.0deg);
-  }
-  50% {
-    transform: rotate(-2.2deg);
-  }
-  100% {
-    transform: rotate(3.0deg);
-  }
-}
-
-/* Tarjeta colgada en movimiento perpetuo */
+/* Tarjeta colgada estática */
 .hanging-card {
   background: #ffffff !important;
   border: 1.5px solid rgba(176, 119, 54, 0.22) !important;
   border-radius: 18px !important;
-  padding: 2.4rem 1.6rem 1.8rem 1.6rem !important;
+  padding: 2.2rem 1.6rem 1.8rem 1.6rem !important;
   position: relative !important;
-  box-shadow: 0 16px 38px rgba(60, 45, 30, 0.08), 0 3px 12px rgba(60, 45, 30, 0.04) !important;
-  transform-origin: 50% -30px !important; /* Punto de pivote exacto en el orificio de la pinza sobre la cuerda */
+  box-shadow: 0 14px 35px rgba(60, 45, 30, 0.08), 0 3px 10px rgba(60, 45, 30, 0.04) !important;
   display: flex !important;
   flex-direction: column !important;
   text-align: left !important;
-  will-change: transform;
+  transform: none !important;
+  animation: none !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
 }
 
-/* Asignación de balanceo desfasado para efecto natural y orgánico */
-.lifestyle-hanging-grid .hanging-card:nth-child(1) {
-  animation: pegSwing1 3.6s ease-in-out infinite;
-}
-
-.lifestyle-hanging-grid .hanging-card:nth-child(2) {
-  animation: pegSwing2 4.2s ease-in-out infinite -1.4s;
-}
-
-.lifestyle-hanging-grid .hanging-card:nth-child(3) {
-  animation: pegSwing3 3.9s ease-in-out infinite -2.8s;
-}
-
-.lifestyle-hanging-grid .hanging-card:nth-child(4) {
-  animation: pegSwing4 4.5s ease-in-out infinite -0.9s;
-}
-
-/* Al pasar el cursor: se detiene suavemente para leer y se acerca */
+/* Hover suave y elegante */
 .hanging-card:hover {
-  animation-play-state: paused !important;
-  transform: rotate(0deg) translateY(6px) scale(1.028) !important;
-  box-shadow: 0 24px 50px rgba(156, 108, 65, 0.24), 0 8px 20px rgba(0, 0, 0, 0.08) !important;
-  border-color: rgba(176, 119, 54, 0.65) !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 22px 48px rgba(156, 108, 65, 0.22), 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(176, 119, 54, 0.60) !important;
   z-index: 10 !important;
-  transition: transform 0.35s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.3s ease !important;
 }
 
-/* Pinza bulldog real en la parte superior */
+/* Perro de ropa de madera clásico sujetando la cuerda y la tarjeta */
 .card-clip-peg {
   position: absolute;
-  top: -42px;
+  top: -85px; /* Hace que el orificio coincida con la cuerda a 62px y la mordaza muerda la tarjeta */
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 116px;
   z-index: 6;
   pointer-events: none;
-  filter: drop-shadow(0 4px 6px rgba(40, 25, 12, 0.30));
+  filter: drop-shadow(0 5px 8px rgba(40, 25, 12, 0.32));
   transition: transform 0.3s ease;
 }
 
 .hanging-card:hover .card-clip-peg {
-  transform: translateX(-50%) scale(1.04);
+  transform: translateX(-50%) translateY(-2px);
 }
 
 .clip-img {
@@ -2066,11 +1993,11 @@ button, input, select {
   justify-content: center;
   margin-bottom: 1.2rem;
   box-shadow: 0 6px 18px rgba(176, 119, 54, 0.12);
-  transition: transform 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28), box-shadow 0.35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hanging-card:hover .lifestyle-visual-wrap {
-  transform: scale(1.12) rotate(-4deg);
+  transform: scale(1.08);
   box-shadow: 0 8px 22px rgba(176, 119, 54, 0.20);
 }
 
@@ -2129,17 +2056,17 @@ button, input, select {
 @media (max-width: 1024px) {
   .lifestyle-hanging-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 4.5rem 1.8rem !important;
+    gap: 5.5rem 1.8rem !important;
   }
 }
 
 @media (max-width: 640px) {
   .lifestyle-hanging-grid {
     grid-template-columns: 1fr !important;
-    gap: 4.5rem !important;
+    gap: 5.5rem !important;
   }
   .clothesline-rope {
-    display: none; /* En 1 columna vertical se preserva el clip en cada tarjeta */
+    display: none; /* En 1 columna vertical se preserva el perro de ropa en cada tarjeta */
   }
 }
 
