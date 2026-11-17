@@ -467,6 +467,15 @@ function initMobileMenu() {
       });
     });
   }
+
+  // Active state indicator for Campus Nav links
+  const campusLinks = document.querySelectorAll('.campus-nav-link');
+  campusLinks.forEach((link) => {
+    link.addEventListener('click', function () {
+      campusLinks.forEach((l) => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
 }
 
 /**
