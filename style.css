@@ -8,53 +8,42 @@
    ============================================================ */
 
 :root {
-  /* Paleta Café Cálido & Tostaduría de Especialidad (Fondo Color Café) */
-  --bg-darker: #25160e;
-  --bg-dark: #321e14;
-  --bg-surface: #3e261a;
-  --bg-card: #4c2f20;
-  --bg-card-hover: #5c3927;
-  --bg-input: #2a1910;
+  /* Paleta Color Arena & Lino Artesanal (Sand Aesthetic) */
+  --bg-darker: #e8ded2;      /* Arena tostado para footer y banner Breborn */
+  --bg-dark: #f5efe6;        /* Arena principal de la página (Body, fondo general) */
+  --bg-surface: #ede5d8;     /* Arena suave para secciones contrastadas */
+  --bg-card: #ffffff;        /* Tarjetas blancas luminosas y limpias sobre la arena */
+  --bg-card-hover: #faf6f0;  /* Blanco cálido al pasar el cursor */
+  --bg-input: #ffffff;       /* Inputs blancos */
 
-  --gold-primary: #d4a373;
-  --gold-light: #f3cca4;
-  --gold-hover: #c48f5a;
-  --gold-glow: rgba(212, 163, 115, 0.25);
-  --gold-glow-strong: rgba(212, 163, 115, 0.45);
+  --gold-primary: #b07736;   /* Caramelo dorado tostado con alto contraste */
+  --gold-light: #8a5722;     /* Dorado ámbar profundo para texto y links */
+  --gold-hover: #996328;
+  --gold-glow: rgba(176, 119, 54, 0.18);
+  --gold-glow-strong: rgba(176, 119, 54, 0.35);
 
-  --terracotta: #d9823b;
-  --terracotta-hover: #c26e29;
-  --terracotta-glow: rgba(217, 130, 59, 0.25);
+  --terracotta: #c76527;     /* Terracota cálido tostado */
+  --terracotta-hover: #ad541c;
+  --terracotta-glow: rgba(199, 101, 39, 0.22);
 
-  --cream-soft: #faf5ee;
-  --cream-muted: #dfd5c6;
-  --cream-dim: #a39585;
+  --cream-soft: #1d1510;     /* Espresso tostado oscuro (texto principal, títulos) */
+  --cream-muted: #5c4c40;    /* Café tostado medio (descripciones, subtítulos) */
+  --cream-dim: #887669;      /* Taupe suave (detalles, etiquetas menores) */
 
-  --wa-green: #25d366;
-  --wa-green-hover: #1ebd58;
-  --wa-glow: rgba(37, 211, 102, 0.25);
+  --wa-green: #1faa52;       /* Verde WhatsApp optimizado para fondo claro */
+  --wa-green-hover: #178a42;
+  --wa-glow: rgba(31, 170, 82, 0.22);
 
-  --breborn-cyan: #06b6d4;
-  --breborn-cyan-hover: #0891b2;
+  --breborn-cyan: #0284c7;    /* Cyan optimizado para fondo claro */
+  --breborn-cyan-hover: #0369a1;
 
-  --border-subtle: rgba(255, 255, 255, 0.07);
-  --border-gold: rgba(212, 163, 115, 0.28);
-  --border-gold-strong: rgba(212, 163, 115, 0.7);
+  --border-subtle: rgba(140, 110, 80, 0.16);
+  --border-card: rgba(140, 110, 80, 0.18);
+  --border-gold: rgba(176, 119, 54, 0.35);
+  --border-gold-strong: rgba(176, 119, 54, 0.70);
 
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Urbanist', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-mono-tracked: 'Space Mono', 'Courier New', monospace;
-  --font-script: 'Caveat', 'Playfair Display', cursive;
-
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --radius-full: 9999px;
-
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.55);
-  --shadow-glow: 0 0 25px rgba(212, 163, 115, 0.18);
+  --shadow-card: 0 8px 25px rgba(60, 45, 30, 0.07);
+  --shadow-glow: 0 0 20px rgba(176, 119, 54, 0.15);
 }
 
 /* ================= RESET & BASICS ================= */
@@ -128,7 +117,7 @@ button, input, select {
 
 .badge-roast {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   padding: 0.15rem 0.45rem;
   border-radius: var(--radius-xs);
   font-size: 0.68rem;
@@ -362,7 +351,7 @@ button, input, select {
 
 .cart-nav-btn:hover {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px var(--gold-glow);
 }
@@ -443,7 +432,7 @@ button, input, select {
 
 .btn-coffee {
   background: linear-gradient(135deg, var(--gold-primary), var(--terracotta));
-  color: var(--bg-darker);
+  color: #ffffff !important;
   box-shadow: 0 4px 18px var(--gold-glow);
 }
 
@@ -817,7 +806,7 @@ button, input, select {
 
 .hanging-badge.gold {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   border-color: var(--gold-primary);
 }
 
@@ -858,7 +847,7 @@ button, input, select {
 
 .btn-quick-hang-add:hover {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   transform: scale(1.05);
   box-shadow: 0 4px 12px var(--gold-glow);
 }
@@ -1056,7 +1045,7 @@ button, input, select {
 
 .mode-chip.active {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   border-color: var(--gold-primary);
   box-shadow: 0 4px 15px var(--gold-glow);
 }
@@ -1213,7 +1202,7 @@ button, input, select {
 .mosaic-tag {
   display: inline-block;
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   font-size: 0.7rem;
   font-weight: 800;
   padding: 0.2rem 0.6rem;
@@ -1267,7 +1256,7 @@ button, input, select {
 
 .tab-btn.active {
   background: linear-gradient(135deg, var(--gold-primary), var(--terracotta));
-  color: var(--bg-darker);
+  color: #ffffff !important;
   border-color: transparent;
   box-shadow: 0 4px 18px var(--gold-glow);
 }
@@ -1355,7 +1344,7 @@ button, input, select {
 
 .card-badge-top.gold {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   border-color: var(--gold-primary);
 }
 
@@ -1477,7 +1466,7 @@ button, input, select {
 
 .btn-add-cart:hover {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px var(--gold-glow);
 }
@@ -1622,7 +1611,7 @@ button, input, select {
 
 .cart-mode-btn.active {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   border-color: var(--gold-primary);
 }
 
@@ -1726,7 +1715,7 @@ button, input, select {
 
 .cart-qty-btn:hover {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
 }
 
 .cart-qty-text {
@@ -1857,7 +1846,7 @@ button, input, select {
 
 .sc-btn {
   background: var(--gold-primary);
-  color: var(--bg-darker);
+  color: #ffffff !important;
   border: none;
   font-weight: 800;
   font-size: 0.82rem;
@@ -2905,10 +2894,10 @@ button, input, select {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, 
-    rgba(37, 22, 14, 0.55) 0%, 
-    rgba(50, 30, 20, 0.22) 32%, 
-    rgba(37, 22, 14, 0.05) 55%, 
-    rgba(37, 22, 14, 0.40) 100%
+    rgba(30, 20, 15, 0.52) 0%, 
+    rgba(40, 25, 18, 0.20) 32%, 
+    rgba(30, 20, 15, 0.04) 55%, 
+    rgba(30, 20, 15, 0.35) 100%
   );
   transition: background 0.4s ease;
 }
@@ -3107,4 +3096,83 @@ button, input, select {
     padding: 0.55rem 1.35rem !important;
     margin-top: 1rem;
   }
+}
+
+/* ================= COLOR ARENA (SAND THEME REFINEMENTS) ================= */
+body {
+  background-color: var(--bg-dark) !important;
+  color: var(--cream-soft) !important;
+}
+
+.product-card, .method-card, .lifestyle-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+.product-card:hover, .method-card:hover, .lifestyle-card:hover {
+  background: var(--bg-card-hover) !important;
+  border-color: var(--border-gold) !important;
+  box-shadow: 0 12px 30px rgba(60, 45, 30, 0.12) !important;
+}
+
+.tab-btn {
+  background: #ffffff !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--cream-soft) !important;
+  box-shadow: 0 2px 8px rgba(60, 45, 30, 0.04) !important;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--gold-primary), var(--terracotta)) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 18px var(--gold-glow) !important;
+}
+
+.mobile-menu {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+.m-link {
+  color: var(--cream-soft) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+.cart-drawer-content {
+  background: #fcf9f5 !important;
+  border-left: 1px solid var(--border-subtle) !important;
+  box-shadow: -10px 0 40px rgba(60, 45, 30, 0.2) !important;
+}
+
+.cart-drawer-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+.cart-item {
+  background: #ffffff !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.cart-drawer-footer {
+  background: #ffffff !important;
+  border-top: 1px solid var(--border-subtle) !important;
+}
+
+.breborn-banner-section {
+  background: var(--bg-darker) !important;
+}
+
+.breborn-banner-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(6, 182, 212, 0.35) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+.footer {
+  background: var(--bg-darker) !important;
+  border-top: 1px solid var(--border-subtle) !important;
 }
