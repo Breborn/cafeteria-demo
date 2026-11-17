@@ -450,25 +450,9 @@ function loadCartFromStorage() {
 }
 
 /**
- * 8. Menú Móvil
+ * 8. Navegación Encabezado Campus Grind
  */
 function initMobileMenu() {
-  const toggleBtn = document.getElementById('mobileToggle');
-  const mobileNav = document.getElementById('mobileNav');
-
-  if (toggleBtn && mobileNav) {
-    toggleBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('open');
-    });
-
-    mobileNav.querySelectorAll('.m-link').forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-      });
-    });
-  }
-
-  // Active state indicator for Campus Nav links
   const campusLinks = document.querySelectorAll('.campus-nav-link');
   campusLinks.forEach((link) => {
     link.addEventListener('click', function () {
