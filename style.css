@@ -8,13 +8,13 @@
    ============================================================ */
 
 :root {
-  /* Paleta Roastery & Autor: Café tostado de especialidad, obsidiana mate y acentos oro/caramelo */
-  --bg-darker: #0b0a09;
-  --bg-dark: #120f0d;
-  --bg-surface: #1a1613;
-  --bg-card: #201b17;
-  --bg-card-hover: #29231e;
-  --bg-input: #15120f;
+  /* Paleta Café Cálido & Tostaduría de Especialidad (Fondo Color Café) */
+  --bg-darker: #25160e;
+  --bg-dark: #321e14;
+  --bg-surface: #3e261a;
+  --bg-card: #4c2f20;
+  --bg-card-hover: #5c3927;
+  --bg-input: #2a1910;
 
   --gold-primary: #d4a373;
   --gold-light: #f3cca4;
@@ -504,7 +504,7 @@ button, input, select {
   position: relative;
   padding: 6.5rem 0 5.5rem 0;
   overflow: hidden;
-  background-color: #12100e;
+  background-color: var(--bg-surface);
 }
 
 /* Background Carousel Slides (100% Original Pure Photos, NO Filter, NO Overlay) */
@@ -785,7 +785,7 @@ button, input, select {
   width: 100%;
   height: 155px;
   overflow: hidden;
-  background: #0f0d0b;
+  background: var(--bg-surface);
 }
 
 .hanging-img-wrap img {
@@ -1323,7 +1323,7 @@ button, input, select {
   width: 100%;
   height: 210px;
   overflow: hidden;
-  background: #110e0c;
+  background: var(--bg-card);
 }
 
 .card-img-wrap img {
@@ -2306,7 +2306,7 @@ button, input, select {
 /* ================= BREBORN BANNER ================= */
 .breborn-banner-section {
   padding: 3rem 0;
-  background: #090807;
+  background: var(--bg-darker);
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -2859,7 +2859,7 @@ button, input, select {
   grid-template-columns: 1fr 1fr;
   margin: 0;
   padding: 0;
-  background: #000000;
+  background: var(--bg-darker);
   overflow: hidden;
 }
 
@@ -2905,20 +2905,20 @@ button, input, select {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, 
-    rgba(0, 0, 0, 0.52) 0%, 
-    rgba(0, 0, 0, 0.22) 32%, 
-    rgba(0, 0, 0, 0.08) 55%, 
-    rgba(0, 0, 0, 0.35) 100%
+    rgba(37, 22, 14, 0.55) 0%, 
+    rgba(50, 30, 20, 0.22) 32%, 
+    rgba(37, 22, 14, 0.05) 55%, 
+    rgba(37, 22, 14, 0.40) 100%
   );
   transition: background 0.4s ease;
 }
 
 .between-split-side:hover .between-split-gradient {
   background: linear-gradient(180deg, 
-    rgba(0, 0, 0, 0.40) 0%, 
-    rgba(0, 0, 0, 0.15) 32%, 
-    rgba(0, 0, 0, 0.05) 55%, 
-    rgba(0, 0, 0, 0.28) 100%
+    rgba(37, 22, 14, 0.42) 0%, 
+    rgba(50, 30, 20, 0.14) 32%, 
+    rgba(37, 22, 14, 0.03) 55%, 
+    rgba(37, 22, 14, 0.30) 100%
   );
 }
 
