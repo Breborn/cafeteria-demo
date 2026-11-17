@@ -1,10 +1,10 @@
 /**
- * MAGNA’S COFFEE • SPECIALTY COFFEE & BAKERY
+ * CAFÉ • SPECIALTY COFFEE & BAKERY
  * Interactive Engine: Live Cart, Multi-category Filter & WhatsApp Checkout
- * Developed for Magna's Coffee by Breborn.cl
+ * Developed for Café by Breborn.cl
  */
 
-// Teléfono oficial de Magna's Coffee (+56 9 5164 4492)
+// Teléfono oficial de Café (+56 9 5164 4492)
 const WHATSAPP_PHONE = '56951644492';
 
 // Estado global del carrito y pedido
@@ -429,7 +429,7 @@ function handleWhatsAppCheckout() {
  */
 function saveCartToStorage() {
   try {
-    localStorage.setItem('magnascoffee_cart', JSON.stringify(AppState.cart));
+    localStorage.setItem('cafe_especialidad_cart', JSON.stringify(AppState.cart));
   } catch (e) {
     // Silencioso
   }
@@ -437,7 +437,7 @@ function saveCartToStorage() {
 
 function loadCartFromStorage() {
   try {
-    const saved = localStorage.getItem('magnascoffee_cart');
+    const saved = localStorage.getItem('cafe_especialidad_cart');
     if (saved) {
       AppState.cart = JSON.parse(saved);
       updateCartUI();
