@@ -8,6 +8,19 @@
    ============================================================ */
 
 :root {
+  /* Tipografía Unificada Open Sans & Manuscrita Cursiva */
+  --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono-tracked: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-script: 'Alex Brush', 'Great Vibes', cursive;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 999px;
+
   /* Paleta Color Arena & Lino Artesanal (Sand Aesthetic) */
   --bg-darker: #e8ded2;      /* Arena tostado para footer y banner Breborn */
   --bg-dark: #f5efe6;        /* Arena principal de la página (Body, fondo general) */
@@ -3424,4 +3437,130 @@ body {
   .between-script-hero {
     font-size: clamp(4rem, 15vw, 6rem) !important;
   }
+}
+
+
+/* ================= GLOBAL TYPOGRAPHY UNIFICATION (OPEN SANS EXACT MATCH) ================= */
+/* Aplica Open Sans en toda la página: títulos, textos, botones, tarjetas, horarios, badges */
+*, body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, li,
+.section-heading, .card-title, .card-price, .badge, .tab-btn, .btn,
+.mono-heading-spaced, .schedule-card-title-mono, .s-day-mono, .s-addr-mono, .s-time-giant,
+.method-card strong, .lifestyle-card h3, .bb-content h3, .f-col h4,
+.hanging-meta h4, .brand-name, .hero-lead, .card-desc, .portal-desc,
+.sunday-tag-mono, .schedule-ig-tag-mono, .btn-mono-cta, .portal-action-pill, .quick-pill {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Headings: Open Sans Modern Bold */
+h1, h2, h3, h4, h5, h6, .section-heading, .card-title, .lifestyle-card h3, .bb-content h3 {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4.5vw, 2.8rem) !important;
+  line-height: 1.2 !important;
+}
+
+/* Schedule and category labels: Clean uppercase Open Sans */
+.mono-heading-spaced, .schedule-card-title-mono, .s-day-mono, .sunday-tag-mono, .schedule-ig-tag-mono, .btn-mono-cta {
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+/* Navigation Links (Matching The Campus Grind reference exactly) */
+.campus-nav-link {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  color: #1b1b1b !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  position: relative !important;
+  padding: 0.35rem 0 !important;
+  transition: all 0.25s ease !important;
+}
+
+.campus-nav-link.active {
+  color: #9c6c41 !important;
+}
+
+.campus-nav-link:hover {
+  color: #9c6c41 !important;
+}
+
+.campus-nav-link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -4px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: #9c6c41 !important;
+  transition: width 0.25s ease !important;
+}
+
+.campus-nav-link:hover::after,
+.campus-nav-link.active::after {
+  width: 100% !important;
+}
+
+.campus-cart-btn {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Category Filter Tabs */
+.tab-btn {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+/* Card Titles & Prices */
+.card-title {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+}
+
+.card-price {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* EXCEPCIÓN ESTRICTA: Preservar caligrafía manuscrita original */
+.between-script-hero,
+.hero-script-title,
+.script-subtitle,
+.s-script-brand,
+.schedule-card-script-note,
+.sunday-script-text,
+.s-addr-script,
+.schedule-script-tagline,
+.between-script {
+  font-family: 'Alex Brush', 'Great Vibes', cursive !important;
+}
+
+.between-script-hero {
+  font-size: clamp(4.5rem, 13vw, 7.5rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+}
+
+.script-subtitle,
+.s-script-brand,
+.schedule-card-script-note,
+.sunday-script-text,
+.s-addr-script,
+.schedule-script-tagline {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
 }
