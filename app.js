@@ -16,6 +16,7 @@ const AppState = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPortalCards();
   initHeroCarousel();
   initTabs();
   initModeChips();
@@ -587,4 +588,36 @@ function initHeroCarousel() {
   }
 
   startTimer();
+}
+
+/**
+ * Interactive Portal Cards (Between Style)
+ * Clicks on portal cards switch to the corresponding menu tab and smooth-scroll to #carta
+ */
+function initPortalCards() {
+  const portalCards = document.querySelectorAll('.portal-card');
+  portalCards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      const targetTab = card.getAttribute('data-target-tab');
+      if (targetTab) {
+        // Find matching tab button
+        const tabBtn = document.querySelector(`.tab-btn[data-tab="${targetTab}"]`);
+        if (tabBtn) {
+          tabBtn.click();
+        }
+      }
+    });
+  });
+
+  // Intercept nav links to #pedido to open cart drawer
+  document.querySelectorAll('a[href="#pedido"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const drawer = document.getElementById('cartDrawer');
+      if (drawer) {
+        drawer.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
 }

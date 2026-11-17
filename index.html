@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=14.0">
+  <link rel="stylesheet" href="style.css?v=15.0">
 </head>
 <body>
 
@@ -39,11 +39,10 @@
       </a>
 
       <nav class="nav-menu">
-        <a href="#coldfoam">Nuevos Cold Foam</a>
-        <a href="#carta">Carta &amp; Pastelería</a>
-        <a href="#grano">Café en Grano</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#sedes">Horarios &amp; Ubicación</a>
+        <a href="#coldfoam">Nuevos Sabores</a>
+        <a href="#carta">Carta</a>
+        <a href="#sedes">Horarios y Ubicación</a>
+        <a href="#pedido">Pedidos</a>
       </nav>
 
       <div class="nav-actions">
@@ -67,190 +66,79 @@
 
   <!-- Mobile Dropdown Navigation -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="#coldfoam" class="m-link">✨ Nuevos Sabores Cold Foam</a>
-    <a href="#carta" class="m-link">📖 Carta de Especialidad &amp; Pastelería</a>
-    <a href="#grano" class="m-link">📦 Café en Grano Tostado Fresco</a>
-    <a href="#experiencia" class="m-link">🌿 Nuestra Experiencia</a>
-    <a href="#sedes" class="m-link">📍 Los Pinos (Las Palmas 2620 L8)</a>
-    <a href="#pedido" class="btn btn-coffee btn-block m-link">💬 Armar Pedido WhatsApp</a>
+    <a href="#coldfoam" class="m-link">✨ Nuevos Sabores</a>
+    <a href="#carta" class="m-link">📖 Carta</a>
+    <a href="#sedes" class="m-link">📍 Horarios y Ubicación</a>
+    <a href="#pedido" class="m-link">🛒 Pedidos</a>
   </div>
 
-  <!-- Hero Section -->
-    <section class="hero-section" id="heroSection">
-    <!-- Carousel Slides (3 Bright High-Definition Original Photos) -->
-    <div class="hero-bg-slides" id="heroBgSlides">
-      <div class="hero-bg-slide active" data-index="0">
-        <img src="assets/hero_slide_coldfoam.jpg" alt="Café de Especialidad y Línea Cold Foam Artesanal" class="hero-bg-img">
-      </div>
-      <div class="hero-bg-slide" data-index="1">
-        <img src="assets/hero_slide_barista.jpg" alt="Barra de Especialidad, Extracción y Arte Latte" class="hero-bg-img">
-      </div>
-      <div class="hero-bg-slide" data-index="2">
-        <img src="assets/hero_slide_pastry.jpg" alt="Pastelería Fina y Carrot Cake Artesanal" class="hero-bg-img">
-      </div>
-    </div>
-
-    <!-- Carousel Navigation Controls -->
-    <div class="hero-carousel-controls">
-      <button class="hero-carousel-btn prev" id="heroPrevBtn" aria-label="Foto anterior">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-      <div class="hero-carousel-dots" id="heroCarouselDots">
-        <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-        <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-        <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
-      </div>
-      <button class="hero-carousel-btn next" id="heroNextBtn" aria-label="Siguiente foto">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-    </div>
-
+  <!-- Hero Section: Modern Minimalist Dual-Portal (Inspiración Between) -->
+  <section class="hero-section hero-between-style" id="heroSection">
     <div class="hero-container">
+
+      <!-- Header Simple y Atractivo -->
       <div class="hero-heading-group">
         <span class="hero-script-title">El ritual del buen café</span>
         <h1 class="hero-mono-heading">
           <span class="hero-title-line">CAFÉ DE ESPECIALIDAD</span>
-          <span class="hero-title-sub">NUEVOS SABORES CON COLD FOAM</span>
         </h1>
       </div>
 
-      <!-- Clothesline Motion Showcase -->
-      <div class="clothesline-showcase-box">
-        <div class="clothesline-header">
-          <span class="clothesline-kicker">✦ RECIÉN SALIDO DE BARRA &amp; PASTELERÍA</span>
-          <span class="clothesline-sub">Pídelos ahora con 1 clic a tu mesa o para llevar</span>
-        </div>
-        <div class="clothesline-container">
-          <div class="clothesline-wire"></div>
-          
-          <div class="clothesline-items">
+      <!-- Two Interactive Feature Portals (Between Style) -->
+      <div class="portal-grid">
 
-            <!-- Item 1: Latte Pistacho con Cold Foam -->
-            <div class="hanging-item sway-left" data-id="m1" data-name="Latte Pistacho con Cold Foam" data-price="4600">
-              <div class="hanging-peg">
-                <span class="peg-clip"></span>
-                <span class="peg-spring"></span>
-              </div>
-              <div class="hanging-card">
-                <div class="hanging-img-wrap">
-                  <img src="assets/prod_latte_pistacho.jpg" alt="Latte Pistacho con Cold Foam Artesanal" loading="lazy">
-                  <span class="hanging-badge">Nuevo Cold Foam</span>
-                </div>
-                <div class="hanging-meta">
-                  <h4>Latte Pistacho Cold Foam</h4>
-                  <span class="hanging-price">$4.600</span>
-                  <button class="btn-quick-hang-add" data-id="m1" data-name="Latte Pistacho con Cold Foam" data-price="4600">
-                    ＋ Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 2: Insuperable Carrot Cake Artesanal -->
-            <div class="hanging-item sway-center" data-id="m5" data-name="Insuperable Carrot Cake Artesanal" data-price="4800">
-              <div class="hanging-peg">
-                <span class="peg-clip"></span>
-                <span class="peg-spring"></span>
-              </div>
-              <div class="hanging-card featured-hang">
-                <div class="hanging-img-wrap">
-                  <img src="assets/prod_carrot_cake.jpg" alt="Carrot Cake Café" loading="lazy">
-                  <span class="hanging-badge gold">Doble Relleno</span>
-                </div>
-                <div class="hanging-meta">
-                  <h4>Carrot Cake Artesanal</h4>
-                  <span class="hanging-price">$4.800</span>
-                  <button class="btn-quick-hang-add" data-id="m5" data-name="Insuperable Carrot Cake Artesanal" data-price="4800">
-                    ＋ Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 3: Matcha Pink con Cold Foam -->
-            <div class="hanging-item sway-right" data-id="m4" data-name="Matcha Pink con Cold Foam" data-price="4600">
-              <div class="hanging-peg">
-                <span class="peg-clip"></span>
-                <span class="peg-spring"></span>
-              </div>
-              <div class="hanging-card">
-                <div class="hanging-img-wrap">
-                  <img src="assets/prod_matcha_pink.jpg" alt="Matcha Pink con Cold Foam" loading="lazy">
-                  <span class="hanging-badge">Ceremonial Pink</span>
-                </div>
-                <div class="hanging-meta">
-                  <h4>Matcha Pink Cold Foam</h4>
-                  <span class="hanging-price">$4.600</span>
-                  <button class="btn-quick-hang-add" data-id="m4" data-name="Matcha Pink con Cold Foam" data-price="4600">
-                    ＋ Agregar
-                  </button>
-                </div>
-              </div>
-            </div>
-
+        <!-- Portal 1: Café & Líquidos -->
+        <a href="#carta" class="portal-card" data-target-tab="cafeteria" aria-label="Ver Carta de Café y Líquidos">
+          <div class="portal-img-wrap">
+            <img src="assets/portal_cafe_liquidos.jpg" alt="Café de Especialidad, Cold Foam y Bebidas Frías" class="portal-img" loading="eager">
+            <div class="portal-overlay"></div>
           </div>
-        </div>
-      </div>
-
-      <!-- Quick Ordering Mode Selector -->
-      <div class="mode-selector-bar">
-        <span class="mode-bar-label">¿Cómo quieres disfrutar hoy?</span>
-        <div class="mode-chips">
-          <button class="mode-chip active" data-mode="Servir en el Local (Mesa)">
-            <span class="m-chip-icon">☕</span> Consumo en Mesa
-          </button>
-          <button class="mode-chip" data-mode="Para Llevar (Take Away Express)">
-            <span class="m-chip-icon">🛍️</span> Retiro en Tienda
-          </button>
-          <button class="mode-chip" data-mode="Delivery a Domicilio">
-            <span class="m-chip-icon">🛵</span> Delivery Express
-          </button>
-        </div>
-      </div>
-
-      <div class="hero-cta-group">
-        <a href="#carta" class="btn btn-coffee btn-lg">
-          <span class="icon">📖</span> Explorar Carta con Fotos
+          <div class="portal-content">
+            <span class="portal-badge">☕ CAFÉ &amp; LÍQUIDOS</span>
+            <h2 class="portal-title">Café &amp; Bebidas</h2>
+            <p class="portal-desc">Cold Foam cremoso, espressos de origen, Flat White, lattes y bebidas frías de autor.</p>
+            <div class="portal-action-pill">
+              <span>Ver Carta de Bebidas</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
         </a>
-        <a href="#grano" class="btn btn-outline-warm btn-lg">
-          <span class="icon">☕</span> Comprar Café en Grano (250g / 500g)
+
+        <!-- Portal 2: Preparaciones Horneadas -->
+        <a href="#carta" class="portal-card" data-target-tab="bakery" aria-label="Ver Preparaciones Horneadas, Pasteles y Sándwich">
+          <div class="portal-img-wrap">
+            <img src="assets/portal_preparaciones_horneadas.jpg" alt="Preparaciones Horneadas, Pasteles, Carrot Cake y Sándwich" class="portal-img" loading="eager">
+            <div class="portal-overlay"></div>
+          </div>
+          <div class="portal-content">
+            <span class="portal-badge">🥐 PASTELERÍA &amp; COCINA</span>
+            <h2 class="portal-title">Preparaciones Horneadas</h2>
+            <p class="portal-desc">Carrot Cake artesanal doble relleno, bollería hojaldrada, tostones y sándwiches gourmet.</p>
+            <div class="portal-action-pill">
+              <span>Ver Pasteles &amp; Sándwich</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
         </a>
+
       </div>
 
-      <!-- Trust Metrics Strip -->
-      <div class="hero-trust-bar">
-        <div class="trust-pill">
-          <span class="t-icon">☕</span>
-          <div>
-            <strong>Tostado en la V Región</strong>
-            <span>Tueste fresco semanal en Valparaíso y Viña</span>
-          </div>
+      <!-- Quick Trust Info Strip -->
+      <div class="hero-quick-strip">
+        <div class="quick-pill">
+          <span class="q-icon">📍</span>
+          <span>Las Palmas 2620 L8, Los Pinos • Quilpué</span>
         </div>
-        <div class="trust-divider"></div>
-        <div class="trust-pill">
-          <span class="t-icon">🥐</span>
-          <div>
-            <strong>Masa Madre 36 Horas</strong>
-            <span>Fermentación natural y pastelería en vivo</span>
-          </div>
+        <div class="quick-pill">
+          <span class="q-icon">🕒</span>
+          <span>Lunes a Sábado: 09:00 a 20:00 hrs</span>
         </div>
-        <div class="trust-divider"></div>
-        <div class="trust-pill">
-          <span class="t-icon">🐾</span>
-          <div>
-            <strong>Pet Friendly &amp; Wi-Fi</strong>
-            <span>Espacios relajados con terraza y enchufes</span>
-          </div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-pill">
-          <span class="t-icon">⚡</span>
-          <div>
-            <strong>Pedidos por WhatsApp</strong>
-            <span>Sin comisiones del 30% a apps externas</span>
-          </div>
+        <div class="quick-pill">
+          <span class="q-icon">💬</span>
+          <span>Pedidos directos por WhatsApp sin comisiones</span>
         </div>
       </div>
+
     </div>
   </section>
 
