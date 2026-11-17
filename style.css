@@ -1116,7 +1116,10 @@ button, input, select {
 
 /* ================= ROASTERY SECTION ================= */
 .roastery-section {
-  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  background-color: var(--bg-dark);
+  background-image: url('assets/texture_distressed_sand.png'), linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  background-repeat: repeat, no-repeat;
+  background-size: 550px auto, 100% 100%;
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -1919,7 +1922,10 @@ button, input, select {
 
 /* ================= LIFESTYLE & EXPERIENCIA (TENDEDERO CON CLIPS EXACTOS DE PINTEREST) ================= */
 .lifestyle-section {
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: url('assets/texture_distressed_sand.png');
+  background-repeat: repeat;
+  background-size: 550px auto;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
   padding: 5.5rem 0 6.5rem 0 !important;
@@ -2128,7 +2134,10 @@ button, input, select {
 
 /* ================= SEDES & HORARIOS CON FONDO TAZA DE CAFÉ ================= */
 .locations-section {
-  background: var(--bg-dark);
+  background-color: var(--bg-dark);
+  background-image: url('assets/texture_distressed_sand.png');
+  background-repeat: repeat;
+  background-size: 550px auto;
   border-top: 1px solid var(--border-subtle);
   position: relative;
 }
@@ -3155,22 +3164,26 @@ button, input, select {
 .between-split-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, 
+  background-image: url('assets/texture_distressed_dark.png'), linear-gradient(180deg, 
     rgba(30, 20, 15, 0.52) 0%, 
     rgba(40, 25, 18, 0.20) 32%, 
     rgba(30, 20, 15, 0.04) 55%, 
     rgba(30, 20, 15, 0.35) 100%
   );
+  background-repeat: repeat, no-repeat;
+  background-size: 500px auto, 100% 100%;
   transition: background 0.4s ease;
 }
 
 .between-split-side:hover .between-split-gradient {
-  background: linear-gradient(180deg, 
+  background-image: url('assets/texture_distressed_dark.png'), linear-gradient(180deg, 
     rgba(37, 22, 14, 0.42) 0%, 
     rgba(50, 30, 20, 0.14) 32%, 
     rgba(37, 22, 14, 0.03) 55%, 
     rgba(37, 22, 14, 0.30) 100%
   );
+  background-repeat: repeat, no-repeat;
+  background-size: 500px auto, 100% 100%;
 }
 
 /* Typographic Lockup (CONOCE nuestra CAFETERÍA / BAR) */
@@ -3426,7 +3439,10 @@ body {
 }
 
 .breborn-banner-section {
-  background: var(--bg-darker) !important;
+  background-color: var(--bg-darker) !important;
+  background-image: url('assets/texture_distressed_sand.png') !important;
+  background-repeat: repeat !important;
+  background-size: 550px auto !important;
 }
 
 .breborn-banner-card {
@@ -3436,7 +3452,10 @@ body {
 }
 
 .footer {
-  background: var(--bg-darker) !important;
+  background-color: var(--bg-darker) !important;
+  background-image: url('assets/texture_distressed_sand.png') !important;
+  background-repeat: repeat !important;
+  background-size: 550px auto !important;
   border-top: 1px solid var(--border-subtle) !important;
 }
 
