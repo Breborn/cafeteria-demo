@@ -3301,26 +3301,30 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.4rem;
+  gap: 3.8rem;
   flex-wrap: wrap;
 }
 
 .campus-nav-link {
-  font-family: 'Montserrat', var(--font-sans);
-  font-size: 0.90rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: #2c241e !important;
-  text-decoration: none;
-  text-transform: uppercase;
+  font-family: 'Open Sans', var(--font-sans) !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  color: #1b1b1b !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
   position: relative;
   padding: 0.35rem 0;
-  transition: color 0.25s ease;
+  transition: all 0.25s ease;
 }
 
-.campus-nav-link.active,
+.campus-nav-link.active {
+  font-weight: 700 !important;
+  color: #9c6c41 !important; /* Exact warm caramel gold from The Campus Grind */
+}
+
 .campus-nav-link:hover {
-  color: #af6934 !important; /* Exact warm caramel gold from Campus Grind */
+  color: #9c6c41 !important;
 }
 
 .campus-nav-link::after {
@@ -3330,8 +3334,8 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: #af6934;
-  transition: width 0.28s ease;
+  background: #9c6c41;
+  transition: width 0.25s ease;
 }
 
 .campus-nav-link:hover::after,
@@ -3344,13 +3348,13 @@ body {
   align-items: center;
   gap: 0.55rem;
   background: #fbf8f5 !important;
-  border: 1.5px solid rgba(176, 119, 54, 0.30) !important;
-  color: #1d1510 !important;
+  border: 1.5px solid rgba(156, 108, 65, 0.35) !important;
+  color: #1b1b1b !important;
   padding: 0.45rem 1.15rem !important;
   border-radius: 999px !important;
-  font-family: 'Montserrat', var(--font-sans) !important;
-  font-size: 0.85rem !important;
-  font-weight: 800 !important;
+  font-family: 'Open Sans', var(--font-sans) !important;
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
   cursor: pointer;
   transition: all 0.25s ease;
   margin-left: 0.8rem;
