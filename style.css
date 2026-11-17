@@ -930,7 +930,7 @@ button, input, select {
 
 /* ================= HERO TYPOGRAPHY (LETRAS OSCURAS Y SIN ESPACIOS ENTRE LETRAS) ================= */
 .hero-heading-group {
-  margin: 0 auto 1.4rem auto;
+  margin: 1.5rem auto 3rem auto;
   text-align: center;
   position: relative;
   z-index: 3;
