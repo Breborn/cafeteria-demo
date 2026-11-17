@@ -3176,3 +3176,24 @@ body {
   background: var(--bg-darker) !important;
   border-top: 1px solid var(--border-subtle) !important;
 }
+
+/* Center Brand Logo Image */
+.b-logo-img {
+  height: 62px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.brand-logo-between:hover .b-logo-img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 900px) {
+  .b-logo-img {
+    height: 50px !important;
+  }
+}
