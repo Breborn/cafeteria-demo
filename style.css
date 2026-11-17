@@ -1868,49 +1868,205 @@ button, input, select {
   cursor: pointer;
 }
 
-/* ================= LIFESTYLE & EXPERIENCIA ================= */
+
+/* ================= LIFESTYLE & EXPERIENCIA (TÉCNICA PINTEREST: TENDEDERO CON PINZAS) ================= */
 .lifestyle-section {
-  background: var(--bg-darker);
+  background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 6rem 0 7rem 0 !important;
+  position: relative;
+  overflow: hidden;
 }
 
-.lifestyle-grid {
+.clothesline-container {
+  position: relative;
+  padding-top: 50px;
+  width: 100%;
+}
+
+/* Cuerda horizontal trenzada estilo tendedero */
+.clothesline-rope {
+  position: absolute;
+  top: 22px;
+  left: -20px;
+  right: -20px;
+  height: 6px;
+  background: repeating-linear-gradient(
+    55deg,
+    #baa793 0px,
+    #baa793 3px,
+    #f2ece3 3px,
+    #f2ece3 6px,
+    #9c8770 6px,
+    #9c8770 9px
+  );
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(50, 35, 20, 0.25);
+  z-index: 2;
+}
+
+/* Anclajes metálicos dorados en los extremos */
+.clothesline-rope::before,
+.clothesline-rope::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 35% 35%, #f6dfb8 20%, #b07736 70%, #684218 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.clothesline-rope::before { left: -4px; }
+.clothesline-rope::after { right: -4px; }
+
+/* Grid de Tarjetas Colgadas */
+.lifestyle-hanging-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.8rem !important;
+  position: relative;
+  z-index: 3;
 }
 
-.lifestyle-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 2.2rem 1.8rem;
-  transition: var(--transition);
-  text-align: left;
+/* Tarjeta colgada */
+.hanging-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(176, 119, 54, 0.22) !important;
+  border-radius: 18px !important;
+  padding: 2.4rem 1.6rem 1.8rem 1.6rem !important;
+  position: relative !important;
+  box-shadow: 0 16px 38px rgba(60, 45, 30, 0.08), 0 3px 12px rgba(60, 45, 30, 0.04) !important;
+  transform-origin: 50% -22px !important;
+  transform: rotate(var(--idle-rot, 0deg));
+  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28), box-shadow 0.35s ease, border-color 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: left !important;
 }
 
-.lifestyle-card:hover {
-  border-color: var(--border-gold);
-  transform: translateY(-4px);
-  background: var(--bg-card-hover);
+/* Efecto hover: se balancea sutilmente y se eleva */
+.hanging-card:hover {
+  transform: rotate(0deg) translateY(6px) scale(1.025) !important;
+  box-shadow: 0 24px 50px rgba(156, 108, 65, 0.22), 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(176, 119, 54, 0.60) !important;
+  z-index: 10 !important;
 }
 
-.lifestyle-icon {
-  font-size: 2.2rem;
+/* Pinza bulldog real en la parte superior */
+.card-clip-peg {
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  z-index: 6;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(40, 25, 12, 0.30));
+  transition: transform 0.3s ease;
+}
+
+.hanging-card:hover .card-clip-peg {
+  transform: translateX(-50%) scale(1.04);
+}
+
+.clip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Contenedor visual del icono táctil */
+.lifestyle-visual-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fdfaf6 0%, #f4ede3 100%);
+  border: 1.5px solid rgba(176, 119, 54, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1.2rem;
+  box-shadow: 0 6px 18px rgba(176, 119, 54, 0.12);
+  transition: transform 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28), box-shadow 0.35s ease;
 }
 
-.lifestyle-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  color: var(--cream-soft);
-  margin-bottom: 0.75rem;
+.hanging-card:hover .lifestyle-visual-wrap {
+  transform: scale(1.12) rotate(-4deg);
+  box-shadow: 0 8px 22px rgba(176, 119, 54, 0.20);
 }
 
-.lifestyle-card p {
-  font-size: 0.9rem;
-  color: var(--cream-muted);
-  line-height: 1.6;
+.lifestyle-icon-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+  display: inline-block;
+  filter: drop-shadow(0 3px 6px rgba(60, 40, 20, 0.15));
+}
+
+.hanging-card h3 {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #1d1510 !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.3 !important;
+}
+
+.hanging-card p {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: #5c4c40 !important;
+  line-height: 1.6 !important;
+  flex-grow: 1 !important;
+  margin-bottom: 1.3rem !important;
+}
+
+/* Micro pill informativa al pie de la tarjeta */
+.card-micro-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #faf6f0;
+  border: 1px solid rgba(176, 119, 54, 0.25);
+  color: #8c5d2e;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  width: fit-content;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c76527;
+  display: inline-block;
+}
+
+/* Responsividad para móviles y tablets */
+@media (max-width: 1024px) {
+  .lifestyle-hanging-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4rem 1.8rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .lifestyle-hanging-grid {
+    grid-template-columns: 1fr !important;
+    gap: 4rem !important;
+  }
+  .clothesline-rope {
+    display: none; /* En 1 columna vertical se preserva el clip en cada tarjeta */
+  }
 }
 
 /* ================= SEDES & HORARIOS CON FONDO TAZA DE CAFÉ ================= */

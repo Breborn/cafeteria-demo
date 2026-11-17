@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=28.0">
+  <link rel="stylesheet" href="style.css?v=29.0">
 </head>
 <body>
 
@@ -979,29 +979,71 @@
         <p class="section-desc">Diseñamos cada rincón pensando en la luz natural, la acústica relajante y el confort para compartir o concentrarse con un café de especialidad en mano.</p>
       </div>
 
-      <div class="lifestyle-grid">
-        <div class="lifestyle-card">
-          <div class="lifestyle-icon">🥐</div>
-          <h3>Bakery Propia &amp; Masa Madre</h3>
-          <p>Toda nuestra bollería, tostones y focaccias se elaboran en nuestro taller con harinas orgánicas, mantequilla premium y fermentaciones lentas de hasta 36 horas.</p>
-        </div>
+      <!-- Tendedero de Experiencias / Hanging Cards con Pinzas (Técnica Pinterest) -->
+      <div class="clothesline-container">
+        <!-- Cuerda tensada horizontal con anclajes -->
+        <div class="clothesline-rope" aria-hidden="true"></div>
 
-        <div class="lifestyle-card">
-          <div class="lifestyle-icon">🐾</div>
-          <h3>100% Pet Friendly</h3>
-          <p>En nuestras terrazas de Cerro Alegre y Viña tus mascotas son bienvenidas de verdad: disponemos de pocillos de agua fresca y galletas caninas artesanales de cortesía.</p>
-        </div>
+        <div class="lifestyle-grid lifestyle-hanging-grid">
+          <!-- Tarjeta 1: Bakery -->
+          <div class="lifestyle-card hanging-card" style="--idle-rot: -1.3deg;">
+            <div class="card-clip-peg" aria-hidden="true">
+              <img src="assets/clip_hanger.png" alt="pinza" class="clip-img">
+            </div>
+            <div class="lifestyle-visual-wrap">
+              <span class="lifestyle-icon-emoji">🥐</span>
+            </div>
+            <h3>Bakery Propia &amp; Masa Madre</h3>
+            <p>Toda nuestra bollería, tostones y focaccias se elaboran en nuestro taller con harinas orgánicas, mantequilla premium y fermentaciones lentas de hasta 36 horas.</p>
+            <div class="card-micro-pill">
+              <span class="pill-dot"></span> Harinas Orgánicas • 36h
+            </div>
+          </div>
 
-        <div class="lifestyle-card">
-          <div class="lifestyle-icon">⚡</div>
-          <h3>Espacio Cowork &amp; Wi-Fi 500M</h3>
-          <p>Conexión simétrica de alta velocidad, enchufes en mesas seleccionadas y música ambiental cuidada para trabajar remoto o tener reuniones sin interrupciones.</p>
-        </div>
+          <!-- Tarjeta 2: Pet Friendly -->
+          <div class="lifestyle-card hanging-card" style="--idle-rot: 0.9deg;">
+            <div class="card-clip-peg" aria-hidden="true">
+              <img src="assets/clip_hanger.png" alt="pinza" class="clip-img">
+            </div>
+            <div class="lifestyle-visual-wrap">
+              <span class="lifestyle-icon-emoji">🐾</span>
+            </div>
+            <h3>100% Pet Friendly</h3>
+            <p>En nuestras terrazas tus mascotas son bienvenidas de verdad: disponemos de pocillos de agua fresca y galletas caninas artesanales de cortesía.</p>
+            <div class="card-micro-pill">
+              <span class="pill-dot"></span> Pocillos &amp; Galletas Caninas
+            </div>
+          </div>
 
-        <div class="lifestyle-card">
-          <div class="lifestyle-icon">🥂</div>
-          <h3>After Office &amp; Mocktails</h3>
-          <p>Al caer la tarde, combinamos el café con coctelería botánica sin alcohol, sangrías caseras, cold brew tonic y tablas de quesos artesanales para socializar.</p>
+          <!-- Tarjeta 3: Cowork -->
+          <div class="lifestyle-card hanging-card" style="--idle-rot: -0.7deg;">
+            <div class="card-clip-peg" aria-hidden="true">
+              <img src="assets/clip_hanger.png" alt="pinza" class="clip-img">
+            </div>
+            <div class="lifestyle-visual-wrap">
+              <span class="lifestyle-icon-emoji">⚡</span>
+            </div>
+            <h3>Espacio Cowork &amp; Wi-Fi 500M</h3>
+            <p>Conexión simétrica de alta velocidad, enchufes en mesas seleccionadas y música ambiental cuidada para trabajar remoto o tener reuniones sin interrupciones.</p>
+            <div class="card-micro-pill">
+              <span class="pill-dot"></span> 500 Mbps Simétrico
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: After Office & Mocktails -->
+          <div class="lifestyle-card hanging-card" style="--idle-rot: 1.2deg;">
+            <div class="card-clip-peg" aria-hidden="true">
+              <img src="assets/clip_hanger.png" alt="pinza" class="clip-img">
+            </div>
+            <div class="lifestyle-visual-wrap">
+              <span class="lifestyle-icon-emoji">🥂</span>
+            </div>
+            <h3>After Office &amp; Mocktails</h3>
+            <p>Al caer la tarde, combinamos el café con coctelería botánica sin alcohol, sangrías caseras, cold brew tonic y tablas de quesos artesanales para socializar.</p>
+            <div class="card-micro-pill">
+              <span class="pill-dot"></span> Cold Brew Tonic &amp; Tablas
+            </div>
+          </div>
         </div>
       </div>
     </div>
