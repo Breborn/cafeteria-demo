@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=10.0">
+  <link rel="stylesheet" href="style.css?v=11.0">
 </head>
 <body>
 
@@ -76,8 +76,37 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-backdrop"></div>
+    <section class="hero-section" id="heroSection">
+    <!-- Carousel Slides (3 Bright High-Definition Original Photos) -->
+    <div class="hero-bg-slides" id="heroBgSlides">
+      <div class="hero-bg-slide active" data-index="0">
+        <img src="assets/hero_slide_coldfoam.jpg" alt="Café de Especialidad y Línea Cold Foam Artesanal" class="hero-bg-img">
+      </div>
+      <div class="hero-bg-slide" data-index="1">
+        <img src="assets/hero_slide_barista.jpg" alt="Barra de Especialidad, Extracción y Arte Latte" class="hero-bg-img">
+      </div>
+      <div class="hero-bg-slide" data-index="2">
+        <img src="assets/hero_slide_pastry.jpg" alt="Pastelería Fina y Carrot Cake Artesanal" class="hero-bg-img">
+      </div>
+      <!-- Subtle natural vignette / gradient overlay to ensure text contrast while keeping photos bright and clear -->
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <!-- Carousel Navigation Controls -->
+    <div class="hero-carousel-controls">
+      <button class="hero-carousel-btn prev" id="heroPrevBtn" aria-label="Foto anterior">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="hero-carousel-dots" id="heroCarouselDots">
+        <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+      <button class="hero-carousel-btn next" id="heroNextBtn" aria-label="Siguiente foto">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
     <div class="hero-container">
       <div class="hero-kicker-box">
         <span class="hero-badge-dot">●</span>
@@ -1296,6 +1325,6 @@
   </a>
 
   <!-- JavaScript Engine -->
-  <script src="app.js?v=6.0"></script>
+  <script src="app.js?v=7.0"></script>
 </body>
 </html>

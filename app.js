@@ -16,6 +16,7 @@ const AppState = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroCarousel();
   initTabs();
   initModeChips();
   initAddToCartButtons();
@@ -465,4 +466,125 @@ function initMobileMenu() {
       });
     });
   }
+}
+
+/**
+ * Hero Background Carousel (3 Bright High-Definition Original Photos)
+ * Continuous crossfade cycle + Ken Burns zoom + Navigation controls + Swipe
+ */
+function initHeroCarousel() {
+  const slides = document.querySelectorAll('.hero-bg-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  const prevBtn = document.getElementById('heroPrevBtn');
+  const nextBtn = document.getElementById('heroNextBtn');
+  const heroSection = document.getElementById('heroSection');
+
+  if (!slides || slides.length === 0) return;
+
+  let currentIndex = 0;
+  let timer = null;
+  const INTERVAL = 5000;
+
+  function showSlide(index) {
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+    currentIndex = index;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentIndex);
+    });
+
+    if (dots && dots.length > 0) {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function startTimer() {
+    stopTimer();
+    timer = setInterval(nextSlide, INTERVAL);
+  }
+
+  function stopTimer() {
+    if (timer) clearInterval(timer);
+  }
+
+  function restartTimer() {
+    startTimer();
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      restartTimer();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      restartTimer();
+    });
+  }
+
+  if (dots && dots.length > 0) {
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const slideIndex = parseInt(e.currentTarget.getAttribute('data-slide'), 10);
+        if (!isNaN(slideIndex)) {
+          showSlide(slideIndex);
+          restartTimer();
+        }
+      });
+    });
+  }
+
+  // Keyboard Navigation
+  document.addEventListener('keydown', (e) => {
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      restartTimer();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+      restartTimer();
+    }
+  });
+
+  // Pause on hover
+  if (heroSection) {
+    heroSection.addEventListener('mouseenter', stopTimer);
+    heroSection.addEventListener('mouseleave', startTimer);
+
+    // Touch Swipe for Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    heroSection.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        restartTimer();
+      }
+    }, { passive: true });
+  }
+
+  startTimer();
 }
