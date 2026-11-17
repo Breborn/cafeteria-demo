@@ -546,11 +546,13 @@ button, input, select {
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
+  /* Daylight luminous wash: original bright photo shines through, solid dark letters have max contrast */
   background: linear-gradient(180deg, 
-    rgba(14, 11, 9, 0.35) 0%, 
-    rgba(14, 11, 9, 0.18) 35%, 
-    rgba(14, 11, 9, 0.38) 75%, 
-    rgba(14, 11, 9, 0.72) 100%
+    rgba(255, 255, 255, 0.82) 0%, 
+    rgba(255, 255, 255, 0.68) 28%, 
+    rgba(255, 255, 255, 0.44) 58%, 
+    rgba(18, 14, 12, 0.48) 82%,
+    rgba(18, 14, 12, 0.95) 100%
   );
   pointer-events: none;
   z-index: 2;
@@ -890,12 +892,14 @@ button, input, select {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(20, 16, 13, 0.85);
-  border: 1px solid var(--border-gold);
-  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 163, 115, 0.55);
+  padding: 0.45rem 1.15rem;
   border-radius: var(--radius-full);
-  margin-bottom: 1.8rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.6rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -912,18 +916,18 @@ button, input, select {
 }
 
 .hero-kicker-text {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  color: var(--cream-soft);
+  color: #181310;
   letter-spacing: 0.04em;
 }
 
 .hero-city-tag {
-  background: rgba(212, 163, 115, 0.15);
-  color: var(--gold-light);
+  background: rgba(212, 163, 115, 0.28);
+  color: #5c3210;
   font-size: 0.75rem;
   font-weight: 800;
-  padding: 0.15rem 0.5rem;
+  padding: 0.18rem 0.55rem;
   border-radius: var(--radius-full);
 }
 
@@ -939,15 +943,70 @@ button, input, select {
   margin-bottom: 1.5rem;
 }
 
+
+/* ================= HERO TYPOGRAPHY PAIRING (ESTE JUEGO DE LETRAS - SÓLO OSCURAS) ================= */
+.hero-heading-group {
+  margin: 0 auto 1.4rem auto;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-script-title {
+  font-family: var(--font-script);
+  font-size: clamp(2.3rem, 5.2vw, 3.5rem);
+  color: #2b1810; /* Sólido oscuro cálido café */
+  font-weight: 700;
+  display: block;
+  line-height: 1.05;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.7);
+}
+
+.hero-mono-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.hero-mono-line1 {
+  font-family: var(--font-mono-tracked);
+  font-size: clamp(1.8rem, 4.4vw, 3.2rem);
+  letter-spacing: clamp(0.14em, 2vw, 0.24em);
+  text-transform: uppercase;
+  color: #110d0b; /* Sólido oscuro profundo espresso */
+  font-weight: 800;
+  display: block;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 18px rgba(255, 255, 255, 0.75);
+}
+
+.hero-mono-line2 {
+  font-family: var(--font-mono-tracked);
+  font-size: clamp(1.15rem, 2.6vw, 1.85rem);
+  letter-spacing: clamp(0.12em, 1.8vw, 0.20em);
+  text-transform: uppercase;
+  color: #1a1410; /* Sólido oscuro café tostado */
+  font-weight: 800;
+  display: block;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.75);
+}
+
 .hero-lead {
-  font-size: 1.15rem;
-  color: #f7ede2;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
-  font-weight: 500;
-  max-width: 780px;
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: #1c1511; /* Sólido oscuro nítido y legible */
+  font-weight: 600;
+  max-width: 820px;
   margin: 0 auto 2.5rem auto;
   line-height: 1.7;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 14px rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 3;
 }
+
 
 .hero-lead strong {
   color: var(--gold-light);
