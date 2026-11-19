@@ -4,14 +4,14 @@
  * Developed for Café by Breborn.cl
  */
 
-// Teléfono oficial de Café (+56 9 5164 4492)
-const WHATSAPP_PHONE = '56951644492';
+// Teléfono oficial de demostración (+56 9 5682 3670)
+const WHATSAPP_PHONE = '56956823670';
 
 // Estado global del carrito y pedido
 const AppState = {
   cart: [],
   selectedMode: 'Servir en el Local (Mesa)',
-  selectedLocation: 'Magna\'s Coffee (Las Palmas 2620 L8, Los Pinos, Quilpué)',
+  selectedLocation: 'Cafetería de Especialidad (Av. Libertad 450, Viña del Mar)',
   customerNotes: ''
 };
 
@@ -394,7 +394,7 @@ function handleWhatsAppCheckout() {
   const notes = notesElem ? notesElem.value.trim() : '';
 
   const lines = [
-    '¡Hola Magna\'s Coffee! ☕ Quisiera enviar el siguiente pedido desde su carta web:',
+    '¡Hola! ☕ Quisiera enviar el siguiente pedido desde su carta web:',
     '',
     `📋 *Modalidad:* ${AppState.selectedMode}`,
     `📍 *Ubicación:* ${location}`

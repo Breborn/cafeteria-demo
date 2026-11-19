@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <!-- Top Arc Path for Circular Text -->
+    <path id="arcTop" d="M 40,150 A 110,110 0 0,1 260,150" fill="none"/>
+    <!-- Bottom Arc Path for Circular Text -->
+    <path id="arcBottom" d="M 260,150 A 110,110 0 0,1 40,150" fill="none"/>
+    <!-- Warm Radial Gradient for Luxury Depth -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="75%" stop-color="#FBF6EE"/>
+      <stop offset="100%" stop-color="#EFE4D2"/>
+    </radialGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Shadow & Base Cream Circle -->
+  <circle cx="150" cy="150" r="144" fill="url(#bgGrad)" stroke="#B88348" stroke-width="4" filter="url(#subtleShadow)"/>
+  
+  <!-- Outer Beaded / Dashed Ring -->
+  <circle cx="150" cy="150" r="136" fill="none" stroke="#3D271D" stroke-width="1.5" stroke-dasharray="3.5 3" opacity="0.75"/>
+  
+  <!-- Inner Framing Rings -->
+  <circle cx="150" cy="150" r="96" fill="none" stroke="#B88348" stroke-width="2" opacity="0.9"/>
+  <circle cx="150" cy="150" r="92" fill="none" stroke="#3D271D" stroke-width="0.75" opacity="0.4"/>
+
+  <!-- Top Curved Text: CAFETERÍA DE ESPECIALIDAD -->
+  <text font-family="'Space Mono', 'Urbanist', -apple-system, sans-serif" font-size="11.5" font-weight="700" fill="#2A1A12" letter-spacing="4">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">
+      CAFETERÍA DE ESPECIALIDAD
+    </textPath>
+  </text>
+
+  <!-- Bottom Curved Text: • TOSTADURÍA & BAKERY • -->
+  <text font-family="'Space Mono', 'Urbanist', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#8C5926" letter-spacing="3.2">
+    <textPath href="#arcBottom" startOffset="50%" text-anchor="middle">
+      • TOSTADURÍA &amp; BAKERY •
+    </textPath>
+  </text>
+
+  <!-- Decorative Stars on Equator -->
+  <text x="32" y="153" font-size="11" fill="#B88348" text-anchor="middle">✦</text>
+  <text x="268" y="153" font-size="11" fill="#B88348" text-anchor="middle">✦</text>
+
+  <!-- Center Badge Area: Coffee Cup & Vapor -->
+  <g transform="translate(150, 114)" text-anchor="middle">
+    <!-- Steam Curves -->
+    <path d="M-8,-16 C-12,-24 -4,-28 -8,-36" fill="none" stroke="#B88348" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+    <path d="M0,-16 C-4,-25 4,-29 0,-38" fill="none" stroke="#8C5926" stroke-width="2" stroke-linecap="round"/>
+    <path d="M8,-16 C4,-24 12,-28 8,-36" fill="none" stroke="#B88348" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Cup Body -->
+    <path d="M-18,-12 C-17,4 17,4 18,-12 Z" fill="#3D271D" stroke="#2A1A12" stroke-width="1.5"/>
+    <!-- Cup Rim -->
+    <ellipse cx="0" cy="-12" rx="18" ry="4" fill="#B88348" stroke="#2A1A12" stroke-width="1.2"/>
+    <ellipse cx="0" cy="-12" rx="15" ry="2.8" fill="#5A3B28"/>
+    <!-- Cup Handle -->
+    <path d="M17,-9 C24,-9 24,0 16,1" fill="none" stroke="#3D271D" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Saucer Plate -->
+    <path d="M-23,7 C-10,10 10,10 23,7" fill="none" stroke="#B88348" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Brand Typography in Center -->
+  <!-- Main Title: CAFÉ in Cormorant Luxury Serif -->
+  <text x="150" y="162" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="36" font-weight="800" fill="#23160E" text-anchor="middle" letter-spacing="4">
+    CAFÉ
+  </text>
+
+  <!-- Divider Line -->
+  <line x1="115" y1="171" x2="185" y2="171" stroke="#B88348" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="150" cy="171" r="2" fill="#3D271D"/>
+
+  <!-- Tagline: COFFEE & BRUNCH -->
+  <text x="150" y="185" font-family="'Space Mono', 'Plus Jakarta Sans', monospace" font-size="8.5" font-weight="700" fill="#7A583B" text-anchor="middle" letter-spacing="2.4">
+    COFFEE &amp; BRUNCH
+  </text>
+  <text x="150" y="198" font-family="'Caveat', cursive" font-size="13" font-weight="700" fill="#B88348" text-anchor="middle">
+    Calidad de Origen
+  </text>
+</svg>
